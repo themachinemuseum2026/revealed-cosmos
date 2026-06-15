@@ -301,6 +301,7 @@
     .bio-card p { color: var(--muted); }
     .bio-list { margin: 18px 0 0; padding: 0; list-style: none; display: grid; gap: 9px; }
     .bio-list li { color: #d7d0c7; font-size: 15px; border-top: 1px solid rgba(255,255,255,.07); padding-top: 9px; }
+    .bio-list strong { color: var(--text); }
     .about-copy p { color: #d7d0c7; font-size: clamp(17px, .35vw + 16px, 18px); max-width: 880px; }
 
     .contact-grid {
@@ -385,6 +386,8 @@
       background: #10131a;
     }
     .modal-footer { border-bottom: 0; border-top: 1px solid var(--line); color: rgba(255,255,255,.72); font-size: 12px; letter-spacing: 1.1px; text-transform: uppercase; }
+    .modal-footer a { color: var(--blue); font-weight: 900; }
+    .mobile-pdf-link { display: none; }
     .modal-bar strong { font-size: 14px; text-transform: uppercase; letter-spacing: .8px; }
     .modal-close {
       border: 1px solid var(--line2);
@@ -395,7 +398,7 @@
       cursor: pointer;
       font-weight: 800;
     }
-    .modal-viewer { position: relative; min-height: 0; overflow: hidden; }
+    .modal-viewer { position: relative; min-height: 0; overflow: auto; -webkit-overflow-scrolling: touch; }
     .modal-viewer::before {
       content: "THE REVEALED COSMOS";
       position: absolute;
@@ -441,6 +444,9 @@
       .modal-shell { width: 100vw; height: 100dvh; border-radius: 0; }
       .modal-bar { padding: 12px; }
       .modal-close { padding: 9px 12px; }
+      .modal-footer { display: grid; justify-content: center; text-align: center; padding: 10px 12px; gap: 6px; }
+      .mobile-pdf-link { display: inline-block; }
+      .modal-viewer iframe { width: 100%; min-width: 100%; }
     }
   </style>
 </head>
@@ -461,7 +467,7 @@
   </header>
 
   <main>
-    <section class="hero">
+    <section id="top" class="hero">
       <div class="wrap hero-inner">
         <aside class="hero-card" aria-label="Revealed Cosmos brand visual">
           <img src="hero_brand.jpg" alt="The Revealed Cosmos eye and cosmic brand visual" />
@@ -534,7 +540,6 @@
           </article>
 
           <article class="card">
-            <div class="cardcard-visual" aria-hidden="true"></div>
             <div class="card-visual" aria-hidden="true"></div>
             <div class="card-body">
               <div class="tag">Tone Bible / Style Architecture</div>
@@ -637,28 +642,29 @@
         <aside class="bio-card">
           <img src="profile.jpg" alt="Aaron A." />
           <h3>Aaron A.</h3>
-          <p>Worldbuilding Systems Consultant</p>
+          <p>Narrative Systems & Worldbuilding Consultant</p>
           <ul class="bio-list">
-            <li>M.A. in Linguistics</li>
-            <li>10+ years studying narrative systems, worldbuilding, and interactive storytelling</li>
-            <li>Game analysis, player behavior, and narrative structure</li>
-            <li>English, Russian, and Spanish language background</li>
+            <li><strong>M.A. in Linguistics & Translation</strong></li>
+            <li><strong>10+ years</strong> building fiction, lore systems, and worldbuilding frameworks</li>
+            <li><strong>20+ years of game study</strong> as a player and analyst, focused on story, systems, and player experience</li>
+            <li><strong>Game analysis:</strong> player behavior, objective clarity, faction pressure, quest logic, and story–gameplay alignment</li>
+            <li><strong>Language background:</strong> English/Russian bilingual with Spanish study for tone, naming, voice, and cross-cultural story awareness</li>
           </ul>
         </aside>
         <div class="about-copy">
           <div class="kicker">About</div>
-          <h2>I turn unfinished concepts into usable development material.</h2>
+          <h2>I turn unfinished concepts into production-ready story material.</h2>
           <p>
-            I work as a narrative designer and worldbuilding consultant for games and fictional IPs. My focus is helping
-            developers turn early ideas into structured worlds that support gameplay, character arcs, faction conflict, and long-term story development.
+            I design narrative systems and worldbuilding architecture for games, RPGs, interactive media, and long-form fictional IPs.
+            My work helps creators turn scattered ideas into clear material that collaborators can read, discuss, revise, and build from.
           </p>
           <p>
-            Many projects begin with strong ideas but scattered material: partial lore, disconnected mechanics, character concepts without clear motivations,
-            or world rules that are not yet defined. My role is to organize and strengthen those elements so the narrative works as a coherent system rather than a collection of isolated pieces.
+            Many projects begin with strong ideas but scattered structure: partial lore, disconnected mechanics, unclear character motivations,
+            faction conflict without pressure, or world rules that are not yet useful for gameplay. My role is to organize those pieces into a coherent system.
           </p>
           <p>
-            Depending on the needs of the project, I can support story bibles, faction conflicts, quest progression, tone guides,
-            dialogue structure, character networks, visual references, keyframe direction, and moodboards for early concept development.
+            Depending on the project, I can support lore packs, story bibles, faction arcs, quest progression, branching outcomes,
+            dialogue and character networks, tone guides, visual reference direction, keyframe notes, and moodboards for early concept development.
           </p>
         </div>
       </div>
@@ -724,11 +730,36 @@
       <div class="modal-viewer">
         <iframe id="sampleFrame" src="" title="Portfolio sample PDF"></iframe>
       </div>
-      <div class="modal-footer">© 2026 The Revealed Cosmos • Portfolio sample • All rights reserved</div>
+      <div class="modal-footer">
+        <span>© 2026 The Revealed Cosmos • Portfolio sample • All rights reserved</span>
+        <a id="mobilePdfLink" class="mobile-pdf-link" href="#" target="_blank" rel="noopener">Open readable PDF</a>
+      </div>
     </div>
   </div>
 
   <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    const initialHash = window.location.hash;
+
+    function forceHeroTopOnInitialLoad() {
+      const shouldStartAtHero = !initialHash || initialHash === '#portfolio';
+      if (!shouldStartAtHero) return;
+
+      if (initialHash === '#portfolio') {
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+      }
+
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+      window.setTimeout(function() {
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+      }, 80);
+    }
+
+    window.addEventListener('pageshow', forceHeroTopOnInitialLoad);
+
     function sendInquiry() {
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
@@ -749,8 +780,15 @@
       const modal = document.getElementById('sampleModal');
       const frame = document.getElementById('sampleFrame');
       const label = document.getElementById('sampleTitle');
+      const mobilePdfLink = document.getElementById('mobilePdfLink');
+      const isMobile = window.matchMedia('(max-width: 680px)').matches;
+      const pdfView = isMobile
+        ? '#toolbar=0&navpanes=0&scrollbar=1&pagemode=none&view=Fit&zoom=page-fit'
+        : '#toolbar=0&navpanes=0&scrollbar=1&pagemode=none&view=FitH';
+
       label.textContent = title || 'Portfolio Sample';
-      frame.src = src + '#toolbar=0&navpanes=0&scrollbar=1&pagemode=none&view=FitH';
+      frame.src = src + pdfView;
+      if (mobilePdfLink) mobilePdfLink.href = src;
       modal.classList.add('open');
       modal.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
