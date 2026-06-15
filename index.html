@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Revealed Cosmos Studio | Worldbuilding, Lore Systems & Game Writing Support</title>
-  <meta name="description" content="Revealed Cosmos Studio helps indie developers, RPG teams, visual novel creators, writers, and early-stage IP teams organize lore, factions, quest logic, tone, and visual story proof into clear materials they can use." />
+  <title>The Revealed Cosmos | Worldbuilding, Lore Systems & Game Writing Support</title>
+  <meta name="description" content="The Revealed Cosmos helps indie developers, RPG teams, visual novel creators, writers, and early-stage IP teams organize lore, factions, quest logic, tone, and visual story proof into clear materials they can use." />
   <meta name="keywords" content="worldbuilding consultant, lore documentation, game writing support, RPG quest design, visual novel writer, story bible, lore bible, faction design, narrative systems, worldbuilding services, indie game writer" />
-  <meta property="og:title" content="Revealed Cosmos Studio | Worldbuilding & Lore Systems" />
+  <meta property="og:title" content="The Revealed Cosmos | Worldbuilding & Lore Systems" />
   <meta property="og:description" content="Lore cleanup, worldbuilding structure, quest logic, tone guides, and visual story proof for games, RPGs, visual novels, and fictional IPs." />
   <meta property="og:image" content="hero_brand.jpg" />
   <meta property="og:type" content="website" />
@@ -89,8 +89,10 @@
     nav { display: flex; gap: 28px; align-items: center; }
     nav a {
       color: var(--muted);
-      font-size: 15px;
-      font-weight: 700;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .7px;
+      text-transform: uppercase;
     }
     nav a:hover { color: var(--text); }
 
@@ -106,14 +108,16 @@
       align-items: center;
     }
 
-    .eyebrow, .kicker {
+    .eyebrow, .kicker, .tag {
       color: var(--gold);
       text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 12px;
+      letter-spacing: 1.9px;
+      font-size: 13px;
       font-weight: 900;
-      margin-bottom: 18px;
     }
+
+    .eyebrow, .kicker { margin-bottom: 18px; }
+    .tag { margin-bottom: 10px; }
 
     h1, h2, h3 { margin-top: 0; line-height: 1.08; letter-spacing: -.035em; }
     h1 { font-size: clamp(40px, 5vw, 66px); margin-bottom: 24px; max-width: 760px; }
@@ -207,10 +211,16 @@
     }
 
     .card-body { padding: 24px; }
-    .tag { color: var(--gold); font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 1.3px; margin-bottom: 10px; }
     .portfolio-grid h3 { text-transform: uppercase; letter-spacing: -.015em; font-size: 22px; }
     .card p { color: #d7d0c7; margin-bottom: 18px; }
-    .sample-link { font-size: 14px; font-weight: 900; }
+    .sample-link {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: .7px;
+      text-transform: uppercase;
+    }
+    .sample-link.external::after { content: " ↗"; }
 
     .services-grid { margin-top: 28px; }
     .service { padding: 28px; }
@@ -218,6 +228,18 @@
     .service p { color: #ded8cf; }
     .service ul { color: #d7d0c7; padding-left: 20px; margin: 0 0 22px; }
     .service li { margin: 7px 0; }
+
+    .bundle {
+      margin-top: 22px;
+      padding: 26px 28px;
+      display: grid;
+      grid-template-columns: 1.4fr .8fr;
+      gap: 24px;
+      align-items: center;
+    }
+    .bundle h3 { font-size: 28px; margin-bottom: 8px; }
+    .bundle p { color: #d7d0c7; margin-bottom: 0; }
+    .bundle .button { justify-self: end; }
 
     .process-grid {
       display: grid;
@@ -273,37 +295,37 @@
     }
     textarea { min-height: 130px; resize: vertical; }
     .form-note { color: var(--soft); font-size: 13px; margin: 4px 0 0; }
-    .email-line { font-weight: 900; }
 
     footer { padding: 34px 0; color: var(--soft); font-size: 14px; text-align: center; }
 
     @media (max-width: 960px) {
-      .hero-grid, .split, .contact-grid { grid-template-columns: 1fr; }
+      .hero-grid, .split, .contact-grid, .bundle { grid-template-columns: 1fr; }
       .portfolio-grid, .services-grid, .pain-points, .process-grid { grid-template-columns: 1fr 1fr; }
       .hero { padding: 58px 0 62px; }
       .hero-card { max-width: 720px; }
+      .bundle .button { justify-self: start; }
     }
 
     @media (max-width: 680px) {
       .wrap, .nav { width: min(100% - 34px, var(--max)); }
       .nav { display: block; padding: 16px 0; min-height: auto; }
       nav { margin-top: 12px; gap: 12px 18px; }
-      nav a { font-size: 14px; }
-      h1 { font-size: clamp(36px, 11vw, 48px); }
-      h2 { font-size: 31px; }
+      nav a { font-size: 13px; }
+      h1 { font-size: clamp(35px, 10.5vw, 46px); }
+      h2 { font-size: 30px; }
       .lead, .section-intro, .about-copy p { font-size: 16px; }
       .portfolio-grid, .services-grid, .pain-points, .process-grid { grid-template-columns: 1fr; }
       section { padding: 56px 0; }
       .card-visual { height: 132px; }
       .button { width: 100%; }
-      .logo { font-size: 18px; }
+      .logo { font-size: 17px; }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="nav">
-      <div class="logo">Revealed Cosmos</div>
+      <div class="logo">The Revealed Cosmos</div>
       <nav aria-label="Main navigation">
         <a href="#portfolio">Portfolio</a>
         <a href="#services">Services</a>
@@ -320,7 +342,7 @@
           <div class="eyebrow">Indie games • RPGs • Visual novels • Fictional IP</div>
           <h1>Worldbuilding, lore, and quest support for story-driven projects.</h1>
           <p class="lead">
-            Revealed Cosmos Studio helps creators turn scattered notes, character ideas, faction conflicts,
+            The Revealed Cosmos helps creators organize scattered notes, character ideas, faction conflicts,
             quest concepts, and visual moods into clear materials that can be read, pitched, revised, and developed.
           </p>
           <div class="buttons">
@@ -335,7 +357,7 @@
           </div>
         </div>
         <aside class="hero-card" aria-label="Revealed Cosmos brand visual">
-          <img src="hero_brand.jpg" alt="Revealed Cosmos eye and cosmic brand visual" />
+          <img src="hero_brand.jpg" alt="The Revealed Cosmos eye and cosmic brand visual" />
         </aside>
       </div>
     </section>
@@ -357,7 +379,7 @@
               <div class="tag">Original IP / Lore Architecture</div>
               <h3>ATLAS 3I / Second Earth</h3>
               <p>Deep-space setting with metaphysics, ship hierarchy, ritual systems, social strata, and narrator voice built into one coherent world framework.</p>
-              <a class="sample-link" href="atlas3i-second-earth-sample.pdf">See sample</a>
+              <a class="sample-link external" href="atlas3i-second-earth-sample.pdf" target="_blank" rel="noopener">See sample</a>
             </div>
           </article>
 
@@ -367,7 +389,7 @@
               <div class="tag">Fantasy Worldbuilding / Lore Bible</div>
               <h3>The Siamic Peninsula</h3>
               <p>Fantasy worldbuilding package with factions, history, magic rules, central conflict, tone, and story hooks for RPG or fictional IP development.</p>
-              <a class="sample-link" href="siamic-peninsula-lore-bible.pdf">See sample</a>
+              <a class="sample-link external" href="siamic-peninsula-lore-bible.pdf" target="_blank" rel="noopener">See sample</a>
             </div>
           </article>
 
@@ -377,7 +399,7 @@
               <div class="tag">RPG Quest Design / Branching Structure</div>
               <h3>The Artifact of Silent Ruin</h3>
               <p>Branching quest sample built from faction pressure, investigation, player choice, conflict escalation, and alternate allegiance paths.</p>
-              <a class="sample-link" href="artifact-of-silent-ruin-quest-design.pdf">See sample</a>
+              <a class="sample-link external" href="artifact-of-silent-ruin-quest-design.pdf" target="_blank" rel="noopener">See sample</a>
             </div>
           </article>
 
@@ -387,7 +409,7 @@
               <div class="tag">Tone Bible / Style Architecture</div>
               <h3>Psychopunk Tone Bible</h3>
               <p>Style guide for surreal metaphysical fiction: tone rules, recurring image systems, rhythm, point-of-view logic, and cross-media voice control.</p>
-              <a class="sample-link" href="psychopunk-tone-bible.pdf">See sample</a>
+              <a class="sample-link external" href="psychopunk-tone-bible.pdf" target="_blank" rel="noopener">See sample</a>
             </div>
           </article>
 
@@ -397,7 +419,7 @@
               <div class="tag">Narrative Prose / Atmosphere</div>
               <h3>PROTOTEUS: The Waking Cycle</h3>
               <p>Atmospheric sci-fi scene demonstrating voice, sensory control, body-centric imagery, metaphysical tension, and cinematic scene rhythm.</p>
-              <a class="sample-link" href="prototeus-waking-cycle-sample.pdf">See sample</a>
+              <a class="sample-link external" href="prototeus-waking-cycle-sample.pdf" target="_blank" rel="noopener">See sample</a>
             </div>
           </article>
 
@@ -407,7 +429,7 @@
               <div class="tag">Visual Story Proof / Mood Direction</div>
               <h3>Visual Reference Packaging</h3>
               <p>Curated mood, atmosphere, and visual reference boards that help clarify story tone, pitch direction, and early creative identity.</p>
-              <a class="sample-link" href="#contact">Ask about visual proof</a>
+              <a class="sample-link" href="#contact">Request visual proof info</a>
             </div>
           </article>
         </div>
@@ -434,7 +456,7 @@
               <li>Clean reference brief</li>
               <li>Priority fixes and next-step notes</li>
             </ul>
-            <a class="sample-link" href="#contact">Request a free fit check</a>
+            <a class="sample-link" href="#contact">Start with a fit check</a>
           </article>
 
           <article class="card service">
@@ -447,7 +469,7 @@
               <li>Branching outcomes</li>
               <li>Player-facing narrative logic</li>
             </ul>
-            <a class="sample-link" href="#contact">Request a free fit check</a>
+            <a class="sample-link" href="#contact">Discuss this package</a>
           </article>
 
           <article class="card service">
@@ -460,9 +482,18 @@
               <li>Story-world framing</li>
               <li>Portfolio or outreach-ready page</li>
             </ul>
-            <a class="sample-link" href="#contact">Request a free fit check</a>
+            <a class="sample-link" href="#contact">Ask about proof package</a>
           </article>
         </div>
+
+        <article class="card bundle">
+          <div>
+            <div class="tag">Best Value / Starter Bundle</div>
+            <h3>World + Quest Starter Bundle</h3>
+            <p>For projects that need both setting clarity and a playable story direction: a cleaned world brief, faction pressure map, and one quest or scene pathway to test the concept.</p>
+          </div>
+          <a class="button" href="#contact">Request bundle fit check</a>
+        </article>
 
         <div class="process-grid">
           <div class="step"><strong>1. Diagnose</strong><span>What is unclear: rules, factions, tone, player path, or presentation?</span></div>
@@ -483,14 +514,13 @@
           <div class="kicker">About</div>
           <h2>I organize story worlds so teams can use them.</h2>
           <p>
-            My work sits between worldbuilding, game writing support, language, and visual story presentation.
-            I help creators turn abstract or fragmented material into coherent systems: lore bibles, faction logic,
-            quest progression, tone guides, and presentation-ready proof.
+            I work as a worldbuilding and lore systems consultant for creators who have strong ideas but need a clearer structure.
+            My focus is organizing early-stage material into lore bibles, faction logic, quest progression, tone guides, visual references,
+            and clean documentation that supports games, RPGs, visual novels, and fictional IP development.
           </p>
           <p>
             My background combines linguistics, teaching, game analysis, narrative systems, and creative production workflows.
-            I am most useful in early development, when a project has strong ideas but needs clearer structure, stronger documentation,
-            and a practical bridge between story, world, and player experience.
+            I am most useful when a project needs clarity, continuity, and a practical bridge between story, world, and player experience.
           </p>
         </div>
       </div>
@@ -503,9 +533,8 @@
           <h2>Request a free project fit check.</h2>
           <p class="section-intro">
             Send a short note about what already exists and what feels unclear. I will respond with whether the project is a fit
-            for lore cleanup, quest structure, visual story proof, or another focused package.
+            for lore cleanup, quest structure, visual story proof, a starter bundle, or another focused package.
           </p>
-          <p class="email-line"><a href="mailto:revealedcosmosstudio@gmail.com">revealedcosmosstudio@gmail.com</a></p>
         </div>
 
         <div class="contact-panel">
@@ -525,6 +554,7 @@
                 <option>Lore & Worldbuilding Cleanup Sprint</option>
                 <option>Quest & Faction Narrative Pack</option>
                 <option>Visual Story Proof Package</option>
+                <option>World + Quest Starter Bundle</option>
                 <option>Portfolio / sample question</option>
               </select>
             </div>
@@ -532,8 +562,8 @@
               <label for="message">Project details</label>
               <textarea id="message" name="message" placeholder="What already exists? What feels unclear? What would a useful outcome look like?"></textarea>
             </div>
-            <button class="button" type="button" onclick="sendInquiry()">Open email draft</button>
-            <p class="form-note">This opens a prepared email to Revealed Cosmos Studio. No backend signup or account required.</p>
+            <button class="button" type="button" onclick="sendInquiry()">Send request</button>
+            <p class="form-note">This opens a prepared email to The Revealed Cosmos Studio. No backend signup or account required.</p>
           </form>
         </div>
       </div>
@@ -541,7 +571,7 @@
   </main>
 
   <footer>
-    <div class="wrap">© 2026 Revealed Cosmos. All rights reserved.</div>
+    <div class="wrap">© 2026 The Revealed Cosmos. All rights reserved.</div>
   </footer>
 
   <script>
