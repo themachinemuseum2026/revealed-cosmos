@@ -71,17 +71,26 @@
     .nav {
       width: min(1300px, calc(100% - 48px));
       margin: 0 auto;
-      min-height: 70px;
+      min-height: 76px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 28px;
     }
 
+    .brand { display: grid; gap: 2px; }
     .logo {
       font-size: 21px;
       font-weight: 900;
       letter-spacing: 1.45px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .brand-subtitle {
+      color: var(--soft);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
       white-space: nowrap;
     }
@@ -97,7 +106,7 @@
     nav a:hover { color: var(--text); }
 
     .hero {
-      padding: 86px 0 76px;
+      padding: 82px 0 76px;
       border-bottom: 1px solid var(--line);
     }
 
@@ -120,16 +129,22 @@
     .tag { margin-bottom: 10px; }
 
     h1, h2, h3 { margin-top: 0; line-height: 1.08; letter-spacing: -.035em; }
-    h1 { font-size: clamp(40px, 5vw, 66px); margin-bottom: 24px; max-width: 760px; }
-    h2 { font-size: clamp(31px, 3.4vw, 46px); margin-bottom: 18px; max-width: 970px; }
+    h1 { font-size: clamp(40px, 5vw, 64px); margin-bottom: 24px; max-width: 770px; }
+    h2 { font-size: clamp(31px, 3.4vw, 45px); margin-bottom: 18px; max-width: 970px; }
     h3 { font-size: 23px; margin-bottom: 12px; }
     p { margin-top: 0; }
 
     .lead {
-      max-width: 690px;
+      max-width: 700px;
       color: #ded8cf;
       font-size: 19px;
       margin-bottom: 0;
+    }
+    .support-note {
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 700px;
+      margin-top: 14px;
     }
 
     .hero-card {
@@ -230,22 +245,6 @@
 
     .services-grid { margin-top: 28px; align-items: stretch; }
     .service { padding: 28px; position: relative; }
-    .service.recommended {
-      border-color: rgba(195,169,106,.42);
-      box-shadow: 0 18px 62px rgba(195,169,106,.08);
-    }
-    .recommended-badge {
-      display: inline-block;
-      margin-bottom: 12px;
-      padding: 6px 10px;
-      border: 1px solid rgba(195,169,106,.45);
-      border-radius: 999px;
-      color: var(--gold);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
     .service h3 { font-size: 25px; }
     .service p { color: #ded8cf; }
     .service ul { color: #d7d0c7; padding-left: 20px; margin: 0 0 22px; }
@@ -263,9 +262,9 @@
       border-radius: 15px;
       padding: 18px;
       color: var(--muted);
-      font-size: 14px;
+      font-size: 15px;
     }
-    .step strong { display: block; color: var(--text); font-size: 18px; margin-bottom: 6px; }
+    .step strong { display: block; color: var(--text); font-size: 19px; margin-bottom: 6px; }
 
     .split {
       display: grid;
@@ -285,15 +284,7 @@
     .bio-card p { color: var(--muted); }
     .bio-list { margin: 18px 0 0; padding: 0; list-style: none; display: grid; gap: 9px; }
     .bio-list li { color: #d7d0c7; font-size: 14px; border-top: 1px solid rgba(255,255,255,.07); padding-top: 9px; }
-    .about-copy p { color: #d7d0c7; font-size: 17px; max-width: 860px; }
-    .deliver-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px 18px;
-      margin-top: 18px;
-      color: var(--muted);
-      padding-left: 18px;
-    }
+    .about-copy p { color: #d7d0c7; font-size: 18px; max-width: 860px; }
 
     .contact-grid {
       display: grid;
@@ -314,7 +305,9 @@
       font: inherit;
     }
     textarea { min-height: 130px; resize: vertical; }
-    .social-links { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 14px; }
+    .social-block { margin-top: 24px; }
+    .social-block p { color: var(--muted); margin-bottom: 10px; }
+    .social-links { display: flex; flex-wrap: wrap; gap: 14px; }
     .social-links a { font-weight: 900; text-transform: uppercase; letter-spacing: .6px; font-size: 13px; }
 
     footer { padding: 34px 0; color: var(--soft); font-size: 14px; text-align: center; }
@@ -324,7 +317,7 @@
       position: fixed;
       inset: 0;
       z-index: 100;
-      background: rgba(0,0,0,.82);
+      background: rgba(0,0,0,.84);
       backdrop-filter: blur(10px);
       padding: 16px;
       align-items: center;
@@ -362,19 +355,35 @@
       font-weight: 800;
     }
     .modal-viewer { position: relative; min-height: 0; }
+    .modal-viewer::before {
+      content: "THE REVEALED COSMOS";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: rgba(255,255,255,.085);
+      font-size: clamp(42px, 8vw, 92px);
+      font-weight: 900;
+      letter-spacing: 3px;
+      transform: rotate(-18deg);
+      pointer-events: none;
+      text-align: center;
+      z-index: 2;
+    }
     .modal-viewer::after {
       content: "THE REVEALED COSMOS • PORTFOLIO SAMPLE • ALL RIGHTS RESERVED";
       position: absolute;
       right: 18px;
       bottom: 14px;
-      color: rgba(255,255,255,.34);
+      color: rgba(255,255,255,.38);
       font-size: 11px;
       letter-spacing: 1.2px;
       pointer-events: none;
       text-transform: uppercase;
-      background: rgba(0,0,0,.28);
+      background: rgba(0,0,0,.32);
       padding: 4px 7px;
       border-radius: 6px;
+      z-index: 2;
     }
     .modal-viewer iframe { width: 100%; height: 100%; border: 0; background: white; }
 
@@ -388,12 +397,15 @@
     @media (max-width: 680px) {
       .wrap, .nav { width: min(100% - 34px, var(--max)); }
       .nav { display: block; padding: 16px 0; min-height: auto; }
-      nav { margin-top: 12px; gap: 12px 18px; }
+      .brand-subtitle { white-space: normal; }
+      nav { margin-top: 14px; gap: 12px 18px; }
       nav a { font-size: 13px; }
+      .hero-card { order: -1; }
       h1 { font-size: clamp(35px, 10.5vw, 46px); }
       h2 { font-size: 30px; }
-      .lead, .section-intro, .about-copy p { font-size: 16px; }
-      .portfolio-grid, .services-grid, .pain-points, .process-grid, .deliver-list { grid-template-columns: 1fr; }
+      .lead, .section-intro { font-size: 16px; }
+      .about-copy p { font-size: 16.5px; }
+      .portfolio-grid, .services-grid, .pain-points, .process-grid { grid-template-columns: 1fr; }
       section { padding: 56px 0; }
       .card-visual { height: 132px; }
       .button { width: 100%; }
@@ -408,7 +420,10 @@
 <body>
   <header>
     <div class="nav">
-      <div class="logo">The Revealed Cosmos</div>
+      <div class="brand">
+        <div class="logo">The Revealed Cosmos</div>
+        <div class="brand-subtitle">Multimedia Narrative Design Studio</div>
+      </div>
       <nav aria-label="Main navigation">
         <a href="#portfolio">Portfolio</a>
         <a href="#services">Services</a>
@@ -427,6 +442,9 @@
           <p class="lead">
             The Revealed Cosmos helps creators turn scattered lore, characters, factions, quests, and tone into structured story bibles,
             quest frameworks, and pitch-ready materials.
+          </p>
+          <p class="support-note">
+            Worldbuilding comes first. When useful, projects can also include visual reference boards, mood direction, and music/sound notes to clarify atmosphere.
           </p>
           <div class="buttons">
             <a class="button" href="#contact">Request a free project review</a>
@@ -539,21 +557,20 @@
               <li>Clean reference brief</li>
               <li>Priority fixes and next-step notes</li>
             </ul>
-            <a class="sample-link" href="#contact">Request this pack</a>
+            <a class="sample-link" href="#contact">Ask about Basic</a>
           </article>
 
-          <article class="card service recommended">
-            <div class="recommended-badge">Recommended</div>
+          <article class="card service">
             <div class="tag">Core Pack</div>
             <h3>World + Quest System Pack</h3>
-            <p>The strongest middle option for story-driven games, RPGs, and visual novels that need both setting logic and playable narrative direction.</p>
+            <p>A strong middle option for story-driven games, RPGs, and visual novels that need both setting logic and playable narrative direction.</p>
             <ul>
               <li>World structure and rules</li>
               <li>Faction pressure points</li>
               <li>Quest hook and objective</li>
               <li>Branching outcomes and player-facing logic</li>
             </ul>
-            <a class="sample-link" href="#contact">Request core pack</a>
+            <a class="sample-link" href="#contact">Ask about Core</a>
           </article>
 
           <article class="card service">
@@ -566,14 +583,14 @@
               <li>Visual reference direction</li>
               <li>Pitch-ready project summary</li>
             </ul>
-            <a class="sample-link" href="#contact">Request premium pack</a>
+            <a class="sample-link" href="#contact">Ask about Premium</a>
           </article>
         </div>
 
         <div class="process-grid">
-          <div class="step"><strong>1. Diagnose</strong><span>What is unclear: rules, factions, tone, player path, or presentation?</span></div>
-          <div class="step"><strong>2. Structure</strong><span>Loose material becomes usable documents, systems, cards, and decision-ready summaries.</span></div>
-          <div class="step"><strong>3. Package</strong><span>The result is prepared so a developer, writer, or creative lead can actually use it.</span></div>
+          <div class="step"><strong>1. Review</strong><span>We identify what already works, what is unclear, and what blocks production or presentation.</span></div>
+          <div class="step"><strong>2. Structure</strong><span>Lore, factions, quest logic, tone, and visual direction become usable documents and summaries.</span></div>
+          <div class="step"><strong>3. Deliver</strong><span>You receive a clear package your team can read, discuss, revise, and build from.</span></div>
         </div>
       </div>
     </section>
@@ -619,8 +636,11 @@
             Send a short note about what already exists and what feels unclear. I will respond with whether the project is a fit
             for lore cleanup, quest structure, a story bible, a pitch package, or another focused support option.
           </p>
-          <div class="social-links">
-            <a href="https://linktr.ee/MachineMuseum" target="_blank" rel="noopener">Connect on Linktree ↗</a>
+          <div class="social-block">
+            <p>Connect with me on social media:</p>
+            <div class="social-links">
+              <a href="https://linktr.ee/MachineMuseum" target="_blank" rel="noopener">Linktree ↗</a>
+            </div>
           </div>
         </div>
 
@@ -648,7 +668,7 @@
               <label for="message">Project details</label>
               <textarea id="message" name="message" placeholder="What already exists? What feels unclear? What would a useful outcome look like?"></textarea>
             </div>
-            <button class="button" type="button" onclick="sendInquiry()">Send request</button>
+            <button class="button" type="button" onclick="sendInquiry()">Send</button>
           </form>
         </div>
       </div>
@@ -693,7 +713,7 @@
       const frame = document.getElementById('sampleFrame');
       const label = document.getElementById('sampleTitle');
       label.textContent = title || 'Portfolio Sample';
-      frame.src = src + '#toolbar=0&navpanes=0&scrollbar=1&view=FitH';
+      frame.src = src + '#toolbar=0&navpanes=0&scrollbar=1&pagemode=none&view=FitH';
       modal.classList.add('open');
       modal.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
