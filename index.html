@@ -3,243 +3,457 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Revealed Cosmos | Worldbuilding & Story Systems</title>
-  <meta name="description" content="Worldbuilding, lore documentation, quest structure, and visual narrative proof for games, interactive media, and original IPs." />
+  <title>Revealed Cosmos | Worldbuilding, Lore Systems & Game Writing Support</title>
+  <meta name="description" content="Worldbuilding, lore documentation, quest structure, tone bibles, and visual story proof for indie games, RPGs, visual novels, writers, and early-stage fictional IPs." />
+  <meta name="keywords" content="worldbuilding consultant, lore documentation, RPG quest design, game writing support, narrative systems, story bible, tone bible, indie game writer, visual novel writer, fantasy worldbuilding" />
+  <meta property="og:title" content="Revealed Cosmos | Worldbuilding & Lore Systems" />
+  <meta property="og:description" content="Structured worldbuilding, lore cleanup, quest design support, and presentation-ready story proof for games and fictional IPs." />
+  <meta property="og:image" content="hero_brand.jpg" />
+  <meta property="og:type" content="website" />
   <style>
     :root {
-      --bg: #06070a;
-      --panel: #101218;
-      --panel2: #141721;
-      --text: #f2efe8;
-      --muted: #c8c1b2;
-      --soft: #8f887a;
-      --gold: #bfa76a;
-      --blue: #72b9d8;
-      --line: rgba(255,255,255,0.10);
+      --bg: #050609;
+      --bg-soft: #0a0c11;
+      --panel: #10131a;
+      --panel2: #151922;
+      --text: #f4f1ea;
+      --muted: #c7c0b4;
+      --soft: #918a7f;
+      --gold: #c2a96f;
+      --blue: #76c7e8;
+      --line: rgba(255,255,255,0.105);
+      --shadow: 0 24px 90px rgba(0,0,0,.48);
+      --radius: 22px;
+      --max: 1240px;
     }
+
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      background: var(--bg);
+      background: radial-gradient(circle at 70% 8%, rgba(54, 140, 180, .10), transparent 30%),
+                  radial-gradient(circle at 20% 0%, rgba(194, 169, 111, .07), transparent 28%),
+                  var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+      font-size: 16px;
     }
+
     body::before {
       content: "";
       position: fixed;
       inset: 0;
       pointer-events: none;
-      background: radial-gradient(circle at 72% 10%, rgba(114,185,216,0.08), transparent 28%),
-                  radial-gradient(circle at 18% 0%, rgba(191,167,106,0.07), transparent 24%);
+      opacity: .12;
+      background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 72px 72px;
       z-index: -1;
     }
+
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { color: #a7e4fb; }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
     header {
-      padding: 24px 7%;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(5,6,9,.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      max-width: 1460px;
+      margin: 0 auto;
+      padding: 20px 32px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid var(--line);
-      position: sticky;
-      top: 0;
-      background: rgba(6,7,10,0.94);
-      backdrop-filter: blur(10px);
-      z-index: 10;
+      gap: 22px;
     }
+
     .logo {
-      font-size: 18px;
-      letter-spacing: 1.8px;
-      font-weight: bold;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 21px;
+      font-weight: 700;
       text-transform: uppercase;
+      letter-spacing: 1.9px;
     }
+
+    nav { display: flex; gap: 24px; flex-wrap: wrap; }
     nav a {
       color: var(--muted);
-      margin-left: 22px;
-      text-decoration: none;
-      font-size: 14px;
+      font-size: 13px;
+      letter-spacing: .4px;
     }
     nav a:hover { color: var(--text); }
+
     .hero {
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 46px;
-      align-items: center;
-      padding: 88px 7% 76px;
-      max-width: 1600px;
-      margin: auto;
+      padding: 92px 0 88px;
+      border-bottom: 1px solid var(--line);
     }
-    .eyebrow {
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(420px, 1.05fr);
+      gap: 54px;
+      align-items: center;
+    }
+
+    .eyebrow, .kicker {
       color: var(--gold);
       text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 13px;
+      letter-spacing: 2.1px;
+      font-size: 12px;
+      font-weight: 700;
       margin-bottom: 18px;
     }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      letter-spacing: -.02em;
+    }
+
     h1 {
-      font-size: clamp(42px, 6.4vw, 86px);
+      font-size: clamp(48px, 6.2vw, 88px);
       line-height: .98;
-      margin: 0 0 24px;
-      max-width: 980px;
+      margin: 0 0 26px;
+      max-width: 850px;
     }
-    .hero p { font-size: 20px; max-width: 760px; color: #ded8cc; }
-    .hero img {
-      width: 100%;
-      border-radius: 24px;
+
+    .lead {
+      font-size: 20px;
+      color: #ded7ca;
+      max-width: 710px;
+      margin: 0;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(21,25,34,.76), rgba(11,13,19,.94));
       border: 1px solid var(--line);
-      box-shadow: 0 24px 80px rgba(0,0,0,.55);
+      border-radius: 28px;
+      padding: 18px;
+      box-shadow: var(--shadow);
     }
-    .buttons { margin-top: 28px; display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .hero-card img {
+      width: 100%;
+      min-height: 300px;
+      object-fit: cover;
+      display: block;
+      border-radius: 20px;
+      filter: saturate(.92) contrast(1.04) brightness(.86);
+    }
+
+    .hero-note {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .note-box {
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+      padding: 14px;
+      background: rgba(255,255,255,.03);
+    }
+
+    .buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
     .button {
-      display: inline-block;
-      padding: 13px 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 12px 18px;
+      border-radius: 999px;
       border: 1px solid var(--gold);
       color: var(--text);
-      text-decoration: none;
-      border-radius: 999px;
-      font-size: 14px;
-      letter-spacing: .5px;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: .3px;
     }
-    .button.secondary { border-color: rgba(255,255,255,.22); color: var(--muted); }
-    section { padding: 70px 7%; border-top: 1px solid rgba(255,255,255,0.08); }
-    .wrap { max-width: 1500px; margin: auto; }
-    h2 { font-size: clamp(30px, 4vw, 48px); margin: 0 0 18px; }
-    .section-intro { max-width: 860px; color: var(--muted); margin-bottom: 34px; }
-    .grid {
+    .button.secondary { border-color: rgba(255,255,255,.18); color: var(--muted); }
+
+    section { padding: 82px 0; border-bottom: 1px solid var(--line); }
+    h2 { font-size: clamp(34px, 4vw, 56px); line-height: 1.05; margin: 0 0 18px; }
+    .section-intro { color: var(--muted); max-width: 840px; margin: 0 0 34px; font-size: 17px; }
+
+    .proof-strip {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 36px;
+    }
+    .proof-item {
+      background: rgba(255,255,255,.035);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 18px;
+      padding: 18px;
+    }
+    .proof-item strong { display: block; color: var(--text); margin-bottom: 5px; }
+    .proof-item span { color: var(--muted); font-size: 14px; }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 24px;
     }
+
     .card {
       background: linear-gradient(180deg, var(--panel2), var(--panel));
       border: 1px solid var(--line);
-      border-radius: 20px;
+      border-radius: var(--radius);
       overflow: hidden;
+      box-shadow: 0 16px 50px rgba(0,0,0,.28);
       min-height: 100%;
-      box-shadow: 0 12px 40px rgba(0,0,0,.28);
     }
-    .card img { width: 100%; height: 210px; object-fit: cover; display: block; border-bottom: 1px solid var(--line); }
-    .card .body { padding: 24px; }
-    .card h3 { margin: 0 0 10px; font-size: 23px; line-height: 1.18; }
-    .card p { color: #d2cabc; margin: 0 0 18px; }
-    .tag { color: var(--gold); font-size: 12px; text-transform: uppercase; letter-spacing: 1.4px; margin-bottom: 10px; }
-    .card a { color: var(--blue); text-decoration: none; font-size: 14px; }
-    .product { padding: 28px; }
-    .product h3 { font-size: 24px; margin: 0 0 12px; }
-    .product ul { padding-left: 20px; color: #d2cabc; }
+
+    .card img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid var(--line);
+      filter: saturate(.9) contrast(1.03) brightness(.86);
+    }
+
+    .card-body { padding: 24px; }
+    .tag {
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.35px;
+      margin-bottom: 10px;
+    }
+    .card h3 { font-size: 24px; line-height: 1.16; margin: 0 0 12px; }
+    .card p { color: #d5cec3; margin: 0 0 18px; }
+    .sample-link { font-weight: 700; font-size: 14px; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .service {
+      padding: 28px;
+    }
+    .service h3 { font-size: 27px; margin: 0 0 14px; }
+    .service p { color: #ded7ca; margin: 0 0 18px; }
+    .service ul { margin: 0 0 22px; padding-left: 20px; color: #d5cec3; }
+    .service li { margin: 6px 0; }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 32px;
+    }
+    .step {
+      background: rgba(255,255,255,.035);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 18px;
+      padding: 22px;
+    }
+    .step strong { display: block; font-family: Georgia, "Times New Roman", serif; font-size: 21px; margin-bottom: 8px; }
+    .step span { color: var(--muted); }
+
     .split {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 42px;
+      align-items: start;
+    }
+
+    .bio-card {
+      background: linear-gradient(180deg, var(--panel2), var(--panel));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 30px;
+    }
+    .bio-card img {
+      width: 106px;
+      height: 106px;
+      border-radius: 999px;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      margin-bottom: 22px;
+    }
+    .bio-card h3 { font-size: 36px; margin: 0 0 10px; }
+    .bio-card p { color: var(--muted); margin: 0; }
+
+    .about-copy p { color: #d7d0c4; font-size: 17px; margin: 0 0 18px; max-width: 820px; }
+
+    .contact-grid {
       display: grid;
       grid-template-columns: .9fr 1.1fr;
       gap: 32px;
       align-items: start;
     }
-    .bio-card { background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: 28px; }
-    .bio-card img { width: 110px; height: 110px; border-radius: 999px; object-fit: cover; border: 1px solid var(--line); margin-bottom: 18px; }
-    .contact-links a { display: inline-block; margin-right: 16px; margin-bottom: 10px; color: var(--blue); text-decoration: none; }
-    footer { padding: 42px 7%; color: var(--soft); border-top: 1px solid var(--line); font-size: 14px; }
-    @media (max-width: 900px) {
-      header { display: block; }
-      nav { margin-top: 14px; }
-      nav a { margin-left: 0; margin-right: 14px; }
-      .hero, .split { grid-template-columns: 1fr; }
-      .hero { padding-top: 58px; }
+    .contact-panel {
+      background: linear-gradient(180deg, var(--panel2), var(--panel));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+    form { display: grid; gap: 14px; }
+    label { font-size: 13px; color: var(--muted); font-weight: 700; }
+    input, select, textarea {
+      width: 100%;
+      background: #090b10;
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 12px;
+      padding: 12px 13px;
+      font: inherit;
+    }
+    textarea { min-height: 130px; resize: vertical; }
+    .small { color: var(--soft); font-size: 13px; margin-top: 10px; }
+
+    footer { padding: 36px 0; color: var(--soft); font-size: 14px; }
+
+    @media (max-width: 980px) {
+      .hero-grid, .split, .contact-grid { grid-template-columns: 1fr; }
+      .portfolio-grid, .services-grid, .proof-strip, .process { grid-template-columns: 1fr 1fr; }
+      .hero { padding-top: 60px; }
+    }
+
+    @media (max-width: 680px) {
+      .nav { display: block; padding: 18px 24px; }
+      nav { margin-top: 12px; gap: 14px; }
+      .wrap { padding: 0 20px; }
+      .portfolio-grid, .services-grid, .proof-strip, .process { grid-template-columns: 1fr; }
+      section { padding: 60px 0; }
+      h1 { font-size: 44px; }
+      .hero-note { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">Revealed Cosmos</div>
-    <nav>
-      <a href="#works">Work</a>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="nav">
+      <div class="logo">Revealed Cosmos</div>
+      <nav aria-label="Main navigation">
+        <a href="#portfolio">Portfolio</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <main>
     <section class="hero">
-      <div>
-        <div class="eyebrow">Worldbuilding / Lore Documentation / Visual Narrative Proof</div>
-        <h1>Structured story worlds for games and interactive media.</h1>
-        <p>
-          I help turn early-stage ideas, scattered lore, faction concepts, and atmospheric fragments
-          into clean worldbuilding systems, quest structures, tone guides, and presentation-ready proof.
-        </p>
-        <div class="buttons">
-          <a class="button" href="#works">View Selected Work</a>
-          <a class="button secondary" href="#services">See Service Packages</a>
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Worldbuilding • Lore Systems • Game Writing Support</div>
+          <h1>Turn scattered story ideas into a world players can understand.</h1>
+          <p class="lead">
+            I help indie developers, writers, and early-stage IP creators organize lore, factions,
+            quest logic, tone, and visual references into clear, usable story systems for games,
+            RPGs, visual novels, and fictional worlds.
+          </p>
+          <div class="buttons">
+            <a class="button" href="#portfolio">View portfolio samples</a>
+            <a class="button secondary" href="#contact">Request a project fit check</a>
+          </div>
+          <div class="proof-strip" aria-label="Core proof points">
+            <div class="proof-item"><strong>Lore cleanup</strong><span>From scattered notes to clean structure.</span></div>
+            <div class="proof-item"><strong>Quest logic</strong><span>Hooks, factions, choices, outcomes.</span></div>
+            <div class="proof-item"><strong>Tone control</strong><span>Voice, atmosphere, style rules.</span></div>
+            <div class="proof-item"><strong>Pitch proof</strong><span>Readable samples for teams and clients.</span></div>
+          </div>
         </div>
+        <aside class="hero-card" aria-label="Revealed Cosmos brand visual">
+          <img src="hero_brand.jpg" alt="Revealed Cosmos brand image" />
+          <div class="hero-note">
+            <div class="note-box">Portfolio built around world structure, not just isolated writing samples.</div>
+            <div class="note-box">Useful for early-stage teams that need clarity before production expands.</div>
+          </div>
+        </aside>
       </div>
-      <img src="hero_brand.jpg" alt="Revealed Cosmos brand image" />
     </section>
 
-    <section id="works">
+    <section id="portfolio">
       <div class="wrap">
-        <h2>Selected Work</h2>
+        <div class="kicker">Selected Portfolio Samples</div>
+        <h2>Proof of structure, tone, and world logic.</h2>
         <p class="section-intro">
-          Portfolio samples showing lore architecture, worldbuilding systems, quest structure,
-          narrative tone control, and AI-assisted visual direction. Each sample is presented as proof of process,
-          not just isolated writing.
+          These samples show how I organize fictional material into usable creative systems: lore bibles,
+          faction conflict, quest progression, tone guides, and visual story references. The goal is not just
+          “more lore” — it is cleaner development material a team can actually use.
         </p>
-        <div class="grid">
+
+        <div class="portfolio-grid">
           <article class="card">
             <img src="atlas3i_cover.jpg" alt="ATLAS 3I portfolio cover" />
-            <div class="body">
+            <div class="card-body">
               <div class="tag">Original IP / Lore Architecture</div>
               <h3>ATLAS 3I / Second Earth</h3>
-              <p>Deep-space psychocosmic setting with metaphysics, ship hierarchy, rituals, social strata, and narrative voice built into one world system.</p>
-              <a href="atlas3i-second-earth-sample.pdf">Open PDF sample</a>
+              <p>Deep-space psychocosmic setting with metaphysics, ship hierarchy, ritual systems, social strata, and narrator voice built into one world framework.</p>
+              <a class="sample-link" href="atlas3i-second-earth-sample.pdf">See sample</a>
             </div>
           </article>
 
           <article class="card">
             <img src="siamic_worldbuilding_cover.jpg" alt="Siamic Peninsula worldbuilding cover" />
-            <div class="body">
+            <div class="card-body">
               <div class="tag">Fantasy Worldbuilding / Lore Bible</div>
               <h3>The Siamic Peninsula</h3>
-              <p>A fantasy setting package with factions, history, magic rules, central conflict, tone, and story hook designed for RPG or fictional IP development.</p>
-              <a href="siamic-peninsula-lore-bible.pdf">Open PDF sample</a>
+              <p>A fantasy worldbuilding package with factions, history, magic rules, central conflict, tone, and story hook designed for RPG or fictional IP development.</p>
+              <a class="sample-link" href="siamic-peninsula-lore-bible.pdf">See sample</a>
             </div>
           </article>
 
           <article class="card">
             <img src="artifact_quest_cover.jpg" alt="Artifact of Silent Ruin quest design cover" />
-            <div class="body">
-              <div class="tag">Quest Design / Branching Structure</div>
+            <div class="card-body">
+              <div class="tag">RPG Quest Design / Branching Structure</div>
               <h3>The Artifact of Silent Ruin</h3>
-              <p>Branching RPG quest sample built from faction pressure, player choice, investigation, conflict, and alternate allegiance paths.</p>
-              <a href="artifact-of-silent-ruin-quest-design.pdf">Open PDF sample</a>
+              <p>Branching RPG quest sample built from faction pressure, investigation, player choice, conflict escalation, and alternate allegiance paths.</p>
+              <a class="sample-link" href="artifact-of-silent-ruin-quest-design.pdf">See sample</a>
             </div>
           </article>
 
           <article class="card">
-            <img src="psychopunk_tone_cover.jpg" alt="Psychopunk tone sample" />
-            <div class="body">
-              <div class="tag">Tone Bible / Narrative Style</div>
+            <img src="hero_brand.jpg" alt="Revealed Cosmos brand visual used for tone bible sample" />
+            <div class="card-body">
+              <div class="tag">Tone Bible / Style Architecture</div>
               <h3>Psychopunk Tone Bible</h3>
-              <p>A voice and imagery guide for surreal metaphysical fiction: tone rules, recurring motifs, rhythm, POV logic, and cross-media style support.</p>
-              <a href="psychopunk-tone-bible.pdf">Open PDF sample</a>
+              <p>A style guide for surreal metaphysical fiction: tone rules, recurring image systems, rhythm, point-of-view logic, and cross-media voice control.</p>
+              <a class="sample-link" href="psychopunk-tone-bible.pdf">See sample</a>
             </div>
           </article>
 
           <article class="card">
-            <img src="prototeus_cover.jpg" alt="Prototeus narrative sample image" />
-            <div class="body">
+            <img src="hero_brand.jpg" alt="Revealed Cosmos brand visual used for prose sample" />
+            <div class="card-body">
               <div class="tag">Narrative Prose / Atmosphere</div>
               <h3>PROTOTEUS: The Waking Cycle</h3>
-              <p>Atmospheric sci-fi scene demonstrating voice, sensory control, metaphysical undertone, body-centric imagery, and cinematic scene rhythm.</p>
-              <a href="prototeus-waking-cycle-sample.pdf">Open PDF sample</a>
+              <p>Atmospheric sci-fi scene demonstrating voice, sensory control, body-centric imagery, metaphysical tension, and cinematic scene rhythm.</p>
+              <a class="sample-link" href="prototeus-waking-cycle-sample.pdf">See sample</a>
             </div>
           </article>
 
           <article class="card">
-            <img src="keyframe_city_spy.jpg" alt="Cinematic keyframe sample" />
-            <div class="body">
-              <div class="tag">Visual Narrative / Keyframe Direction</div>
-              <h3>Cinematic Mood & Keyframe Direction</h3>
-              <p>AI-assisted visual references used to clarify atmosphere, setting mood, visual tone, story beats, and early pitch direction.</p>
-              <a href="#contact">Ask for visual sequence</a>
+            <img src="hero_brand.jpg" alt="Revealed Cosmos visual reference card" />
+            <div class="card-body">
+              <div class="tag">Visual Story Proof / Mood Direction</div>
+              <h3>Visual Reference Packaging</h3>
+              <p>Curated mood, atmosphere, and visual reference boards that help clarify story tone, pitch direction, and early creative identity for a project.</p>
+              <a class="sample-link" href="#contact">Ask about visual proof</a>
             </div>
           </article>
         </div>
@@ -248,86 +462,151 @@
 
     <section id="services">
       <div class="wrap">
-        <h2>Service Packages</h2>
+        <div class="kicker">Services</div>
+        <h2>Three practical ways I can help a project.</h2>
         <p class="section-intro">
-          Simple, practical packages for indie developers, writers, small teams, and early-stage IP creators who need structure before production expands.
+          These packages are built for early-stage projects that have promising ideas but need structure,
+          clearer story logic, and presentable materials before moving deeper into production or pitching.
         </p>
-        <div class="grid">
-          <div class="card product">
-            <div class="tag">Starter</div>
+
+        <div class="services-grid">
+          <article class="card service">
+            <div class="tag">Starter / Diagnostic</div>
             <h3>Lore & Worldbuilding Cleanup Sprint</h3>
-            <p>For teams with scattered lore, inconsistent factions, unclear rules, or a setting that needs structure.</p>
+            <p>For creators with scattered notes, unclear rules, inconsistent factions, or a setting that feels interesting but hard to explain.</p>
             <ul>
-              <li>World pillars and rules</li>
-              <li>Faction / conflict map</li>
-              <li>3-5 page cleaned reference brief</li>
-              <li>Next-step development notes</li>
+              <li>World pillars and core rules</li>
+              <li>Faction and conflict map</li>
+              <li>Clean reference brief</li>
+              <li>Priority fixes and next-step notes</li>
             </ul>
-          </div>
-          <div class="card product">
-            <div class="tag">Games / RPG</div>
+            <a class="sample-link" href="#contact">Ask about this sprint</a>
+          </article>
+
+          <article class="card service">
+            <div class="tag">Games / RPG / Visual Novel</div>
             <h3>Quest & Faction Narrative Pack</h3>
-            <p>For RPGs, visual novels, and interactive stories that need quest hooks and choice-driven structure.</p>
+            <p>For interactive stories that need stronger quest hooks, faction pressure, player-facing logic, and choice-driven consequences.</p>
             <ul>
               <li>Quest hook and objective</li>
               <li>Faction pressure points</li>
               <li>Branching outcomes</li>
               <li>Player-facing narrative logic</li>
             </ul>
-          </div>
-          <div class="card product">
-            <div class="tag">Pitch Support</div>
+            <a class="sample-link" href="#contact">Ask about this pack</a>
+          </article>
+
+          <article class="card service">
+            <div class="tag">Pitch / Presentation</div>
             <h3>Visual Story Proof Package</h3>
-            <p>For creators who need a presentable pitch page, visual mood direction, or proof-of-concept package.</p>
+            <p>For teams or solo creators who need a clearer presentation of a world, character, tone, or story concept for outreach or internal direction.</p>
             <ul>
               <li>Concept summary</li>
-              <li>Moodboard/keyframe selection</li>
+              <li>Moodboard or visual reference selection</li>
               <li>Story-world framing</li>
               <li>Portfolio or outreach-ready page</li>
             </ul>
-          </div>
+            <a class="sample-link" href="#contact">Ask about proof package</a>
+          </article>
+        </div>
+
+        <div class="process">
+          <div class="step"><strong>1. Diagnose</strong><span>I identify what is unclear: rules, factions, tone, player path, or presentation.</span></div>
+          <div class="step"><strong>2. Structure</strong><span>I turn loose material into usable documents, systems, cards, and decision-ready summaries.</span></div>
+          <div class="step"><strong>3. Package</strong><span>I prepare the result so a developer, writer, or creative lead can actually use it.</span></div>
         </div>
       </div>
     </section>
 
     <section id="about">
       <div class="wrap split">
-        <div class="bio-card">
-          <img src="profile.jpg" alt="Aaron Asaad" onerror="this.style.display='none'" />
-          <h2>Aaron Asaad</h2>
-          <p class="section-intro">Worldbuilding & Lore Documentation Specialist / Game Writing Support</p>
-        </div>
-        <div>
-          <h2>About</h2>
-          <p class="section-intro">
+        <aside class="bio-card">
+          <img src="profile.jpg" alt="Aaron Asaad" />
+          <h3>Aaron Asaad</h3>
+          <p>Worldbuilding & Lore Documentation Specialist / Game Writing Support</p>
+        </aside>
+        <div class="about-copy">
+          <div class="kicker">About</div>
+          <h2>Structured thinking for messy fictional worlds.</h2>
+          <p>
             I work at the intersection of story structure, worldbuilding, language, and visual narrative development.
-            My strongest lane is turning abstract or fragmented creative material into coherent systems: lore bibles,
-            faction logic, quest progression, tone guides, and presentation-ready proof for games and fictional IPs.
+            My strongest lane is helping creators turn abstract or fragmented material into coherent systems:
+            lore bibles, faction logic, quest progression, tone guides, and presentation-ready proof.
           </p>
-          <p class="section-intro">
-            My background combines linguistics, teaching, game analysis, narrative systems, and AI-assisted creative workflows.
-            I am especially useful in early development, when a project has strong ideas but needs structure, clarity, and a stronger bridge between story, world, and player experience.
+          <p>
+            My background combines linguistics, teaching, game analysis, narrative systems, and creative production workflows.
+            I am especially useful in early development, when a project has strong ideas but needs structure, clarity,
+            and a stronger bridge between story, world, and player experience.
           </p>
         </div>
       </div>
     </section>
 
     <section id="contact">
-      <div class="wrap">
-        <h2>Contact / Links</h2>
-        <p class="section-intro">
-          Available for worldbuilding cleanup, lore documentation, quest design support, visual proof packaging, and early-stage story systems consulting.
-        </p>
-        <div class="contact-links">
-          <a href="mailto:aaron.asaad2016@gmail.com">aaron.asaad2016@gmail.com</a>
-          <a href="Aaron_Asaad_Worldbuilding_Lore_Systems_Resume.pdf">Download resume</a>
+      <div class="wrap contact-grid">
+        <div>
+          <div class="kicker">Contact</div>
+          <h2>Tell me what is stuck.</h2>
+          <p class="section-intro">
+            Use the form to generate an email draft, or contact me directly. Best fit: early-stage games,
+            RPGs, visual novels, fictional IPs, writers, and small teams that need worldbuilding structure,
+            lore documentation, quest logic, or pitch-ready story proof.
+          </p>
+          <p><a href="mailto:aaron.asaad2016@gmail.com">aaron.asaad2016@gmail.com</a></p>
+        </div>
+
+        <div class="contact-panel">
+          <form id="inquiryForm">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="your@email.com" />
+            </div>
+            <div>
+              <label for="service">What do you need?</label>
+              <select id="service" name="service">
+                <option>General project question</option>
+                <option>Lore & Worldbuilding Cleanup Sprint</option>
+                <option>Quest & Faction Narrative Pack</option>
+                <option>Visual Story Proof Package</option>
+                <option>Portfolio / sample question</option>
+              </select>
+            </div>
+            <div>
+              <label for="message">Project details</label>
+              <textarea id="message" name="message" placeholder="What already exists? What feels unclear? What would a useful outcome look like?"></textarea>
+            </div>
+            <button class="button" type="button" onclick="sendInquiry()">Open email draft</button>
+            <p class="small">This static form opens your email app with a prepared message. No backend or account signup required.</p>
+          </form>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    © 2026 Revealed Cosmos. All rights reserved. Portfolio materials are public samples only; full project materials available on request.
+    <div class="wrap">© 2026 Revealed Cosmos. All rights reserved.</div>
   </footer>
+
+  <script>
+    function sendInquiry() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const service = document.getElementById('service').value;
+      const message = document.getElementById('message').value.trim();
+      const subject = encodeURIComponent('Revealed Cosmos project inquiry — ' + service);
+      const body = encodeURIComponent(
+        'Name: ' + name + '\n' +
+        'Email: ' + email + '\n' +
+        'Service / topic: ' + service + '\n\n' +
+        'Project details:\n' + message + '\n\n' +
+        'What I would like help with:\n'
+      );
+      window.location.href = 'mailto:aaron.asaad2016@gmail.com?subject=' + subject + '&body=' + body;
+    }
+  </script>
 </body>
 </html>
