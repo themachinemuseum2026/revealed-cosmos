@@ -212,6 +212,7 @@
 
     .button.secondary { border-color: var(--line2); background: rgba(255,255,255,.035); color: var(--muted); }
     .button:hover { transform: translateY(-1px); color: var(--text); }
+    .button[disabled] { opacity: .64; cursor: wait; transform: none; }
 
     .pain-points {
       display: grid;
@@ -352,11 +353,13 @@
       font-size: 16px;
     }
     textarea { min-height: 135px; resize: vertical; }
+    .honeypot { display: none !important; }
 
     .response-note, .form-status, .direct-email-note { color: var(--muted); font-size: 16px; }
     .response-note { margin-top: 18px; }
     .form-status { margin: 0; font-size: 14px; line-height: 1.45; }
     .form-status.error { color: #f3b4a8; }
+    .form-status.success { color: #bce8c2; }
     .form-status a, .direct-email-note a { color: var(--blue); font-weight: 800; }
 
     .social-block { margin-top: 24px; }
@@ -635,12 +638,13 @@
 
         <div class="contact-panel">
           <form id="inquiryForm">
+            <input type="checkbox" name="botcheck" id="botcheck" class="honeypot" tabindex="-1" autocomplete="off" />
             <div><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required /></div>
             <div><label for="email">Email</label><input id="email" name="email" type="email" placeholder="your@email.com" autocomplete="email" required /></div>
             <div><label for="service">What would you like help with?</label><select id="service" name="service"><option>General project question</option><option>Basic Pack — Lore Cleanup Brief</option><option>Core Pack — World + Quest System Pack</option><option>Premium Pack — Story Bible + Pitch Package</option><option>Portfolio / sample question</option></select></div>
             <div><label for="message">Project details</label><textarea id="message" name="message" placeholder="What already exists? What feels unclear? What would a useful outcome look like?" required></textarea></div>
-            <button class="button" type="submit">Send message</button>
-            <p id="formStatus" class="form-status" aria-live="polite">This opens a prefilled email draft. Review it and click Send.</p>
+            <button id="submitButton" class="button" type="submit">Send message</button>
+            <p id="formStatus" class="form-status" aria-live="polite">Your message will be sent directly through the contact form.</p>
           </form>
         </div>
       </div>
@@ -661,6 +665,7 @@
   <script id="trc-live-fixes-script">
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 
+    const WEB3FORMS_ACCESS_KEY = 'e7b01ded-e06f-4ed1-88b2-050976525786';
     const CONTACT_EMAIL = 'revealedcosmosstudio@gmail.com';
 
     function getHeaderOffset() {
@@ -705,28 +710,75 @@
     window.addEventListener('resize', updateScrollOffset);
     window.addEventListener('orientationchange', () => setTimeout(updateScrollOffset, 250));
 
-    function sendInquiry(event) {
+    function setFormStatus(message, type = '') {
+      const status = document.getElementById('formStatus');
+      if (!status) return;
+      status.textContent = message;
+      status.className = 'form-status' + (type ? ' ' + type : '');
+    }
+
+    async function sendInquiry(event) {
       if (event) event.preventDefault();
+
+      const form = document.getElementById('inquiryForm');
+      const submitButton = document.getElementById('submitButton');
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
       const service = document.getElementById('service').value;
       const message = document.getElementById('message').value.trim();
-      const status = document.getElementById('formStatus');
+      const botcheck = document.getElementById('botcheck');
+
+      if (botcheck && botcheck.checked) return;
 
       if (!name || !email || !message) {
-        status.textContent = 'Please add your name, email, and project details before sending.';
-        status.className = 'form-status error';
+        setFormStatus('Please add your name, email, and project details before sending.', 'error');
         return;
       }
 
-      const subject = 'Project review request — ' + service;
-      const body = 'Name: ' + name + '\n' + 'Email: ' + email + '\n' + 'Service / topic: ' + service + '\n\n' + 'Project details:\n' + message + '\n\n' + 'Best next step or question:\n';
-      const gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(CONTACT_EMAIL) + '&su=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-      const mailtoUrl = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-      const popup = window.open(gmailUrl, '_blank', 'noopener');
-      if (!popup) window.location.href = mailtoUrl;
-      status.innerHTML = 'A prefilled email draft opened. Review it and click Send. If nothing opened, email <a href="' + mailtoUrl + '">' + CONTACT_EMAIL + '</a>.';
-      status.className = 'form-status';
+      const originalButtonText = submitButton ? submitButton.textContent : '';
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+      }
+      setFormStatus('Sending your message...', '');
+
+      const payload = {
+        access_key: WEB3FORMS_ACCESS_KEY,
+        subject: 'TRC project review request — ' + service,
+        from_name: 'The Revealed Cosmos Contact Form',
+        name,
+        email,
+        service,
+        message,
+        page: window.location.href
+      };
+
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          setFormStatus('✓ Message sent. Thank you — I will reply soon.', 'success');
+          if (form) form.reset();
+        } else {
+          throw new Error(result.message || 'Message failed to send.');
+        }
+      } catch (error) {
+        setFormStatus('Something went wrong. Please email ' + CONTACT_EMAIL + ' directly.', 'error');
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = originalButtonText || 'Send message';
+        }
+      }
     }
 
     const inquiryForm = document.getElementById('inquiryForm');
