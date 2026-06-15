@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Revealed Cosmos | Worldbuilding, Lore Systems & Game Writing Support</title>
-  <meta name="description" content="The Revealed Cosmos helps indie developers, RPG teams, visual novel creators, writers, and original IP teams organize lore, factions, quest logic, tone, and visual story proof into clear materials they can use." />
+  <title>The Revealed Cosmos | Worldbuilding Systems for Story-Driven Projects</title>
+  <meta name="description" content="The Revealed Cosmos helps indie developers, RPG teams, visual novel creators, game writers, and original IP teams organize lore, factions, quest logic, tone, and visual story proof into clear development materials." />
   <meta name="keywords" content="worldbuilding consultant, lore documentation, game writing support, RPG quest design, visual novel writer, story bible, lore bible, faction design, narrative systems, worldbuilding services, indie game writer" />
-  <meta property="og:title" content="The Revealed Cosmos | Worldbuilding & Lore Systems" />
-  <meta property="og:description" content="Lore cleanup, worldbuilding structure, quest logic, tone guides, and visual story proof for games, RPGs, visual novels, and fictional IPs." />
+  <meta property="og:title" content="The Revealed Cosmos | Worldbuilding Systems" />
+  <meta property="og:description" content="Worldbuilding packs, lore cleanup, quest frameworks, tone guides, and pitch-ready story materials for games, RPGs, visual novels, and fictional IPs." />
   <meta property="og:image" content="hero_brand.jpg" />
   <meta property="og:type" content="website" />
   <style>
@@ -32,7 +32,7 @@
     body {
       margin: 0;
       background:
-        radial-gradient(circle at 74% 8%, rgba(60,148,188,.10), transparent 34%),
+        radial-gradient(circle at 52% 0%, rgba(60,148,188,.11), transparent 36%),
         radial-gradient(circle at 18% 0%, rgba(195,169,106,.055), transparent 30%),
         linear-gradient(180deg, #050608 0%, #07080c 100%);
       color: var(--text);
@@ -50,7 +50,7 @@
         linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px);
       background-size: 72px 72px;
-      opacity: .18;
+      opacity: .16;
       z-index: -1;
     }
 
@@ -106,48 +106,19 @@
     nav a:hover { color: var(--text); }
 
     .hero {
-      padding: 82px 0 76px;
+      padding: 72px 0 76px;
       border-bottom: 1px solid var(--line);
     }
 
-    .hero-grid {
+    .hero-inner {
       display: grid;
-      grid-template-columns: minmax(0, .92fr) minmax(360px, .9fr);
-      gap: 52px;
-      align-items: center;
-    }
-
-    .eyebrow, .kicker, .tag {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 1.9px;
-      font-size: 13px;
-      font-weight: 900;
-    }
-
-    .eyebrow, .kicker { margin-bottom: 18px; }
-    .tag { margin-bottom: 10px; }
-
-    h1, h2, h3 { margin-top: 0; line-height: 1.08; letter-spacing: -.035em; }
-    h1 { font-size: clamp(40px, 5vw, 64px); margin-bottom: 24px; max-width: 770px; }
-    h2 { font-size: clamp(31px, 3.4vw, 45px); margin-bottom: 18px; max-width: 970px; }
-    h3 { font-size: 23px; margin-bottom: 12px; }
-    p { margin-top: 0; }
-
-    .lead {
-      max-width: 700px;
-      color: #ded8cf;
-      font-size: 19px;
-      margin-bottom: 0;
-    }
-    .support-note {
-      color: var(--muted);
-      font-size: 15px;
-      max-width: 700px;
-      margin-top: 14px;
+      gap: 34px;
+      justify-items: center;
+      text-align: center;
     }
 
     .hero-card {
+      width: min(880px, 100%);
       background: linear-gradient(180deg, rgba(21,25,34,.70), rgba(10,12,18,.95));
       border: 1px solid var(--line);
       border-radius: 26px;
@@ -164,7 +135,39 @@
       filter: saturate(.95) contrast(1.04) brightness(.88);
     }
 
-    .buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+    .hero-copy { max-width: 850px; }
+
+    .eyebrow, .kicker, .tag {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 1.9px;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .eyebrow, .kicker { margin-bottom: 18px; }
+    .tag { margin-bottom: 10px; }
+
+    h1, h2, h3 { margin-top: 0; line-height: 1.08; letter-spacing: -.035em; }
+    h1 { font-size: clamp(40px, 5vw, 64px); margin-bottom: 24px; }
+    h2 { font-size: clamp(31px, 3.4vw, 45px); margin-bottom: 18px; max-width: 970px; }
+    h3 { font-size: 23px; margin-bottom: 12px; }
+    p { margin-top: 0; }
+
+    .lead {
+      color: #ded8cf;
+      font-size: 19px;
+      margin: 0 auto;
+      max-width: 780px;
+    }
+    .support-note {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 780px;
+      margin: 14px auto 0;
+    }
+
+    .buttons { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 30px; }
     .button {
       display: inline-flex;
       align-items: center;
@@ -187,6 +190,7 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 12px;
       margin-top: 32px;
+      text-align: left;
     }
     .mini-card {
       background: rgba(255,255,255,.035);
@@ -250,6 +254,16 @@
     .service ul { color: #d7d0c7; padding-left: 20px; margin: 0 0 22px; }
     .service li { margin: 7px 0; }
 
+    .services-cta {
+      margin-top: 26px;
+      padding: 26px 28px;
+      display: flex;
+      justify-content: space-between;
+      gap: 22px;
+      align-items: center;
+    }
+    .services-cta p { color: #d7d0c7; margin-bottom: 0; max-width: 740px; }
+
     .process-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -305,6 +319,7 @@
       font: inherit;
     }
     textarea { min-height: 130px; resize: vertical; }
+    .response-note { color: var(--muted); font-size: 15px; margin-top: 18px; }
     .social-block { margin-top: 24px; }
     .social-block p { color: var(--muted); margin-bottom: 10px; }
     .social-links { display: flex; flex-wrap: wrap; gap: 14px; }
@@ -388,10 +403,10 @@
     .modal-viewer iframe { width: 100%; height: 100%; border: 0; background: white; }
 
     @media (max-width: 960px) {
-      .hero-grid, .split, .contact-grid { grid-template-columns: 1fr; }
+      .split, .contact-grid { grid-template-columns: 1fr; }
       .portfolio-grid, .services-grid, .pain-points, .process-grid { grid-template-columns: 1fr 1fr; }
-      .hero { padding: 58px 0 62px; }
-      .hero-card { max-width: 720px; }
+      .hero { padding: 54px 0 62px; }
+      .services-cta { display: grid; }
     }
 
     @media (max-width: 680px) {
@@ -400,7 +415,6 @@
       .brand-subtitle { white-space: normal; }
       nav { margin-top: 14px; gap: 12px 18px; }
       nav a { font-size: 13px; }
-      .hero-card { order: -1; }
       h1 { font-size: clamp(35px, 10.5vw, 46px); }
       h2 { font-size: 30px; }
       .lead, .section-intro { font-size: 16px; }
@@ -410,6 +424,8 @@
       .card-visual { height: 132px; }
       .button { width: 100%; }
       .logo { font-size: 18px; }
+      .hero-card { padding: 12px; border-radius: 20px; }
+      .hero-card img { border-radius: 14px; }
       .sample-modal { padding: 0; }
       .modal-shell { width: 100vw; height: 100dvh; border-radius: 0; }
       .modal-bar { padding: 12px; }
@@ -422,7 +438,7 @@
     <div class="nav">
       <div class="brand">
         <div class="logo">The Revealed Cosmos</div>
-        <div class="brand-subtitle">Multimedia Narrative Design Studio</div>
+        <div class="brand-subtitle">Multi-Medium Narrative Design Studio</div>
       </div>
       <nav aria-label="Main navigation">
         <a href="#portfolio">Portfolio</a>
@@ -435,16 +451,20 @@
 
   <main>
     <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
+      <div class="wrap hero-inner">
+        <aside class="hero-card" aria-label="Revealed Cosmos brand visual">
+          <img src="hero_brand.jpg" alt="The Revealed Cosmos eye and cosmic brand visual" />
+        </aside>
+        <div class="hero-copy">
           <div class="eyebrow">For indie developers, game writers, RPG teams, and original IP creators</div>
-          <h1>Worldbuilding and lore systems for story-driven projects.</h1>
+          <h1>Worldbuilding systems for story-driven projects.</h1>
           <p class="lead">
             The Revealed Cosmos helps creators turn scattered lore, characters, factions, quests, and tone into structured story bibles,
             quest frameworks, and pitch-ready materials.
           </p>
           <p class="support-note">
-            Worldbuilding comes first. When useful, projects can also include visual reference boards, mood direction, and music/sound notes to clarify atmosphere.
+            Core focus: worldbuilding and narrative structure. Optional support can include visual reference boards, mood direction,
+            and music/sound notes when they help define atmosphere.
           </p>
           <div class="buttons">
             <a class="button" href="#contact">Request a free project review</a>
@@ -457,9 +477,6 @@
             <div class="mini-card"><strong>Pitch proof</strong><span>Samples become easier for clients, teams, and collaborators to read.</span></div>
           </div>
         </div>
-        <aside class="hero-card" aria-label="Revealed Cosmos brand visual">
-          <img src="hero_brand.jpg" alt="The Revealed Cosmos eye and cosmic brand visual" />
-        </aside>
       </div>
     </section>
 
@@ -540,10 +557,10 @@
     <section id="services">
       <div class="wrap">
         <div class="kicker">Services</div>
-        <h2>Three service packs for different stages of development.</h2>
+        <h2>Three worldbuilding packs for different project stages.</h2>
         <p class="section-intro">
-          Choose the level of support that matches your current stage: quick cleanup, a complete world-and-quest structure,
-          or a broader pitch-ready package for presenting the project to collaborators, clients, or teams.
+          Pick the level of support that matches your goal: clean up existing lore, build a world-and-quest system,
+          or prepare a stronger story bible and pitch package for collaborators, clients, or teams.
         </p>
 
         <div class="services-grid">
@@ -569,6 +586,7 @@
               <li>Faction pressure points</li>
               <li>Quest hook and objective</li>
               <li>Branching outcomes and player-facing logic</li>
+              <li>Optional visual reference notes</li>
             </ul>
             <a class="sample-link" href="#contact">Ask about Core</a>
           </article>
@@ -576,16 +594,22 @@
           <article class="card service">
             <div class="tag">Premium Pack</div>
             <h3>Story Bible + Pitch Package</h3>
-            <p>A broader package for creators who need a clearer project presentation, stronger documentation, and visual direction for outreach or internal development.</p>
+            <p>A broader package for creators who need stronger documentation, clearer presentation, and multi-medium direction for outreach or internal development.</p>
             <ul>
               <li>Story bible / lore documentation</li>
               <li>Tone and world identity guide</li>
-              <li>Visual reference direction</li>
+              <li>Visual reference or keyframe direction</li>
+              <li>Optional music/sound atmosphere notes</li>
               <li>Pitch-ready project summary</li>
             </ul>
             <a class="sample-link" href="#contact">Ask about Premium</a>
           </article>
         </div>
+
+        <article class="card services-cta">
+          <p>Not sure which pack fits? Send a short message with what already exists, what feels unclear, and what kind of result you need.</p>
+          <a class="button" href="#contact">Send me a message</a>
+        </article>
 
         <div class="process-grid">
           <div class="step"><strong>1. Review</strong><span>We identify what already works, what is unclear, and what blocks production or presentation.</span></div>
@@ -600,7 +624,7 @@
         <aside class="bio-card">
           <img src="profile.jpg" alt="Aaron A." />
           <h3>Aaron A.</h3>
-          <p>Worldbuilding & Lore Systems Consultant</p>
+          <p>Worldbuilding Systems Consultant</p>
           <ul class="bio-list">
             <li>M.A. in Linguistics</li>
             <li>10+ years studying narrative systems, worldbuilding, and interactive storytelling</li>
@@ -610,10 +634,10 @@
         </aside>
         <div class="about-copy">
           <div class="kicker">About</div>
-          <h2>I organize story worlds so teams can use them.</h2>
+          <h2>I turn unfinished story worlds into usable development material.</h2>
           <p>
             I work as a narrative designer and worldbuilding consultant for games and fictional IPs. My focus is helping
-            developers turn early ideas into clear, structured worlds that support gameplay, character arcs, and long-term story development.
+            developers turn early ideas into structured worlds that support gameplay, character arcs, faction conflict, and long-term story development.
           </p>
           <p>
             Many projects begin with strong ideas but scattered material: partial lore, disconnected mechanics, character concepts without clear motivations,
@@ -621,7 +645,7 @@
           </p>
           <p>
             Depending on the needs of the project, I can support story bibles, faction conflicts, quest progression, tone guides,
-            dialogue structure, character networks, visual references, and moodboards for early concept direction.
+            dialogue structure, character networks, visual references, keyframe direction, and moodboards for early concept development.
           </p>
         </div>
       </div>
@@ -631,11 +655,12 @@
       <div class="wrap contact-grid">
         <div>
           <div class="kicker">Contact</div>
-          <h2>Request a free project review.</h2>
+          <h2>Request a free project review or ask a question.</h2>
           <p class="section-intro">
             Send a short note about what already exists and what feels unclear. I will respond with whether the project is a fit
             for lore cleanup, quest structure, a story bible, a pitch package, or another focused support option.
           </p>
+          <p class="response-note">I usually respond within 24 business hours.</p>
           <div class="social-block">
             <p>Connect with me on social media:</p>
             <div class="social-links">
@@ -668,7 +693,7 @@
               <label for="message">Project details</label>
               <textarea id="message" name="message" placeholder="What already exists? What feels unclear? What would a useful outcome look like?"></textarea>
             </div>
-            <button class="button" type="button" onclick="sendInquiry()">Send</button>
+            <button class="button" type="button" onclick="sendInquiry()">Send message</button>
           </form>
         </div>
       </div>
