@@ -25,10 +25,17 @@
       --max: 1160px;
       --radius: 20px;
       --shadow: 0 22px 70px rgba(0,0,0,.42);
+      --scroll-offset: 112px;
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--scroll-offset);
+      -webkit-text-size-adjust: 100%;
+    }
+
     body {
       margin: 0;
       overflow-x: hidden;
@@ -79,7 +86,16 @@
       gap: 28px;
     }
 
-    .brand { display: grid; gap: 3px; }
+    .brand {
+      display: grid;
+      gap: 3px;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .brand:hover .logo,
+    .brand:focus-visible .logo { color: #fff; }
+
     .logo {
       font-size: clamp(19px, 1.15vw + 12px, 23px);
       font-weight: 900;
@@ -87,6 +103,7 @@
       text-transform: uppercase;
       white-space: nowrap;
     }
+
     .brand-subtitle {
       color: var(--soft);
       font-size: clamp(11px, .35vw + 9px, 12px);
@@ -105,6 +122,12 @@
       text-transform: uppercase;
     }
     nav a:hover { color: var(--text); }
+
+    section {
+      padding: clamp(58px, 6vw, 80px) 0;
+      border-bottom: 1px solid var(--line);
+      scroll-margin-top: var(--scroll-offset);
+    }
 
     .hero {
       padding: clamp(46px, 6vw, 72px) 0 clamp(58px, 6vw, 78px);
@@ -161,6 +184,7 @@
       margin: 0 auto;
       max-width: 850px;
     }
+
     .support-note {
       color: var(--muted);
       font-size: clamp(16px, .35vw + 15px, 17px);
@@ -185,6 +209,7 @@
       text-transform: uppercase;
       cursor: pointer;
     }
+
     .button.secondary { border-color: var(--line2); background: rgba(255,255,255,.035); color: var(--muted); }
     .button:hover { transform: translateY(-1px); color: var(--text); }
 
@@ -195,6 +220,7 @@
       margin-top: 34px;
       text-align: left;
     }
+
     .mini-card {
       background: rgba(255,255,255,.038);
       border: 1px solid rgba(255,255,255,.1);
@@ -203,9 +229,8 @@
       color: var(--muted);
       font-size: clamp(15px, .25vw + 14px, 16px);
     }
-    .mini-card strong { display: block; color: var(--text); margin-bottom: 5px; font-size: clamp(16px, .25vw + 15px, 17px); }
 
-    section { padding: clamp(58px, 6vw, 80px) 0; border-bottom: 1px solid var(--line); }
+    .mini-card strong { display: block; color: var(--text); margin-bottom: 5px; font-size: clamp(16px, .25vw + 15px, 17px); }
     .section-intro { max-width: 850px; color: var(--muted); font-size: clamp(17px, .35vw + 16px, 18px); margin-bottom: 36px; }
 
     .portfolio-grid, .services-grid {
@@ -235,6 +260,7 @@
     .card-body { padding: clamp(22px, 2vw, 25px); }
     .portfolio-grid h3 { text-transform: uppercase; letter-spacing: -.015em; font-size: clamp(22px, .55vw + 20px, 24px); }
     .card p { color: #d7d0c7; margin-bottom: 20px; font-size: clamp(16px, .25vw + 15px, 17px); }
+
     .sample-link {
       display: inline-block;
       padding: 0;
@@ -273,6 +299,7 @@
       gap: 16px;
       margin-top: 26px;
     }
+
     .step {
       background: rgba(255,255,255,.035);
       border: 1px solid rgba(255,255,255,.09);
@@ -310,6 +337,7 @@
       gap: 38px;
       align-items: start;
     }
+
     .contact-panel { background: linear-gradient(180deg, var(--panel2), var(--panel)); border: 1px solid var(--line); border-radius: var(--radius); padding: 29px; }
     form { display: grid; gap: 14px; }
     label { display: block; font-size: 14px; color: var(--muted); font-weight: 800; margin-bottom: 7px; }
@@ -324,7 +352,13 @@
       font-size: 16px;
     }
     textarea { min-height: 135px; resize: vertical; }
-    .response-note { color: var(--muted); font-size: 16px; margin-top: 18px; }
+
+    .response-note, .form-status, .direct-email-note { color: var(--muted); font-size: 16px; }
+    .response-note { margin-top: 18px; }
+    .form-status { margin: 0; font-size: 14px; line-height: 1.45; }
+    .form-status.error { color: #f3b4a8; }
+    .form-status a, .direct-email-note a { color: var(--blue); font-weight: 800; }
+
     .social-block { margin-top: 24px; }
     .social-block p { color: var(--muted); margin-bottom: 10px; }
     .social-card {
@@ -352,6 +386,35 @@
     }
 
     footer { padding: 34px 0; color: var(--soft); font-size: 14px; text-align: center; }
+
+    #backToTop {
+      position: fixed;
+      right: clamp(16px, 4vw, 30px);
+      bottom: calc(18px + env(safe-area-inset-bottom));
+      z-index: 80;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 15px;
+      border: 1px solid var(--gold);
+      border-radius: 999px;
+      background: rgba(16,19,26,.94);
+      color: var(--text);
+      box-shadow: 0 14px 34px rgba(0,0,0,.34);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .7px;
+      text-transform: uppercase;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(12px);
+      pointer-events: none;
+      transition: opacity .18s ease, transform .18s ease;
+    }
+    #backToTop.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    #backToTop:hover { transform: translateY(-1px); }
 
     .sample-modal {
       display: none;
@@ -424,6 +487,7 @@
     }
 
     @media (max-width: 680px) {
+      :root { --scroll-offset: 154px; }
       body { font-size: 16px; }
       .wrap, .nav { width: min(100% - 34px, var(--max)); }
       .nav { display: block; padding: 16px 0; min-height: auto; }
@@ -440,6 +504,7 @@
       .logo { font-size: 18px; }
       .hero-card { padding: 12px; border-radius: 20px; }
       .hero-card img { border-radius: 14px; }
+      #backToTop { right: 14px; bottom: calc(14px + env(safe-area-inset-bottom)); min-height: 42px; padding: 9px 13px; font-size: 12px; }
       .sample-modal { padding: 0; }
       .modal-shell { width: 100vw; height: 100dvh; border-radius: 0; }
       .modal-bar { padding: 12px; }
@@ -453,10 +518,10 @@
 <body>
   <header>
     <div class="nav">
-      <div class="brand">
+      <a class="brand" href="#top" aria-label="Return to the top of The Revealed Cosmos homepage">
         <div class="logo">The Revealed Cosmos</div>
         <div class="brand-subtitle">Multi-Medium Narrative Design Studio</div>
-      </div>
+      </a>
       <nav aria-label="Main navigation">
         <a href="#portfolio">Portfolio</a>
         <a href="#services">Services</a>
@@ -475,15 +540,8 @@
         <div class="hero-copy">
           <div class="eyebrow">For indie developers, creators, and original IP developers</div>
           <h1>Worldbuilding systems for story-driven projects.</h1>
-          <p class="lead">
-            The Revealed Cosmos helps indie developers and creators turn scattered materials — lore notes, character concepts,
-            factions, quests, visual references, and tone ideas — into structured, cohesive worldbuilding systems, story bibles,
-            quest frameworks, and pitch-ready development materials.
-          </p>
-          <p class="support-note">
-            Services can include lore documentation, quest and faction design, tone guides, visual direction, draft concept-art/keyframe references,
-            and music/sound atmosphere notes when they help define the world.
-          </p>
+          <p class="lead">The Revealed Cosmos helps indie developers and creators turn scattered materials — lore notes, character concepts, factions, quests, visual references, and tone ideas — into structured, cohesive worldbuilding systems, story bibles, quest frameworks, and pitch-ready development materials.</p>
+          <p class="support-note">Services can include lore documentation, quest and faction design, tone guides, visual direction, draft concept-art/keyframe references, and music/sound atmosphere notes when they help define the world.</p>
           <div class="pain-points" aria-label="Common problems solved">
             <div class="mini-card"><strong>Lore systems</strong><span>Lore, rules, factions, and history become organized.</span></div>
             <div class="mini-card"><strong>Quest frameworks</strong><span>Hooks, choices, outcomes, and player logic become clearer.</span></div>
@@ -502,72 +560,15 @@
       <div class="wrap">
         <div class="kicker">Selected Portfolio Samples</div>
         <h2>World structure, quest logic, and tone systems.</h2>
-        <p class="section-intro">
-          Portfolio samples showing how story material becomes usable creative documentation: lore architecture,
-          faction conflict, quest progression, tone rules, and world presentation. Each piece shows process and structure,
-          not just isolated writing.
-        </p>
+        <p class="section-intro">Portfolio samples showing how story material becomes usable creative documentation: lore architecture, faction conflict, quest progression, tone rules, and world presentation. Each piece shows process and structure, not just isolated writing.</p>
 
         <div class="portfolio-grid">
-          <article class="card">
-            <div class="card-visual" aria-hidden="true"></div>
-            <div class="card-body">
-              <div class="tag">Original IP / Lore Architecture</div>
-              <h3>ATLAS 3I / Second Earth</h3>
-              <p>Deep-space setting with metaphysics, ship hierarchy, ritual systems, social strata, and narrator voice built into one coherent world framework.</p>
-              <button class="sample-link" type="button" onclick="openSample('atlas3i-second-earth-sample.pdf','ATLAS 3I / Second Earth')">See sample</button>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-visual" aria-hidden="true"></div>
-            <div class="card-body">
-              <div class="tag">Fantasy Worldbuilding / Lore Bible</div>
-              <h3>The Siamic Peninsula</h3>
-              <p>Fantasy worldbuilding package with factions, history, magic rules, central conflict, tone, and story hooks for RPG or fictional IP development.</p>
-              <button class="sample-link" type="button" onclick="openSample('siamic-peninsula-lore-bible.pdf','The Siamic Peninsula')">See sample</button>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-visual" aria-hidden="true"></div>
-            <div class="card-body">
-              <div class="tag">RPG Quest Design / Branching Structure</div>
-              <h3>The Artifact of Silent Ruin</h3>
-              <p>Branching quest sample built from faction pressure, investigation, player choice, conflict escalation, and alternate allegiance paths.</p>
-              <button class="sample-link" type="button" onclick="openSample('artifact-of-silent-ruin-quest-design.pdf','The Artifact of Silent Ruin')">See sample</button>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-visual" aria-hidden="true"></div>
-            <div class="card-body">
-              <div class="tag">Tone Bible / Style Architecture</div>
-              <h3>Psychopunk Tone Bible</h3>
-              <p>Style guide for surreal metaphysical fiction: tone rules, recurring image systems, rhythm, point-of-view logic, and cross-media voice control.</p>
-              <button class="sample-link" type="button" onclick="openSample('psychopunk-tone-bible.pdf','Psychopunk Tone Bible')">See sample</button>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-visual" aria-hidden="true"></div>
-            <div class="card-body">
-              <div class="tag">Narrative Prose / Atmosphere</div>
-              <h3>PROTOTEUS: The Waking Cycle</h3>
-              <p>Atmospheric sci-fi scene demonstrating voice, sensory control, body-centric imagery, metaphysical tension, and cinematic scene rhythm.</p>
-              <button class="sample-link" type="button" onclick="openSample('prototeus-waking-cycle-sample.pdf','PROTOTEUS: The Waking Cycle')">See sample</button>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-visual" aria-hidden="true"></div>
-            <div class="card-body">
-              <div class="tag">Visual Design / Keyframes / Music Direction</div>
-              <h3>Atmosphere, Keyframes & Sound Notes</h3>
-              <p>Draft concept-art/keyframe references, moodboards, and optional music or sound notes for atmosphere building, pitch direction, and creative alignment.</p>
-              <a class="sample-link" href="#contact">Ask questions about visual/music support</a>
-            </div>
-          </article>
+          <article class="card"><div class="card-visual" aria-hidden="true"></div><div class="card-body"><div class="tag">Original IP / Lore Architecture</div><h3>ATLAS 3I / Second Earth</h3><p>Deep-space setting with metaphysics, ship hierarchy, ritual systems, social strata, and narrator voice built into one coherent world framework.</p><button class="sample-link" type="button" onclick="openSample('atlas3i-second-earth-sample.pdf','ATLAS 3I / Second Earth')">See sample</button></div></article>
+          <article class="card"><div class="card-visual" aria-hidden="true"></div><div class="card-body"><div class="tag">Fantasy Worldbuilding / Lore Bible</div><h3>The Siamic Peninsula</h3><p>Fantasy worldbuilding package with factions, history, magic rules, central conflict, tone, and story hooks for RPG or fictional IP development.</p><button class="sample-link" type="button" onclick="openSample('siamic-peninsula-lore-bible.pdf','The Siamic Peninsula')">See sample</button></div></article>
+          <article class="card"><div class="card-visual" aria-hidden="true"></div><div class="card-body"><div class="tag">RPG Quest Design / Branching Structure</div><h3>The Artifact of Silent Ruin</h3><p>Branching quest sample built from faction pressure, investigation, player choice, conflict escalation, and alternate allegiance paths.</p><button class="sample-link" type="button" onclick="openSample('artifact-of-silent-ruin-quest-design.pdf','The Artifact of Silent Ruin')">See sample</button></div></article>
+          <article class="card"><div class="card-visual" aria-hidden="true"></div><div class="card-body"><div class="tag">Tone Bible / Style Architecture</div><h3>Psychopunk Tone Bible</h3><p>Style guide for surreal metaphysical fiction: tone rules, recurring image systems, rhythm, point-of-view logic, and cross-media voice control.</p><button class="sample-link" type="button" onclick="openSample('psychopunk-tone-bible.pdf','Psychopunk Tone Bible')">See sample</button></div></article>
+          <article class="card"><div class="card-visual" aria-hidden="true"></div><div class="card-body"><div class="tag">Narrative Prose / Atmosphere</div><h3>PROTOTEUS: The Waking Cycle</h3><p>Atmospheric sci-fi scene demonstrating voice, sensory control, body-centric imagery, metaphysical tension, and cinematic scene rhythm.</p><button class="sample-link" type="button" onclick="openSample('prototeus-waking-cycle-sample.pdf','PROTOTEUS: The Waking Cycle')">See sample</button></div></article>
+          <article class="card"><div class="card-visual" aria-hidden="true"></div><div class="card-body"><div class="tag">Visual Design / Keyframes / Music Direction</div><h3>Atmosphere, Keyframes & Sound Notes</h3><p>Draft concept-art/keyframe references, moodboards, and optional music or sound notes for atmosphere building, pitch direction, and creative alignment.</p><a class="sample-link" href="#contact">Ask questions about visual/music support</a></div></article>
         </div>
       </div>
     </section>
@@ -576,58 +577,15 @@
       <div class="wrap">
         <div class="kicker">Services</div>
         <h2>Three worldbuilding packs for different project stages.</h2>
-        <p class="section-intro">
-          Pick the level of support that matches your goal: clean up existing lore, build a world-and-quest system,
-          or prepare a stronger story bible and pitch package for collaborators, clients, or teams.
-        </p>
+        <p class="section-intro">Pick the level of support that matches your goal: clean up existing lore, build a world-and-quest system, or prepare a stronger story bible and pitch package for collaborators, clients, or teams.</p>
 
         <div class="services-grid">
-          <article class="card service">
-            <div class="tag">Basic Pack</div>
-            <h3>Lore Cleanup Brief</h3>
-            <p>A focused starting package for creators who need scattered notes turned into something readable and organized.</p>
-            <ul>
-              <li>World pillars and core rules</li>
-              <li>Faction and conflict map</li>
-              <li>Clean reference brief</li>
-              <li>Priority fixes and next-step notes</li>
-            </ul>
-            <a class="sample-link" href="#contact">Ask about Basic</a>
-          </article>
-
-          <article class="card service">
-            <div class="tag">Core Pack</div>
-            <h3>World + Quest System Pack</h3>
-            <p>A strong middle option for story-driven games, RPGs, and visual novels that need both setting logic and playable narrative direction.</p>
-            <ul>
-              <li>World structure and rules</li>
-              <li>Faction pressure points</li>
-              <li>Quest hook and objective</li>
-              <li>Branching outcomes and player-facing logic</li>
-              <li>Optional visual reference notes</li>
-            </ul>
-            <a class="sample-link" href="#contact">Ask about Core</a>
-          </article>
-
-          <article class="card service">
-            <div class="tag">Premium Pack</div>
-            <h3>Story Bible + Pitch Package</h3>
-            <p>A broader package for creators who need stronger documentation, clearer presentation, and multi-medium direction for outreach or internal development.</p>
-            <ul>
-              <li>Story bible / lore documentation</li>
-              <li>Tone and world identity guide</li>
-              <li>Visual reference or keyframe direction</li>
-              <li>Optional music/sound atmosphere notes</li>
-              <li>Pitch-ready project summary</li>
-            </ul>
-            <a class="sample-link" href="#contact">Ask about Premium</a>
-          </article>
+          <article class="card service"><div class="tag">Basic Pack</div><h3>Lore Cleanup Brief</h3><p>A focused starting package for creators who need scattered notes turned into something readable and organized.</p><ul><li>World pillars and core rules</li><li>Faction and conflict map</li><li>Clean reference brief</li><li>Priority fixes and next-step notes</li></ul><a class="sample-link" href="#contact">Ask about Basic</a></article>
+          <article class="card service"><div class="tag">Core Pack</div><h3>World + Quest System Pack</h3><p>A strong middle option for story-driven games, RPGs, and visual novels that need both setting logic and playable narrative direction.</p><ul><li>World structure and rules</li><li>Faction pressure points</li><li>Quest hook and objective</li><li>Branching outcomes and player-facing logic</li><li>Optional visual reference notes</li></ul><a class="sample-link" href="#contact">Ask about Core</a></article>
+          <article class="card service"><div class="tag">Premium Pack</div><h3>Story Bible + Pitch Package</h3><p>A broader package for creators who need stronger documentation, clearer presentation, and multi-medium direction for outreach or internal development.</p><ul><li>Story bible / lore documentation</li><li>Tone and world identity guide</li><li>Visual reference or keyframe direction</li><li>Optional music/sound atmosphere notes</li><li>Pitch-ready project summary</li></ul><a class="sample-link" href="#contact">Ask about Premium</a></article>
         </div>
 
-        <article class="card services-cta">
-          <p>Not sure which pack fits? Send a short message with what already exists, what feels unclear, and what kind of result you need.</p>
-          <a class="button" href="#contact">Send me a message</a>
-        </article>
+        <article class="card services-cta"><p>Not sure which pack fits? Send a short message with what already exists, what feels unclear, and what kind of result you need.</p><a class="button" href="#contact">Send me a message</a></article>
 
         <div class="process-grid">
           <div class="step"><strong>1. Review</strong><span>We identify what already works, what is unclear, and what blocks production or presentation.</span></div>
@@ -654,18 +612,9 @@
         <div class="about-copy">
           <div class="kicker">About</div>
           <h2>I turn unfinished concepts into production-ready story material.</h2>
-          <p>
-            I design narrative systems and worldbuilding architecture for games, RPGs, interactive media, and long-form fictional IPs.
-            My work helps creators turn scattered ideas into clear material that collaborators can read, discuss, revise, and build from.
-          </p>
-          <p>
-            Many projects begin with strong ideas but scattered structure: partial lore, disconnected mechanics, unclear character motivations,
-            faction conflict without pressure, or world rules that are not yet useful for gameplay. My role is to organize those pieces into a coherent system.
-          </p>
-          <p>
-            Depending on the project, I can support lore packs, story bibles, faction arcs, quest progression, branching outcomes,
-            dialogue and character networks, tone guides, visual reference direction, keyframe notes, and moodboards for early concept development.
-          </p>
+          <p>I design narrative systems and worldbuilding architecture for games, RPGs, interactive media, and long-form fictional IPs. My work helps creators turn scattered ideas into clear material that collaborators can read, discuss, revise, and build from.</p>
+          <p>Many projects begin with strong ideas but scattered structure: partial lore, disconnected mechanics, unclear character motivations, faction conflict without pressure, or world rules that are not yet useful for gameplay. My role is to organize those pieces into a coherent system.</p>
+          <p>Depending on the project, I can support lore packs, story bibles, faction arcs, quest progression, branching outcomes, dialogue and character networks, tone guides, visual reference direction, keyframe notes, and moodboards for early concept development.</p>
         </div>
       </div>
     </section>
@@ -675,105 +624,123 @@
         <div>
           <div class="kicker">Contact</div>
           <h2>Request a free project review or ask a question.</h2>
-          <p class="section-intro">
-            Send a short note about what already exists and what feels unclear. I will respond with whether the project is a fit
-            for lore cleanup, quest structure, a story bible, a pitch package, or another focused support option.
-          </p>
+          <p class="section-intro">Send a short note about what already exists and what feels unclear. I will respond with whether the project is a fit for lore cleanup, quest structure, a story bible, a pitch package, or another focused support option.</p>
           <p class="response-note">I usually respond within 24 business hours.</p>
           <div class="social-block">
             <p>Connect with me on social media:</p>
             <a class="social-card" href="https://linktr.ee/MachineMuseum" target="_blank" rel="noopener"><span class="social-icon">↗</span> Linktree</a>
+            <p class="direct-email-note">Direct email: <a href="mailto:revealedcosmosstudio@gmail.com">revealedcosmosstudio@gmail.com</a></p>
           </div>
         </div>
 
         <div class="contact-panel">
           <form id="inquiryForm">
-            <div>
-              <label for="name">Name</label>
-              <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" />
-            </div>
-            <div>
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="your@email.com" autocomplete="email" />
-            </div>
-            <div>
-              <label for="service">What would you like help with?</label>
-              <select id="service" name="service">
-                <option>General project question</option>
-                <option>Basic Pack — Lore Cleanup Brief</option>
-                <option>Core Pack — World + Quest System Pack</option>
-                <option>Premium Pack — Story Bible + Pitch Package</option>
-                <option>Portfolio / sample question</option>
-              </select>
-            </div>
-            <div>
-              <label for="message">Project details</label>
-              <textarea id="message" name="message" placeholder="What already exists? What feels unclear? What would a useful outcome look like?"></textarea>
-            </div>
-            <button class="button" type="button" onclick="sendInquiry()">Send message</button>
+            <div><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required /></div>
+            <div><label for="email">Email</label><input id="email" name="email" type="email" placeholder="your@email.com" autocomplete="email" required /></div>
+            <div><label for="service">What would you like help with?</label><select id="service" name="service"><option>General project question</option><option>Basic Pack — Lore Cleanup Brief</option><option>Core Pack — World + Quest System Pack</option><option>Premium Pack — Story Bible + Pitch Package</option><option>Portfolio / sample question</option></select></div>
+            <div><label for="message">Project details</label><textarea id="message" name="message" placeholder="What already exists? What feels unclear? What would a useful outcome look like?" required></textarea></div>
+            <button class="button" type="submit">Send message</button>
+            <p id="formStatus" class="form-status" aria-live="polite">This opens a prefilled email draft. Review it and click Send.</p>
           </form>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="wrap">© 2026 The Revealed Cosmos. All rights reserved.</div>
-  </footer>
+  <footer><div class="wrap">© 2026 The Revealed Cosmos. All rights reserved.</div></footer>
+  <button id="backToTop" type="button" aria-label="Back to top">↑ Top</button>
 
   <div id="sampleModal" class="sample-modal" aria-hidden="true" role="dialog" aria-label="Portfolio sample viewer" onclick="if(event.target === this) closeSample()">
     <div class="modal-shell">
-      <div class="modal-bar">
-        <strong id="sampleTitle">Portfolio Sample</strong>
-        <button class="modal-close" type="button" onclick="closeSample()">Close ×</button>
-      </div>
-      <div class="modal-viewer">
-        <iframe id="sampleFrame" src="" title="Portfolio sample PDF"></iframe>
-      </div>
-      <div class="modal-footer">
-        <span>© 2026 The Revealed Cosmos • Portfolio sample • All rights reserved</span>
-        <a id="mobilePdfLink" class="mobile-pdf-link" href="#" target="_blank" rel="noopener">Open readable PDF</a>
-      </div>
+      <div class="modal-bar"><strong id="sampleTitle">Portfolio Sample</strong><button class="modal-close" type="button" onclick="closeSample()">Close ×</button></div>
+      <div class="modal-viewer"><iframe id="sampleFrame" src="" title="Portfolio sample PDF"></iframe></div>
+      <div class="modal-footer"><span>© 2026 The Revealed Cosmos • Portfolio sample • All rights reserved</span><a id="mobilePdfLink" class="mobile-pdf-link" href="#" target="_blank" rel="noopener">Open readable PDF</a></div>
     </div>
   </div>
 
-  <script>
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual';
+  <script id="trc-live-fixes-script">
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+
+    const CONTACT_EMAIL = 'revealedcosmosstudio@gmail.com';
+
+    function getHeaderOffset() {
+      const header = document.querySelector('header');
+      return (header ? Math.ceil(header.getBoundingClientRect().height) : 0) + 18;
     }
 
-    const initialHash = window.location.hash;
-
-    function forceHeroTopOnInitialLoad() {
-      const shouldStartAtHero = !initialHash || initialHash === '#portfolio';
-      if (!shouldStartAtHero) return;
-
-      if (initialHash === '#portfolio') {
-        history.replaceState(null, '', window.location.pathname + window.location.search);
-      }
-
-      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-      window.setTimeout(function() {
-        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-      }, 80);
+    function updateScrollOffset() {
+      document.documentElement.style.setProperty('--scroll-offset', getHeaderOffset() + 'px');
     }
 
-    window.addEventListener('pageshow', forceHeroTopOnInitialLoad);
+    function getTarget(hash) {
+      if (!hash || hash === '#') return document.getElementById('top');
+      try { return document.querySelector(hash); } catch (error) { return null; }
+    }
 
-    function sendInquiry() {
+    function scrollToSection(hash, updateHash = true) {
+      const target = getTarget(hash || '#top');
+      if (!target) return;
+      updateScrollOffset();
+      const top = Math.max(target.getBoundingClientRect().top + window.scrollY - getHeaderOffset(), 0);
+      window.scrollTo({ top, behavior: 'smooth' });
+      if (updateHash && history.pushState) history.pushState(null, '', hash || '#top');
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        const hash = link.getAttribute('href');
+        if (!getTarget(hash)) return;
+        event.preventDefault();
+        scrollToSection(hash, true);
+      });
+    });
+
+    const backToTop = document.getElementById('backToTop');
+    function updateBackToTop() {
+      if (!backToTop) return;
+      backToTop.classList.toggle('visible', window.scrollY > Math.min(520, window.innerHeight * 0.55));
+    }
+    if (backToTop) backToTop.addEventListener('click', () => scrollToSection('#top', true));
+    window.addEventListener('scroll', updateBackToTop, { passive: true });
+    window.addEventListener('resize', updateScrollOffset);
+    window.addEventListener('orientationchange', () => setTimeout(updateScrollOffset, 250));
+
+    function sendInquiry(event) {
+      if (event) event.preventDefault();
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
       const service = document.getElementById('service').value;
       const message = document.getElementById('message').value.trim();
-      const subject = encodeURIComponent('Project review request — ' + service);
-      const body = encodeURIComponent(
-        'Name: ' + name + '\n' +
-        'Email: ' + email + '\n' +
-        'Service / topic: ' + service + '\n\n' +
-        'Project details:\n' + message + '\n\n' +
-        'Best next step or question:\n'
-      );
-      window.location.href = 'mailto:revealedcosmosstudio@gmail.com?subject=' + subject + '&body=' + body;
+      const status = document.getElementById('formStatus');
+
+      if (!name || !email || !message) {
+        status.textContent = 'Please add your name, email, and project details before sending.';
+        status.className = 'form-status error';
+        return;
+      }
+
+      const subject = 'Project review request — ' + service;
+      const body = 'Name: ' + name + '\n' + 'Email: ' + email + '\n' + 'Service / topic: ' + service + '\n\n' + 'Project details:\n' + message + '\n\n' + 'Best next step or question:\n';
+      const gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(CONTACT_EMAIL) + '&su=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      const mailtoUrl = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      const popup = window.open(gmailUrl, '_blank', 'noopener');
+      if (!popup) window.location.href = mailtoUrl;
+      status.innerHTML = 'A prefilled email draft opened. Review it and click Send. If nothing opened, email <a href="' + mailtoUrl + '">' + CONTACT_EMAIL + '</a>.';
+      status.className = 'form-status';
+    }
+
+    const inquiryForm = document.getElementById('inquiryForm');
+    if (inquiryForm) inquiryForm.addEventListener('submit', sendInquiry);
+
+    function forceHeroTopOnInitialLoad() {
+      const initialHash = window.location.hash;
+      if (!initialHash || initialHash === '#portfolio') {
+        if (initialHash === '#portfolio') history.replaceState(null, '', window.location.pathname + window.location.search);
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+        setTimeout(() => window.scrollTo({ top: 0, left: 0, behavior: 'auto' }), 80);
+      } else {
+        setTimeout(() => scrollToSection(initialHash, false), 120);
+      }
     }
 
     function openSample(src, title) {
@@ -782,10 +749,7 @@
       const label = document.getElementById('sampleTitle');
       const mobilePdfLink = document.getElementById('mobilePdfLink');
       const isMobile = window.matchMedia('(max-width: 680px)').matches;
-      const pdfView = isMobile
-        ? '#toolbar=0&navpanes=0&scrollbar=1&pagemode=none&view=Fit&zoom=page-fit'
-        : '#toolbar=0&navpanes=0&scrollbar=1&pagemode=none&view=FitH';
-
+      const pdfView = isMobile ? '#toolbar=0&navpanes=0&scrollbar=1&pagemode=none&view=Fit&zoom=page-fit' : '#toolbar=0&navpanes=0&scrollbar=1&pagemode=none&view=FitH';
       label.textContent = title || 'Portfolio Sample';
       frame.src = src + pdfView;
       if (mobilePdfLink) mobilePdfLink.href = src;
@@ -803,9 +767,12 @@
       document.body.style.overflow = '';
     }
 
-    document.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape') closeSample();
-    });
+    window.openSample = openSample;
+    window.closeSample = closeSample;
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeSample(); });
+    window.addEventListener('pageshow', forceHeroTopOnInitialLoad);
+    updateScrollOffset();
+    updateBackToTop();
   </script>
 </body>
 </html>
