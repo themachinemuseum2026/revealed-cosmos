@@ -3,161 +3,154 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Revealed Cosmos | Visual Narrative Design</title>
-
+  <title>Revealed Cosmos | Worldbuilding & Story Systems</title>
+  <meta name="description" content="Worldbuilding, lore documentation, quest structure, and visual narrative proof for games, interactive media, and original IPs." />
   <style>
+    :root {
+      --bg: #06070a;
+      --panel: #101218;
+      --panel2: #141721;
+      --text: #f2efe8;
+      --muted: #c8c1b2;
+      --soft: #8f887a;
+      --gold: #bfa76a;
+      --blue: #72b9d8;
+      --line: rgba(255,255,255,0.10);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: Georgia, "Times New Roman", serif;
-      background: #08090d;
-      color: #f2efe8;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
     }
-
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(circle at 72% 10%, rgba(114,185,216,0.08), transparent 28%),
+                  radial-gradient(circle at 18% 0%, rgba(191,167,106,0.07), transparent 24%);
+      z-index: -1;
+    }
     header {
-      padding: 28px 8%;
+      padding: 24px 7%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid rgba(255,255,255,0.12);
+      border-bottom: 1px solid var(--line);
       position: sticky;
       top: 0;
-      background: rgba(8,9,13,0.94);
-      backdrop-filter: blur(8px);
+      background: rgba(6,7,10,0.94);
+      backdrop-filter: blur(10px);
       z-index: 10;
     }
-
     .logo {
-      font-size: 20px;
-      letter-spacing: 1.5px;
+      font-size: 18px;
+      letter-spacing: 1.8px;
       font-weight: bold;
       text-transform: uppercase;
     }
-
     nav a {
-      color: #c8c1b2;
+      color: var(--muted);
       margin-left: 22px;
       text-decoration: none;
       font-size: 14px;
     }
-
-    nav a:hover {
-      color: #f2efe8;
-    }
-
+    nav a:hover { color: var(--text); }
     .hero {
-      padding: 110px 8% 90px;
-      max-width: 1100px;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 46px;
+      align-items: center;
+      padding: 88px 7% 76px;
+      max-width: 1600px;
+      margin: auto;
     }
-
     .eyebrow {
-      color: #bfa76a;
+      color: var(--gold);
       text-transform: uppercase;
       letter-spacing: 2px;
       font-size: 13px;
       margin-bottom: 18px;
     }
-
     h1 {
-      font-size: clamp(44px, 7vw, 92px);
-      line-height: 0.95;
-      margin: 0 0 28px;
-      max-width: 900px;
+      font-size: clamp(42px, 6.4vw, 86px);
+      line-height: .98;
+      margin: 0 0 24px;
+      max-width: 980px;
     }
-
-    .hero p {
-      font-size: 21px;
-      max-width: 760px;
-      color: #d8d2c5;
+    .hero p { font-size: 20px; max-width: 760px; color: #ded8cc; }
+    .hero img {
+      width: 100%;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      box-shadow: 0 24px 80px rgba(0,0,0,.55);
     }
-
+    .buttons { margin-top: 28px; display: flex; gap: 14px; flex-wrap: wrap; }
     .button {
       display: inline-block;
-      margin-top: 28px;
       padding: 13px 20px;
-      border: 1px solid #bfa76a;
-      color: #f2efe8;
+      border: 1px solid var(--gold);
+      color: var(--text);
       text-decoration: none;
       border-radius: 999px;
       font-size: 14px;
-      letter-spacing: 0.5px;
+      letter-spacing: .5px;
     }
-
-    section {
-      padding: 70px 8%;
-      border-top: 1px solid rgba(255,255,255,0.08);
-    }
-
-    h2 {
-      font-size: 34px;
-      margin-bottom: 18px;
-    }
-
-    .section-intro {
-      max-width: 760px;
-      color: #c8c1b2;
-      margin-bottom: 32px;
-    }
-
+    .button.secondary { border-color: rgba(255,255,255,.22); color: var(--muted); }
+    section { padding: 70px 7%; border-top: 1px solid rgba(255,255,255,0.08); }
+    .wrap { max-width: 1500px; margin: auto; }
+    h2 { font-size: clamp(30px, 4vw, 48px); margin: 0 0 18px; }
+    .section-intro { max-width: 860px; color: var(--muted); margin-bottom: 34px; }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 22px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
     }
-
     .card {
-      background: #11131a;
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 18px;
-      padding: 24px;
-      min-height: 210px;
+      background: linear-gradient(180deg, var(--panel2), var(--panel));
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      min-height: 100%;
+      box-shadow: 0 12px 40px rgba(0,0,0,.28);
     }
-
-    .card h3 {
-      margin-top: 0;
-      font-size: 22px;
+    .card img { width: 100%; height: 210px; object-fit: cover; display: block; border-bottom: 1px solid var(--line); }
+    .card .body { padding: 24px; }
+    .card h3 { margin: 0 0 10px; font-size: 23px; line-height: 1.18; }
+    .card p { color: #d2cabc; margin: 0 0 18px; }
+    .tag { color: var(--gold); font-size: 12px; text-transform: uppercase; letter-spacing: 1.4px; margin-bottom: 10px; }
+    .card a { color: var(--blue); text-decoration: none; font-size: 14px; }
+    .product { padding: 28px; }
+    .product h3 { font-size: 24px; margin: 0 0 12px; }
+    .product ul { padding-left: 20px; color: #d2cabc; }
+    .split {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 32px;
+      align-items: start;
     }
-
-    .card p {
-      color: #cfc7b8;
-    }
-
-    .tag {
-      color: #bfa76a;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-    }
-
-    footer {
-      padding: 40px 8%;
-      color: #8f887a;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      font-size: 14px;
-    }
-
-    @media (max-width: 700px) {
-      header {
-        display: block;
-      }
-
-      nav {
-        margin-top: 14px;
-      }
-
-      nav a {
-        margin-left: 0;
-        margin-right: 14px;
-      }
+    .bio-card { background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: 28px; }
+    .bio-card img { width: 110px; height: 110px; border-radius: 999px; object-fit: cover; border: 1px solid var(--line); margin-bottom: 18px; }
+    .contact-links a { display: inline-block; margin-right: 16px; margin-bottom: 10px; color: var(--blue); text-decoration: none; }
+    footer { padding: 42px 7%; color: var(--soft); border-top: 1px solid var(--line); font-size: 14px; }
+    @media (max-width: 900px) {
+      header { display: block; }
+      nav { margin-top: 14px; }
+      nav a { margin-left: 0; margin-right: 14px; }
+      .hero, .split { grid-template-columns: 1fr; }
+      .hero { padding-top: 58px; }
     }
   </style>
 </head>
-
 <body>
   <header>
     <div class="logo">Revealed Cosmos</div>
     <nav>
-      <a href="#works">Works</a>
+      <a href="#works">Work</a>
       <a href="#services">Services</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
@@ -166,108 +159,175 @@
 
   <main>
     <section class="hero">
-      <div class="eyebrow">Visual Narrative Design / AI-Assisted Story Worlds</div>
-      <h1>Story worlds turned into visual proof.</h1>
-      <p>
-        Revealed Cosmos is a portfolio of AI-assisted visual narrative design,
-        story-world packaging, keyframe direction, and cinematic concept development.
-        I help transform abstract ideas, characters, moods, and worlds into clear
-        creative assets that can be shown, pitched, developed, or expanded.
-      </p>
-      <a class="button" href="#works">View Selected Works</a>
+      <div>
+        <div class="eyebrow">Worldbuilding / Lore Documentation / Visual Narrative Proof</div>
+        <h1>Structured story worlds for games and interactive media.</h1>
+        <p>
+          I help turn early-stage ideas, scattered lore, faction concepts, and atmospheric fragments
+          into clean worldbuilding systems, quest structures, tone guides, and presentation-ready proof.
+        </p>
+        <div class="buttons">
+          <a class="button" href="#works">View Selected Work</a>
+          <a class="button secondary" href="#services">See Service Packages</a>
+        </div>
+      </div>
+      <img src="hero_brand.jpg" alt="Revealed Cosmos brand image" />
     </section>
 
     <section id="works">
-      <h2>Selected Works</h2>
-      <p class="section-intro">
-        A small selection of visual narrative experiments, concept packages, and
-        worldbuilding samples. Final project cards will be added as the portfolio is packaged.
-      </p>
+      <div class="wrap">
+        <h2>Selected Work</h2>
+        <p class="section-intro">
+          Portfolio samples showing lore architecture, worldbuilding systems, quest structure,
+          narrative tone control, and AI-assisted visual direction. Each sample is presented as proof of process,
+          not just isolated writing.
+        </p>
+        <div class="grid">
+          <article class="card">
+            <img src="atlas3i_cover.jpg" alt="ATLAS 3I portfolio cover" />
+            <div class="body">
+              <div class="tag">Original IP / Lore Architecture</div>
+              <h3>ATLAS 3I / Second Earth</h3>
+              <p>Deep-space psychocosmic setting with metaphysics, ship hierarchy, rituals, social strata, and narrative voice built into one world system.</p>
+              <a href="atlas3i-second-earth-sample.pdf">Open PDF sample</a>
+            </div>
+          </article>
 
-      <div class="grid">
-        <div class="card">
-          <div class="tag">Portfolio Card 01</div>
-          <h3>Revealed Cosmos — Core Concept</h3>
-          <p>
-            A cinematic story-world framework exploring identity, memory, spiritual pressure,
-            institutions, and transformation through visual narrative design.
-          </p>
-        </div>
+          <article class="card">
+            <img src="siamic_worldbuilding_cover.jpg" alt="Siamic Peninsula worldbuilding cover" />
+            <div class="body">
+              <div class="tag">Fantasy Worldbuilding / Lore Bible</div>
+              <h3>The Siamic Peninsula</h3>
+              <p>A fantasy setting package with factions, history, magic rules, central conflict, tone, and story hook designed for RPG or fictional IP development.</p>
+              <a href="siamic-peninsula-lore-bible.pdf">Open PDF sample</a>
+            </div>
+          </article>
 
-        <div class="card">
-          <div class="tag">Portfolio Card 02</div>
-          <h3>Character / World Concept Package</h3>
-          <p>
-            A sample structure for turning a character, faction, or world idea into a concise
-            visual and narrative presentation.
-          </p>
-        </div>
+          <article class="card">
+            <img src="artifact_quest_cover.jpg" alt="Artifact of Silent Ruin quest design cover" />
+            <div class="body">
+              <div class="tag">Quest Design / Branching Structure</div>
+              <h3>The Artifact of Silent Ruin</h3>
+              <p>Branching RPG quest sample built from faction pressure, player choice, investigation, conflict, and alternate allegiance paths.</p>
+              <a href="artifact-of-silent-ruin-quest-design.pdf">Open PDF sample</a>
+            </div>
+          </article>
 
-        <div class="card">
-          <div class="tag">Portfolio Card 03</div>
-          <h3>AI-Assisted Keyframe Direction</h3>
-          <p>
-            Visual mood, composition, and story atmosphere developed into usable creative proof
-            for pitch decks, videos, games, or narrative projects.
-          </p>
+          <article class="card">
+            <img src="psychopunk_tone_cover.jpg" alt="Psychopunk tone sample" />
+            <div class="body">
+              <div class="tag">Tone Bible / Narrative Style</div>
+              <h3>Psychopunk Tone Bible</h3>
+              <p>A voice and imagery guide for surreal metaphysical fiction: tone rules, recurring motifs, rhythm, POV logic, and cross-media style support.</p>
+              <a href="psychopunk-tone-bible.pdf">Open PDF sample</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="prototeus_cover.jpg" alt="Prototeus narrative sample image" />
+            <div class="body">
+              <div class="tag">Narrative Prose / Atmosphere</div>
+              <h3>PROTOTEUS: The Waking Cycle</h3>
+              <p>Atmospheric sci-fi scene demonstrating voice, sensory control, metaphysical undertone, body-centric imagery, and cinematic scene rhythm.</p>
+              <a href="prototeus-waking-cycle-sample.pdf">Open PDF sample</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="keyframe_city_spy.jpg" alt="Cinematic keyframe sample" />
+            <div class="body">
+              <div class="tag">Visual Narrative / Keyframe Direction</div>
+              <h3>Cinematic Mood & Keyframe Direction</h3>
+              <p>AI-assisted visual references used to clarify atmosphere, setting mood, visual tone, story beats, and early pitch direction.</p>
+              <a href="#contact">Ask for visual sequence</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
     <section id="services">
-      <h2>Services / MVP Offers</h2>
-      <p class="section-intro">
-        Practical creative packages for writers, creators, indie developers, educators, and
-        small teams who need story ideas turned into presentable visual proof.
-      </p>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Visual Story Concept Package</h3>
-          <p>
-            Short narrative premise, visual direction, mood, key themes, and
-            presentation-ready summary.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Character + Worldbuilding Sheet</h3>
-          <p>
-            Character identity, world context, aesthetic direction, emotional tone,
-            and story function.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>AI-Assisted Creative Direction</h3>
-          <p>
-            Prompt strategy, visual selection, narrative framing, and polish for
-            portfolio-ready creative assets.
-          </p>
+      <div class="wrap">
+        <h2>Service Packages</h2>
+        <p class="section-intro">
+          Simple, practical packages for indie developers, writers, small teams, and early-stage IP creators who need structure before production expands.
+        </p>
+        <div class="grid">
+          <div class="card product">
+            <div class="tag">Starter</div>
+            <h3>Lore & Worldbuilding Cleanup Sprint</h3>
+            <p>For teams with scattered lore, inconsistent factions, unclear rules, or a setting that needs structure.</p>
+            <ul>
+              <li>World pillars and rules</li>
+              <li>Faction / conflict map</li>
+              <li>3-5 page cleaned reference brief</li>
+              <li>Next-step development notes</li>
+            </ul>
+          </div>
+          <div class="card product">
+            <div class="tag">Games / RPG</div>
+            <h3>Quest & Faction Narrative Pack</h3>
+            <p>For RPGs, visual novels, and interactive stories that need quest hooks and choice-driven structure.</p>
+            <ul>
+              <li>Quest hook and objective</li>
+              <li>Faction pressure points</li>
+              <li>Branching outcomes</li>
+              <li>Player-facing narrative logic</li>
+            </ul>
+          </div>
+          <div class="card product">
+            <div class="tag">Pitch Support</div>
+            <h3>Visual Story Proof Package</h3>
+            <p>For creators who need a presentable pitch page, visual mood direction, or proof-of-concept package.</p>
+            <ul>
+              <li>Concept summary</li>
+              <li>Moodboard/keyframe selection</li>
+              <li>Story-world framing</li>
+              <li>Portfolio or outreach-ready page</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="about">
-      <h2>About</h2>
-      <p class="section-intro">
-        Revealed Cosmos is a visual narrative portfolio focused on AI-assisted story-world
-        development, cinematic concept design, and creative packaging. The work combines
-        narrative structure, visual atmosphere, character/world concepts, and prompt-driven
-        production workflows to turn abstract ideas into presentable creative proof.
-      </p>
+      <div class="wrap split">
+        <div class="bio-card">
+          <img src="profile.jpg" alt="Aaron Asaad" onerror="this.style.display='none'" />
+          <h2>Aaron Asaad</h2>
+          <p class="section-intro">Worldbuilding & Lore Documentation Specialist / Game Writing Support</p>
+        </div>
+        <div>
+          <h2>About</h2>
+          <p class="section-intro">
+            I work at the intersection of story structure, worldbuilding, language, and visual narrative development.
+            My strongest lane is turning abstract or fragmented creative material into coherent systems: lore bibles,
+            faction logic, quest progression, tone guides, and presentation-ready proof for games and fictional IPs.
+          </p>
+          <p class="section-intro">
+            My background combines linguistics, teaching, game analysis, narrative systems, and AI-assisted creative workflows.
+            I am especially useful in early development, when a project has strong ideas but needs structure, clarity, and a stronger bridge between story, world, and player experience.
+          </p>
+        </div>
+      </div>
     </section>
 
     <section id="contact">
-      <h2>Contact / Links</h2>
-      <p class="section-intro">
-        Portfolio links, freelance profiles, LinkedIn, and contact information will be added here.
-      </p>
+      <div class="wrap">
+        <h2>Contact / Links</h2>
+        <p class="section-intro">
+          Available for worldbuilding cleanup, lore documentation, quest design support, visual proof packaging, and early-stage story systems consulting.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:aaron.asaad2016@gmail.com">aaron.asaad2016@gmail.com</a>
+          <a href="Aaron_Asaad_Worldbuilding_Lore_Systems_Resume.pdf">Download resume</a>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
-    © 2026 Revealed Cosmos. All rights reserved.
+    © 2026 Revealed Cosmos. All rights reserved. Portfolio materials are public samples only; full project materials available on request.
   </footer>
 </body>
 </html>
