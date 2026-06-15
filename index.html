@@ -63,7 +63,7 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(5,6,8,.91);
+      background: rgba(5,6,8,.92);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--line);
     }
@@ -79,7 +79,7 @@
     }
 
     .logo {
-      font-size: 20px;
+      font-size: 21px;
       font-weight: 900;
       letter-spacing: 1.45px;
       text-transform: uppercase;
@@ -227,26 +227,29 @@
       cursor: pointer;
     }
     .sample-link:hover { color: #a9e7ff; }
-    .sample-link.external::after { content: " ↗"; }
 
-    .services-grid { margin-top: 28px; }
-    .service { padding: 28px; }
+    .services-grid { margin-top: 28px; align-items: stretch; }
+    .service { padding: 28px; position: relative; }
+    .service.recommended {
+      border-color: rgba(195,169,106,.42);
+      box-shadow: 0 18px 62px rgba(195,169,106,.08);
+    }
+    .recommended-badge {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 10px;
+      border: 1px solid rgba(195,169,106,.45);
+      border-radius: 999px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
     .service h3 { font-size: 25px; }
     .service p { color: #ded8cf; }
     .service ul { color: #d7d0c7; padding-left: 20px; margin: 0 0 22px; }
     .service li { margin: 7px 0; }
-
-    .bundle {
-      margin-top: 22px;
-      padding: 26px 28px;
-      display: grid;
-      grid-template-columns: 1.4fr .8fr;
-      gap: 24px;
-      align-items: center;
-    }
-    .bundle h3 { font-size: 28px; margin-bottom: 8px; }
-    .bundle p { color: #d7d0c7; margin-bottom: 0; }
-    .bundle .button { justify-self: end; }
 
     .process-grid {
       display: grid;
@@ -280,6 +283,8 @@
     .bio-card img { width: 96px; height: 96px; object-fit: cover; border-radius: 999px; border: 1px solid var(--line); margin-bottom: 18px; }
     .bio-card h3 { font-size: 30px; margin-bottom: 10px; }
     .bio-card p { color: var(--muted); }
+    .bio-list { margin: 18px 0 0; padding: 0; list-style: none; display: grid; gap: 9px; }
+    .bio-list li { color: #d7d0c7; font-size: 14px; border-top: 1px solid rgba(255,255,255,.07); padding-top: 9px; }
     .about-copy p { color: #d7d0c7; font-size: 17px; max-width: 860px; }
     .deliver-list {
       display: grid;
@@ -309,7 +314,6 @@
       font: inherit;
     }
     textarea { min-height: 130px; resize: vertical; }
-    .form-note { color: var(--soft); font-size: 13px; margin: 4px 0 0; }
     .social-links { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 14px; }
     .social-links a { font-weight: 900; text-transform: uppercase; letter-spacing: .6px; font-size: 13px; }
 
@@ -320,16 +324,16 @@
       position: fixed;
       inset: 0;
       z-index: 100;
-      background: rgba(0,0,0,.78);
+      background: rgba(0,0,0,.82);
       backdrop-filter: blur(10px);
-      padding: 20px;
+      padding: 16px;
       align-items: center;
       justify-content: center;
     }
     .sample-modal.open { display: flex; }
     .modal-shell {
-      width: min(1100px, 100%);
-      height: min(90vh, 900px);
+      width: min(1120px, 100%);
+      height: min(92vh, 930px);
       background: #07090d;
       border: 1px solid var(--line2);
       border-radius: 18px;
@@ -359,24 +363,26 @@
     }
     .modal-viewer { position: relative; min-height: 0; }
     .modal-viewer::after {
-      content: "THE REVEALED COSMOS • PORTFOLIO SAMPLE";
+      content: "THE REVEALED COSMOS • PORTFOLIO SAMPLE • ALL RIGHTS RESERVED";
       position: absolute;
       right: 18px;
       bottom: 14px;
-      color: rgba(255,255,255,.28);
+      color: rgba(255,255,255,.34);
       font-size: 11px;
-      letter-spacing: 1.4px;
+      letter-spacing: 1.2px;
       pointer-events: none;
       text-transform: uppercase;
+      background: rgba(0,0,0,.28);
+      padding: 4px 7px;
+      border-radius: 6px;
     }
     .modal-viewer iframe { width: 100%; height: 100%; border: 0; background: white; }
 
     @media (max-width: 960px) {
-      .hero-grid, .split, .contact-grid, .bundle { grid-template-columns: 1fr; }
+      .hero-grid, .split, .contact-grid { grid-template-columns: 1fr; }
       .portfolio-grid, .services-grid, .pain-points, .process-grid { grid-template-columns: 1fr 1fr; }
       .hero { padding: 58px 0 62px; }
       .hero-card { max-width: 720px; }
-      .bundle .button { justify-self: start; }
     }
 
     @media (max-width: 680px) {
@@ -391,9 +397,11 @@
       section { padding: 56px 0; }
       .card-visual { height: 132px; }
       .button { width: 100%; }
-      .logo { font-size: 17px; }
-      .sample-modal { padding: 10px; }
-      .modal-shell { height: 92vh; border-radius: 14px; }
+      .logo { font-size: 18px; }
+      .sample-modal { padding: 0; }
+      .modal-shell { width: 100vw; height: 100dvh; border-radius: 0; }
+      .modal-bar { padding: 12px; }
+      .modal-close { padding: 9px 12px; }
     }
   </style>
 </head>
@@ -414,11 +422,11 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <div class="eyebrow">For indie developers • RPG teams • visual novels • original IP creators</div>
-          <h1>Worldbuilding and lore systems for story-driven games.</h1>
+          <div class="eyebrow">For indie developers, game writers, RPG teams, and original IP creators</div>
+          <h1>Worldbuilding and lore systems for story-driven projects.</h1>
           <p class="lead">
-            The Revealed Cosmos helps creators organize early ideas into clear story worlds: lore rules,
-            faction conflict, quest direction, tone guides, and visual reference materials that support production.
+            The Revealed Cosmos helps creators turn scattered lore, characters, factions, quests, and tone into structured story bibles,
+            quest frameworks, and pitch-ready materials.
           </p>
           <div class="buttons">
             <a class="button" href="#contact">Request a free project review</a>
@@ -514,61 +522,53 @@
     <section id="services">
       <div class="wrap">
         <div class="kicker">Services</div>
-        <h2>Focused packages for early-stage worlds, quests, and pitch materials.</h2>
+        <h2>Three service packs for different stages of development.</h2>
         <p class="section-intro">
-          The strongest fit is a project that already has ideas, notes, characters, or world fragments — but needs
-          cleaner structure before writing, production, funding, or team collaboration expands.
+          Choose the level of support that matches your current stage: quick cleanup, a complete world-and-quest structure,
+          or a broader pitch-ready package for presenting the project to collaborators, clients, or teams.
         </p>
 
         <div class="services-grid">
           <article class="card service">
-            <div class="tag">Starter / Diagnostic</div>
-            <h3>Lore & Worldbuilding Cleanup Sprint</h3>
-            <p>For creators with scattered notes, unclear rules, inconsistent factions, or a setting that feels interesting but hard to explain.</p>
+            <div class="tag">Basic Pack</div>
+            <h3>Lore Cleanup Brief</h3>
+            <p>A focused starting package for creators who need scattered notes turned into something readable and organized.</p>
             <ul>
               <li>World pillars and core rules</li>
               <li>Faction and conflict map</li>
               <li>Clean reference brief</li>
               <li>Priority fixes and next-step notes</li>
             </ul>
-            <a class="sample-link" href="#contact">Request project review</a>
+            <a class="sample-link" href="#contact">Request this pack</a>
           </article>
 
-          <article class="card service">
-            <div class="tag">Games / RPG / Visual Novel</div>
-            <h3>Quest & Faction Narrative Pack</h3>
-            <p>For interactive stories that need stronger hooks, faction pressure, player-facing logic, and choice-driven consequences.</p>
+          <article class="card service recommended">
+            <div class="recommended-badge">Recommended</div>
+            <div class="tag">Core Pack</div>
+            <h3>World + Quest System Pack</h3>
+            <p>The strongest middle option for story-driven games, RPGs, and visual novels that need both setting logic and playable narrative direction.</p>
             <ul>
-              <li>Quest hook and objective</li>
+              <li>World structure and rules</li>
               <li>Faction pressure points</li>
-              <li>Branching outcomes</li>
-              <li>Player-facing narrative logic</li>
+              <li>Quest hook and objective</li>
+              <li>Branching outcomes and player-facing logic</li>
             </ul>
-            <a class="sample-link" href="#contact">Discuss this package</a>
+            <a class="sample-link" href="#contact">Request core pack</a>
           </article>
 
           <article class="card service">
-            <div class="tag">Pitch / Presentation</div>
-            <h3>Visual Story Proof Package</h3>
-            <p>For teams or solo creators who need a clearer presentation of a world, character, tone, or story concept for outreach or internal direction.</p>
+            <div class="tag">Premium Pack</div>
+            <h3>Story Bible + Pitch Package</h3>
+            <p>A broader package for creators who need a clearer project presentation, stronger documentation, and visual direction for outreach or internal development.</p>
             <ul>
-              <li>Concept summary</li>
-              <li>Moodboard or visual reference selection</li>
-              <li>Story-world framing</li>
-              <li>Portfolio or outreach-ready page</li>
+              <li>Story bible / lore documentation</li>
+              <li>Tone and world identity guide</li>
+              <li>Visual reference direction</li>
+              <li>Pitch-ready project summary</li>
             </ul>
-            <a class="sample-link" href="#contact">Ask about proof package</a>
+            <a class="sample-link" href="#contact">Request premium pack</a>
           </article>
         </div>
-
-        <article class="card bundle">
-          <div>
-            <div class="tag">Best Value / Starter Bundle</div>
-            <h3>World + Quest Starter Bundle</h3>
-            <p>For projects that need both setting clarity and a playable story direction: a cleaned world brief, faction pressure map, and one quest or scene pathway to test the concept.</p>
-          </div>
-          <a class="button" href="#contact">Request bundle review</a>
-        </article>
 
         <div class="process-grid">
           <div class="step"><strong>1. Diagnose</strong><span>What is unclear: rules, factions, tone, player path, or presentation?</span></div>
@@ -583,7 +583,13 @@
         <aside class="bio-card">
           <img src="profile.jpg" alt="Aaron A." />
           <h3>Aaron A.</h3>
-          <p>Worldbuilding & Lore Documentation Specialist / Game Writing Support</p>
+          <p>Worldbuilding & Lore Systems Consultant</p>
+          <ul class="bio-list">
+            <li>M.A. in Linguistics</li>
+            <li>10+ years studying narrative systems, worldbuilding, and interactive storytelling</li>
+            <li>Game analysis, player behavior, and narrative structure</li>
+            <li>English, Russian, and Spanish language background</li>
+          </ul>
         </aside>
         <div class="about-copy">
           <div class="kicker">About</div>
@@ -600,12 +606,6 @@
             Depending on the needs of the project, I can support story bibles, faction conflicts, quest progression, tone guides,
             dialogue structure, character networks, visual references, and moodboards for early concept direction.
           </p>
-          <ul class="deliver-list">
-            <li>M.A. in Linguistics</li>
-            <li>10+ years studying narrative systems and worldbuilding</li>
-            <li>Game analysis, player behavior, and narrative structure</li>
-            <li>English, Russian, and Spanish language background</li>
-          </ul>
         </div>
       </div>
     </section>
@@ -617,10 +617,10 @@
           <h2>Request a free project review.</h2>
           <p class="section-intro">
             Send a short note about what already exists and what feels unclear. I will respond with whether the project is a fit
-            for lore cleanup, quest structure, visual story proof, a starter bundle, or another focused package.
+            for lore cleanup, quest structure, a story bible, a pitch package, or another focused support option.
           </p>
           <div class="social-links">
-            <a href="https://linktr.ee/MachineMuseum" target="_blank" rel="noopener">Linktree ↗</a>
+            <a href="https://linktr.ee/MachineMuseum" target="_blank" rel="noopener">Connect on Linktree ↗</a>
           </div>
         </div>
 
@@ -638,10 +638,9 @@
               <label for="service">What would you like help with?</label>
               <select id="service" name="service">
                 <option>General project question</option>
-                <option>Lore & Worldbuilding Cleanup Sprint</option>
-                <option>Quest & Faction Narrative Pack</option>
-                <option>Visual Story Proof Package</option>
-                <option>World + Quest Starter Bundle</option>
+                <option>Basic Pack — Lore Cleanup Brief</option>
+                <option>Core Pack — World + Quest System Pack</option>
+                <option>Premium Pack — Story Bible + Pitch Package</option>
                 <option>Portfolio / sample question</option>
               </select>
             </div>
@@ -650,7 +649,6 @@
               <textarea id="message" name="message" placeholder="What already exists? What feels unclear? What would a useful outcome look like?"></textarea>
             </div>
             <button class="button" type="button" onclick="sendInquiry()">Send request</button>
-            <p class="form-note">This opens a prepared email to The Revealed Cosmos Studio. No backend signup or account required.</p>
           </form>
         </div>
       </div>
@@ -695,7 +693,7 @@
       const frame = document.getElementById('sampleFrame');
       const label = document.getElementById('sampleTitle');
       label.textContent = title || 'Portfolio Sample';
-      frame.src = src;
+      frame.src = src + '#toolbar=0&navpanes=0&scrollbar=1&view=FitH';
       modal.classList.add('open');
       modal.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
