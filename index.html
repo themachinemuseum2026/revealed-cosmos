@@ -232,6 +232,27 @@
     }
 
     .mini-card strong { display: block; color: var(--text); margin-bottom: 5px; font-size: clamp(16px, .25vw + 15px, 17px); }
+
+    .hero-review-note {
+      margin-top: 28px;
+      width: min(780px, 100%);
+      padding: clamp(20px, 2vw, 26px);
+      border: 1px solid rgba(195,169,106,.28);
+      border-radius: var(--radius);
+      background: rgba(195,169,106,.055);
+      color: #ded8cf;
+      box-shadow: 0 16px 46px rgba(0,0,0,.24);
+    }
+
+    .hero-review-note strong {
+      display: block;
+      color: var(--text);
+      font-size: clamp(18px, .5vw + 17px, 21px);
+      margin-bottom: 6px;
+    }
+
+    .hero-review-note p { margin-bottom: 0; }
+
     .section-intro { max-width: 850px; color: var(--muted); font-size: clamp(17px, .35vw + 16px, 18px); margin-bottom: 36px; }
 
     .portfolio-grid, .services-grid {
@@ -541,18 +562,22 @@
           <img src="hero_brand.jpg" alt="The Revealed Cosmos eye and cosmic brand visual" />
         </aside>
         <div class="hero-copy">
-          <div class="eyebrow">Free project review for indie developers, creators, and original IP teams</div>
+          <div class="eyebrow">For indie developers, creative teams, and story-driven IP projects</div>
           <h1>Worldbuilding systems for story-driven projects.</h1>
-          <p class="lead">The Revealed Cosmos helps creators turn scattered materials — lore notes, character concepts, factions, quests, visual references, and tone ideas — into structured, cohesive worldbuilding systems, story bibles, quest frameworks, and pitch-ready development materials.</p>
-          <p class="support-note">Start with a free review of your project. I will look at what already exists, what feels unclear, and what kind of support would actually help before we define the right scope.</p>
+          <p class="lead">The Revealed Cosmos helps creators turn early world ideas — lore notes, characters, factions, quests, visual references, and tone direction — into clear worldbuilding systems, story bibles, quest frameworks, and pitch-ready development materials.</p>
+          <p class="support-note">Services can include lore documentation, quest and faction design, tone guides, visual direction, draft concept-art/keyframe references, and music/sound atmosphere notes when they help define the world.</p>
           <div class="pain-points" aria-label="Common problems solved">
             <div class="mini-card"><strong>Lore systems</strong><span>Lore, rules, factions, and history become organized.</span></div>
             <div class="mini-card"><strong>Quest frameworks</strong><span>Hooks, choices, outcomes, and player logic become clearer.</span></div>
             <div class="mini-card"><strong>Tone guides</strong><span>Voice, atmosphere, motifs, and style direction get defined.</span></div>
             <div class="mini-card"><strong>Pitch materials</strong><span>Samples, summaries, and proof become easier for teams to read.</span></div>
           </div>
+          <div class="hero-review-note">
+            <strong>Not sure how I can help yet?</strong>
+            <p>Start with a free review of your project. Send a short note, describe what you are building, and I will suggest the clearest next step if the project is a fit.</p>
+          </div>
           <div class="buttons">
-            <a class="button" href="#contact">Request a free project review</a>
+            <a class="button" href="#contact">Request a free review of your project</a>
             <a class="button secondary" href="#portfolio">View portfolio samples</a>
           </div>
         </div>
@@ -562,17 +587,22 @@
     <section id="portfolio">
       <div class="wrap">
         <div class="kicker">Selected Portfolio Samples</div>
-        <h2>World structure, quest logic, and tone systems.</h2>
-        <p class="section-intro">Portfolio samples showing how story material becomes usable creative documentation: lore architecture, faction conflict, quest progression, tone rules, and world presentation. Each piece shows process and structure, not just isolated writing.</p>
+        <h2>Examples of structure, tone, quest logic, and world presentation.</h2>
+        <p class="section-intro">These samples show the kind of thinking I can bring to a project: organizing world rules, clarifying faction pressure, shaping quest logic, controlling tone, and turning creative direction into readable material. If your project does not match one of these examples exactly, send a message — the work can be adapted to the project.</p>
 
         <div class="portfolio-grid">
-          <article class="card"><div class="card-visual" aria-hidden="true"></div><div class="card-body"><div class="tag">Original IP / Lore Architecture</div><h3>ATLAS 3I / Second Earth</h3><p>Deep-space setting with metaphysics, ship hierarchy, ritual systems, social strata, and narrator voice built into one coherent world framework.</p><button class="sample-link" type="button" onclick="openSample('atlas3i-second-earth-sample.pdf','ATLAS 3I / Second Earth')">See sample</button></div></article>
-          <article class="card"><div class="card-visual" aria-hidden="true"></div><div class="card-body"><div class="tag">Fantasy Worldbuilding / Lore Bible</div><h3>The Siamic Peninsula</h3><p>Fantasy worldbuilding package with factions, history, magic rules, central conflict, tone, and story hooks for RPG or fictional IP development.</p><button class="sample-link" type="button" onclick="openSample('siamic-peninsula-lore-bible.pdf','The Siamic Peninsula')">See sample</button></div></article>
-          <article class="card"><div class="card-visual" aria-hidden="true"></div><div class="card-body"><div class="tag">RPG Quest Design / Branching Structure</div><h3>The Artifact of Silent Ruin</h3><p>Branching quest sample built from faction pressure, investigation, player choice, conflict escalation, and alternate allegiance paths.</p><button class="sample-link" type="button" onclick="openSample('artifact-of-silent-ruin-quest-design.pdf','The Artifact of Silent Ruin')">See sample</button></div></article>
-          <article class="card"><div class="card-visual" aria-hidden="true"></div><div class="card-body"><div class="tag">Tone Bible / Style Architecture</div><h3>Psychopunk Tone Bible</h3><p>Style guide for surreal metaphysical fiction: tone rules, recurring image systems, rhythm, point-of-view logic, and cross-media voice control.</p><button class="sample-link" type="button" onclick="openSample('psychopunk-tone-bible.pdf','Psychopunk Tone Bible')">See sample</button></div></article>
-          <article class="card"><div class="card-visual" aria-hidden="true"></div><div class="card-body"><div class="tag">Narrative Prose / Atmosphere</div><h3>PROTOTEUS: The Waking Cycle</h3><p>Atmospheric sci-fi scene demonstrating voice, sensory control, body-centric imagery, metaphysical tension, and cinematic scene rhythm.</p><button class="sample-link" type="button" onclick="openSample('prototeus-waking-cycle-sample.pdf','PROTOTEUS: The Waking Cycle')">See sample</button></div></article>
-          <article class="card"><div class="card-visual" aria-hidden="true"></div><div class="card-body"><div class="tag">Visual Design / Keyframes / Music Direction</div><h3>Atmosphere, Keyframes & Sound Notes</h3><p>Draft concept-art/keyframe references, moodboards, and optional music or sound notes for atmosphere building, pitch direction, and creative alignment.</p><a class="sample-link" href="#contact">Ask questions about visual/music support</a></div></article>
+          <article class="card"><div class="card-visual" aria-hidden="true"></div><div class="card-body"><div class="tag">Original IP / Lore Architecture</div><h3>ATLAS 3I / Second Earth</h3><p>Sci-fi worldbuilding sample showing how setting rules, social structure, metaphysics, and atmosphere can become a usable lore framework.</p><button class="sample-link" type="button" onclick="openSample('atlas3i-second-earth-sample.pdf','ATLAS 3I / Second Earth')">See sample</button></div></article>
+          <article class="card"><div class="card-visual" aria-hidden="true"></div><div class="card-body"><div class="tag">Fantasy Worldbuilding / Lore Bible</div><h3>The Siamic Peninsula</h3><p>Fantasy lore sample showing factions, history, magic rules, tone, and story hooks shaped into a clear world reference.</p><button class="sample-link" type="button" onclick="openSample('siamic-peninsula-lore-bible.pdf','The Siamic Peninsula')">See sample</button></div></article>
+          <article class="card"><div class="card-visual" aria-hidden="true"></div><div class="card-body"><div class="tag">RPG Quest Design / Branching Structure</div><h3>The Artifact of Silent Ruin</h3><p>Quest-design sample showing objectives, investigation flow, faction pressure, player choice, and alternate outcomes.</p><button class="sample-link" type="button" onclick="openSample('artifact-of-silent-ruin-quest-design.pdf','The Artifact of Silent Ruin')">See sample</button></div></article>
+          <article class="card"><div class="card-visual" aria-hidden="true"></div><div class="card-body"><div class="tag">Tone Bible / Style Architecture</div><h3>Psychopunk Tone Bible</h3><p>Tone-control sample showing voice, motifs, imagery, rhythm, and style rules for a consistent creative direction.</p><button class="sample-link" type="button" onclick="openSample('psychopunk-tone-bible.pdf','Psychopunk Tone Bible')">See sample</button></div></article>
+          <article class="card"><div class="card-visual" aria-hidden="true"></div><div class="card-body"><div class="tag">Narrative Prose / Atmosphere</div><h3>PROTOTEUS: The Waking Cycle</h3><p>Atmospheric prose sample showing scene rhythm, sensory detail, character perspective, and cinematic mood.</p><button class="sample-link" type="button" onclick="openSample('prototeus-waking-cycle-sample.pdf','PROTOTEUS: The Waking Cycle')">See sample</button></div></article>
+          <article class="card"><div class="card-visual" aria-hidden="true"></div><div class="card-body"><div class="tag">Visual Design / Keyframes / Music Direction</div><h3>Atmosphere, Keyframes & Sound Notes</h3><p>Support area for moodboards, keyframe direction, visual references, and sound atmosphere notes when they help define the world.</p><a class="sample-link" href="#contact">Ask about visual / music support</a></div></article>
         </div>
+
+        <article class="card services-cta">
+          <p>Do not see your exact project type here? Send a short message. I can review the idea, ask the right clarifying questions, and suggest whether lore, quest, tone, pitch, visual, or sound-direction support makes sense.</p>
+          <a class="button" href="#contact">Send me a message</a>
+        </article>
       </div>
     </section>
 
@@ -641,7 +671,7 @@
             <input type="checkbox" name="botcheck" id="botcheck" class="honeypot" tabindex="-1" autocomplete="off" />
             <div><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required /></div>
             <div><label for="email">Email</label><input id="email" name="email" type="email" placeholder="your@email.com" autocomplete="email" required /></div>
-            <div><label for="service">What would you like help with?</label><select id="service" name="service"><option>Free project review</option><option>Questions about service packs</option><option>General question</option><option>Other</option></select></div>
+            <div><label for="service">What would you like help with?</label><select id="service" name="service"><option>Free project review</option><option>Question about services</option><option>General question</option><option>Visual / music support question</option><option>Other</option></select></div>
             <div><label for="message">Project details</label><textarea id="message" name="message" placeholder="What already exists? What feels unclear? What would a useful outcome look like?" required></textarea></div>
             <button id="submitButton" class="button" type="submit">Send message</button>
             <p id="formStatus" class="form-status" aria-live="polite">Your message will be sent directly through the contact form.</p>
@@ -667,6 +697,14 @@
 
     const WEB3FORMS_ACCESS_KEY = 'e7b01ded-e06f-4ed1-88b2-050976525786';
     const CONTACT_EMAIL = 'revealedcosmosstudio@gmail.com';
+
+    const messagePrompts = {
+      'Free project review': 'What already exists? What feels unclear? What would a useful outcome look like?',
+      'Question about services': 'Which service option are you considering? What stage is your project in? What kind of support are you unsure about?',
+      'General question': 'What would you like to ask? Add any useful context, links, or project details.',
+      'Visual / music support question': 'What kind of visual, keyframe, moodboard, or sound atmosphere support are you exploring?',
+      'Other': 'Briefly describe what you need, what you are building, and what kind of reply would help.'
+    };
 
     function cleanUrl() {
       if (history.replaceState) {
@@ -715,6 +753,16 @@
     window.addEventListener('scroll', updateBackToTop, { passive: true });
     window.addEventListener('resize', updateScrollOffset);
     window.addEventListener('orientationchange', () => setTimeout(updateScrollOffset, 250));
+
+    function updateMessagePlaceholder() {
+      const service = document.getElementById('service');
+      const message = document.getElementById('message');
+      if (!service || !message) return;
+      message.placeholder = messagePrompts[service.value] || messagePrompts.Other;
+    }
+
+    const serviceSelect = document.getElementById('service');
+    if (serviceSelect) serviceSelect.addEventListener('change', updateMessagePlaceholder);
 
     function setFormStatus(message, type = '') {
       const status = document.getElementById('formStatus');
@@ -774,6 +822,7 @@
         if (result.success) {
           setFormStatus('✓ Message sent. I will reply within 24 business hours.', 'success');
           if (form) form.reset();
+          updateMessagePlaceholder();
         } else {
           throw new Error(result.message || 'Message failed to send.');
         }
@@ -833,6 +882,7 @@
     window.addEventListener('pageshow', forceHeroTopOnInitialLoad);
     updateScrollOffset();
     updateBackToTop();
+    updateMessagePlaceholder();
   </script>
 </body>
 </html>
