@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Revealed Cosmos | Visual Narrative Design</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #08090d;
+      color: #f2efe8;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 28px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      position: sticky;
+      top: 0;
+      background: rgba(8,9,13,0.94);
+      backdrop-filter: blur(8px);
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 20px;
+      letter-spacing: 1.5px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    nav a {
+      color: #c8c1b2;
+      margin-left: 22px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #f2efe8;
+    }
+
+    .hero {
+      padding: 110px 8% 90px;
+      max-width: 1100px;
+    }
+
+    .eyebrow {
+      color: #bfa76a;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(44px, 7vw, 92px);
+      line-height: 0.95;
+      margin: 0 0 28px;
+      max-width: 900px;
+    }
+
+    .hero p {
+      font-size: 21px;
+      max-width: 760px;
+      color: #d8d2c5;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 13px 20px;
+      border: 1px solid #bfa76a;
+      color: #f2efe8;
+      text-decoration: none;
+      border-radius: 999px;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+
+    section {
+      padding: 70px 8%;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    h2 {
+      font-size: 34px;
+      margin-bottom: 18px;
+    }
+
+    .section-intro {
+      max-width: 760px;
+      color: #c8c1b2;
+      margin-bottom: 32px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: #11131a;
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 18px;
+      padding: 24px;
+      min-height: 210px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 22px;
+    }
+
+    .card p {
+      color: #cfc7b8;
+    }
+
+    .tag {
+      color: #bfa76a;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+    }
+
+    footer {
+      padding: 40px 8%;
+      color: #8f887a;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        display: block;
+      }
+
+      nav {
+        margin-top: 14px;
+      }
+
+      nav a {
+        margin-left: 0;
+        margin-right: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">Revealed Cosmos</div>
+    <nav>
+      <a href="#works">Works</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">Visual Narrative Design / AI-Assisted Story Worlds</div>
+      <h1>Story worlds turned into visual proof.</h1>
+      <p>
+        Revealed Cosmos is a portfolio of AI-assisted visual narrative design,
+        story-world packaging, keyframe direction, and cinematic concept development.
+        I help transform abstract ideas, characters, moods, and worlds into clear
+        creative assets that can be shown, pitched, developed, or expanded.
+      </p>
+      <a class="button" href="#works">View Selected Works</a>
+    </section>
+
+    <section id="works">
+      <h2>Selected Works</h2>
+      <p class="section-intro">
+        A small selection of visual narrative experiments, concept packages, and
+        worldbuilding samples. Final project cards will be added as the portfolio is packaged.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <div class="tag">Portfolio Card 01</div>
+          <h3>Revealed Cosmos — Core Concept</h3>
+          <p>
+            A cinematic story-world framework exploring identity, memory, spiritual pressure,
+            institutions, and transformation through visual narrative design.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="tag">Portfolio Card 02</div>
+          <h3>Character / World Concept Package</h3>
+          <p>
+            A sample structure for turning a character, faction, or world idea into a concise
+            visual and narrative presentation.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="tag">Portfolio Card 03</div>
+          <h3>AI-Assisted Keyframe Direction</h3>
+          <p>
+            Visual mood, composition, and story atmosphere developed into usable creative proof
+            for pitch decks, videos, games, or narrative projects.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2>Services / MVP Offers</h2>
+      <p class="section-intro">
+        Practical creative packages for writers, creators, indie developers, educators, and
+        small teams who need story ideas turned into presentable visual proof.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Visual Story Concept Package</h3>
+          <p>
+            Short narrative premise, visual direction, mood, key themes, and
+            presentation-ready summary.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Character + Worldbuilding Sheet</h3>
+          <p>
+            Character identity, world context, aesthetic direction, emotional tone,
+            and story function.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>AI-Assisted Creative Direction</h3>
+          <p>
+            Prompt strategy, visual selection, narrative framing, and polish for
+            portfolio-ready creative assets.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p class="section-intro">
+        Revealed Cosmos is a visual narrative portfolio focused on AI-assisted story-world
+        development, cinematic concept design, and creative packaging. The work combines
+        narrative structure, visual atmosphere, character/world concepts, and prompt-driven
+        production workflows to turn abstract ideas into presentable creative proof.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact / Links</h2>
+      <p class="section-intro">
+        Portfolio links, freelance profiles, LinkedIn, and contact information will be added here.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Revealed Cosmos. All rights reserved.
+  </footer>
+</body>
+</html>
