@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Revealed Cosmos Studio | Worldbuilding, Lore Systems & Game Writing Support</title>
-  <meta name="description" content="Revealed Cosmos Studio helps indie developers, RPG teams, visual novel creators, writers, and early-stage IP teams organize lore, factions, quest logic, tone, and visual story proof into clear production-ready materials." />
+  <meta name="description" content="Revealed Cosmos Studio helps indie developers, RPG teams, visual novel creators, writers, and early-stage IP teams organize lore, factions, quest logic, tone, and visual story proof into clear materials they can use." />
   <meta name="keywords" content="worldbuilding consultant, lore documentation, game writing support, RPG quest design, visual novel writer, story bible, lore bible, faction design, narrative systems, worldbuilding services, indie game writer" />
   <meta property="og:title" content="Revealed Cosmos Studio | Worldbuilding & Lore Systems" />
   <meta property="og:description" content="Lore cleanup, worldbuilding structure, quest logic, tone guides, and visual story proof for games, RPGs, visual novels, and fictional IPs." />
@@ -13,7 +13,6 @@
   <style>
     :root {
       --bg: #050608;
-      --bg2: #090b10;
       --panel: #10131a;
       --panel2: #151922;
       --text: #f4f1ea;
@@ -23,7 +22,7 @@
       --blue: #76c7e8;
       --line: rgba(255,255,255,.11);
       --line2: rgba(255,255,255,.18);
-      --max: 1180px;
+      --max: 1160px;
       --radius: 20px;
       --shadow: 0 22px 70px rgba(0,0,0,.42);
     }
@@ -33,13 +32,13 @@
     body {
       margin: 0;
       background:
-        radial-gradient(circle at 72% 8%, rgba(60,148,188,.11), transparent 34%),
-        radial-gradient(circle at 18% 0%, rgba(195,169,106,.06), transparent 30%),
+        radial-gradient(circle at 74% 8%, rgba(60,148,188,.10), transparent 34%),
+        radial-gradient(circle at 18% 0%, rgba(195,169,106,.055), transparent 30%),
         linear-gradient(180deg, #050608 0%, #07080c 100%);
       color: var(--text);
       font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       font-size: 16px;
-      line-height: 1.65;
+      line-height: 1.62;
     }
 
     body::before {
@@ -48,10 +47,10 @@
       inset: 0;
       pointer-events: none;
       background-image:
-        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+        linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px);
       background-size: 72px 72px;
-      opacity: .2;
+      opacity: .18;
       z-index: -1;
     }
 
@@ -64,13 +63,13 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(5,6,8,.9);
+      background: rgba(5,6,8,.91);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--line);
     }
 
     .nav {
-      width: min(1320px, calc(100% - 48px));
+      width: min(1300px, calc(100% - 48px));
       margin: 0 auto;
       min-height: 70px;
       display: flex;
@@ -81,28 +80,28 @@
 
     .logo {
       font-size: 20px;
-      font-weight: 800;
-      letter-spacing: 1.4px;
+      font-weight: 900;
+      letter-spacing: 1.45px;
       text-transform: uppercase;
       white-space: nowrap;
     }
 
-    nav { display: flex; gap: 26px; align-items: center; }
+    nav { display: flex; gap: 28px; align-items: center; }
     nav a {
       color: var(--muted);
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 15px;
+      font-weight: 700;
     }
     nav a:hover { color: var(--text); }
 
     .hero {
-      padding: 82px 0 74px;
+      padding: 86px 0 76px;
       border-bottom: 1px solid var(--line);
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, .92fr) minmax(380px, .95fr);
+      grid-template-columns: minmax(0, .92fr) minmax(360px, .9fr);
       gap: 52px;
       align-items: center;
     }
@@ -112,14 +111,14 @@
       text-transform: uppercase;
       letter-spacing: 2px;
       font-size: 12px;
-      font-weight: 800;
+      font-weight: 900;
       margin-bottom: 18px;
     }
 
     h1, h2, h3 { margin-top: 0; line-height: 1.08; letter-spacing: -.035em; }
-    h1 { font-size: clamp(42px, 5.3vw, 72px); margin-bottom: 24px; max-width: 760px; }
-    h2 { font-size: clamp(32px, 3.8vw, 52px); margin-bottom: 18px; }
-    h3 { font-size: 24px; margin-bottom: 12px; }
+    h1 { font-size: clamp(40px, 5vw, 66px); margin-bottom: 24px; max-width: 760px; }
+    h2 { font-size: clamp(31px, 3.4vw, 46px); margin-bottom: 18px; max-width: 970px; }
+    h3 { font-size: 23px; margin-bottom: 12px; }
     p { margin-top: 0; }
 
     .lead {
@@ -130,7 +129,7 @@
     }
 
     .hero-card {
-      background: linear-gradient(180deg, rgba(21,25,34,.75), rgba(10,12,18,.96));
+      background: linear-gradient(180deg, rgba(21,25,34,.70), rgba(10,12,18,.95));
       border: 1px solid var(--line);
       border-radius: 26px;
       padding: 18px;
@@ -146,22 +145,6 @@
       filter: saturate(.95) contrast(1.04) brightness(.88);
     }
 
-    .hero-note {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 14px;
-    }
-
-    .note-box, .mini-card, .step {
-      background: rgba(255,255,255,.035);
-      border: 1px solid rgba(255,255,255,.09);
-      border-radius: 15px;
-      padding: 14px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
     .buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
     .button {
       display: inline-flex;
@@ -171,20 +154,28 @@
       padding: 12px 18px;
       border-radius: 999px;
       border: 1px solid var(--gold);
-      background: rgba(195,169,106,.08);
+      background: rgba(195,169,106,.10);
       color: var(--text);
       font-size: 14px;
-      font-weight: 800;
+      font-weight: 900;
       cursor: pointer;
     }
     .button.secondary { border-color: var(--line2); background: rgba(255,255,255,.035); color: var(--muted); }
     .button:hover { transform: translateY(-1px); color: var(--text); }
 
-    .proof-strip {
+    .pain-points {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      margin-top: 34px;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .mini-card {
+      background: rgba(255,255,255,.035);
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 15px;
+      padding: 14px;
+      color: var(--muted);
+      font-size: 13px;
     }
     .mini-card strong { display: block; color: var(--text); margin-bottom: 5px; }
 
@@ -207,18 +198,19 @@
     }
 
     .card-visual {
-      height: 150px;
-      background-image: linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.32)), url('hero_brand.jpg');
+      height: 148px;
+      background-image: linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,.34)), url('hero_brand.jpg');
       background-size: cover;
       background-position: center;
       border-bottom: 1px solid var(--line);
-      filter: saturate(.85) contrast(1.05) brightness(.82);
+      filter: saturate(.86) contrast(1.05) brightness(.82);
     }
 
     .card-body { padding: 24px; }
     .tag { color: var(--gold); font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 1.3px; margin-bottom: 10px; }
+    .portfolio-grid h3 { text-transform: uppercase; letter-spacing: -.015em; font-size: 22px; }
     .card p { color: #d7d0c7; margin-bottom: 18px; }
-    .sample-link { font-size: 14px; font-weight: 800; }
+    .sample-link { font-size: 14px; font-weight: 900; }
 
     .services-grid { margin-top: 28px; }
     .service { padding: 28px; }
@@ -232,6 +224,14 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 16px;
       margin-top: 26px;
+    }
+    .step {
+      background: rgba(255,255,255,.035);
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 15px;
+      padding: 18px;
+      color: var(--muted);
+      font-size: 14px;
     }
     .step strong { display: block; color: var(--text); font-size: 18px; margin-bottom: 6px; }
 
@@ -249,7 +249,7 @@
       padding: 28px;
     }
     .bio-card img { width: 96px; height: 96px; object-fit: cover; border-radius: 999px; border: 1px solid var(--line); margin-bottom: 18px; }
-    .bio-card h3 { font-size: 32px; margin-bottom: 10px; }
+    .bio-card h3 { font-size: 30px; margin-bottom: 10px; }
     .bio-card p { color: var(--muted); }
     .about-copy p { color: #d7d0c7; font-size: 17px; max-width: 840px; }
 
@@ -273,13 +273,13 @@
     }
     textarea { min-height: 130px; resize: vertical; }
     .form-note { color: var(--soft); font-size: 13px; margin: 4px 0 0; }
-    .email-line { font-weight: 800; }
+    .email-line { font-weight: 900; }
 
     footer { padding: 34px 0; color: var(--soft); font-size: 14px; text-align: center; }
 
     @media (max-width: 960px) {
       .hero-grid, .split, .contact-grid { grid-template-columns: 1fr; }
-      .portfolio-grid, .services-grid, .proof-strip, .process-grid { grid-template-columns: 1fr 1fr; }
+      .portfolio-grid, .services-grid, .pain-points, .process-grid { grid-template-columns: 1fr 1fr; }
       .hero { padding: 58px 0 62px; }
       .hero-card { max-width: 720px; }
     }
@@ -288,13 +288,13 @@
       .wrap, .nav { width: min(100% - 34px, var(--max)); }
       .nav { display: block; padding: 16px 0; min-height: auto; }
       nav { margin-top: 12px; gap: 12px 18px; }
-      nav a { font-size: 13px; }
-      h1 { font-size: clamp(38px, 12vw, 52px); }
-      h2 { font-size: 34px; }
+      nav a { font-size: 14px; }
+      h1 { font-size: clamp(36px, 11vw, 48px); }
+      h2 { font-size: 31px; }
       .lead, .section-intro, .about-copy p { font-size: 16px; }
-      .portfolio-grid, .services-grid, .proof-strip, .process-grid, .hero-note { grid-template-columns: 1fr; }
-      section { padding: 58px 0; }
-      .card-visual { height: 135px; }
+      .portfolio-grid, .services-grid, .pain-points, .process-grid { grid-template-columns: 1fr; }
+      section { padding: 56px 0; }
+      .card-visual { height: 132px; }
       .button { width: 100%; }
       .logo { font-size: 18px; }
     }
@@ -317,38 +317,33 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <div class="eyebrow">Worldbuilding • Lore Systems • Game Writing Support</div>
-          <h1>Clear story systems for worlds that are still becoming real.</h1>
+          <div class="eyebrow">Indie games • RPGs • Visual novels • Fictional IP</div>
+          <h1>Worldbuilding, lore, and quest support for story-driven projects.</h1>
           <p class="lead">
-            Revealed Cosmos Studio helps early-stage creators turn scattered lore, character ideas,
-            faction conflicts, quest concepts, and visual moods into organized materials that can be read,
-            pitched, revised, and developed.
+            Revealed Cosmos Studio helps creators turn scattered notes, character ideas, faction conflicts,
+            quest concepts, and visual moods into clear materials that can be read, pitched, revised, and developed.
           </p>
           <div class="buttons">
-            <a class="button" href="#portfolio">View portfolio</a>
-            <a class="button secondary" href="#contact">Request a free project fit check</a>
+            <a class="button" href="#contact">Request a free fit check</a>
+            <a class="button secondary" href="#portfolio">View portfolio</a>
           </div>
-          <div class="proof-strip" aria-label="Core service strengths">
-            <div class="mini-card"><strong>Lore cleanup</strong><span>Turn scattered notes into a clear reference system.</span></div>
-            <div class="mini-card"><strong>Quest logic</strong><span>Build hooks, factions, choices, and consequences.</span></div>
-            <div class="mini-card"><strong>Tone control</strong><span>Define voice, atmosphere, motifs, and style rules.</span></div>
-            <div class="mini-card"><strong>Pitch proof</strong><span>Create readable samples for clients, teams, and outreach.</span></div>
+          <div class="pain-points" aria-label="Common problems solved">
+            <div class="mini-card"><strong>Lore cleanup</strong><span>Scattered notes become a clean reference system.</span></div>
+            <div class="mini-card"><strong>Quest logic</strong><span>Hooks, factions, choices, and consequences become clearer.</span></div>
+            <div class="mini-card"><strong>Tone control</strong><span>Voice, atmosphere, motifs, and style rules get defined.</span></div>
+            <div class="mini-card"><strong>Pitch proof</strong><span>Samples become easier for clients, teams, and collaborators to read.</span></div>
           </div>
         </div>
         <aside class="hero-card" aria-label="Revealed Cosmos brand visual">
           <img src="hero_brand.jpg" alt="Revealed Cosmos eye and cosmic brand visual" />
-          <div class="hero-note">
-            <div class="note-box">Best fit: indie games, RPGs, visual novels, writers, and early-stage fictional IPs.</div>
-            <div class="note-box">Goal: make the story-world easier to understand, discuss, and build.</div>
-          </div>
         </aside>
       </div>
     </section>
 
     <section id="portfolio">
       <div class="wrap">
-        <div class="kicker">Portfolio</div>
-        <h2>Selected samples of world structure and narrative systems.</h2>
+        <div class="kicker">Selected Portfolio Samples</div>
+        <h2>World structure, quest logic, and tone systems.</h2>
         <p class="section-intro">
           These samples show how loose fictional ideas can become usable creative documents: lore architecture,
           faction conflict, quest progression, tone rules, and world presentation. Each piece is proof of process —
@@ -422,10 +417,10 @@
     <section id="services">
       <div class="wrap">
         <div class="kicker">Services</div>
-        <h2>Practical support for early-stage worlds, quests, and pitch materials.</h2>
+        <h2>Focused packages for early-stage worlds, quests, and pitch materials.</h2>
         <p class="section-intro">
           The strongest fit is a project that already has ideas, notes, characters, or world fragments — but needs
-          a cleaner structure before writing, production, funding, or team collaboration expands.
+          cleaner structure before writing, production, funding, or team collaboration expands.
         </p>
 
         <div class="services-grid">
@@ -537,8 +532,8 @@
               <label for="message">Project details</label>
               <textarea id="message" name="message" placeholder="What already exists? What feels unclear? What would a useful outcome look like?"></textarea>
             </div>
-            <button class="button" type="button" onclick="sendInquiry()">Send project fit request</button>
-            <p class="form-note">This opens your email app with a prepared message to Revealed Cosmos Studio.</p>
+            <button class="button" type="button" onclick="sendInquiry()">Open email draft</button>
+            <p class="form-note">This opens a prepared email to Revealed Cosmos Studio. No backend signup or account required.</p>
           </form>
         </div>
       </div>
