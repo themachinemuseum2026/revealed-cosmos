@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>The Revealed Cosmos | Worldbuilding Systems for Story-Driven Projects</title>
-  <meta name="description" content="The Revealed Cosmos helps indie developers, creators, and original IP developers organize lore, factions, quest logic, tone, visual references, and story proof into structured, cohesive development materials." />
-  <meta name="keywords" content="worldbuilding consultant, lore documentation, game writing support, RPG quest design, visual novel writer, story bible, lore bible, faction design, narrative systems, worldbuilding services, indie game writer" />
-  <meta property="og:title" content="The Revealed Cosmos | Worldbuilding Systems" />
-  <meta property="og:description" content="Worldbuilding support, lore cleanup, quest frameworks, tone guides, visual references, keyframes, music atmosphere notes, and pitch-ready story materials for games and fictional IPs." />
+  <title>The Revealed Cosmos Studio — Narrative Systems & Development Documentation</title>
+  <meta name="description" content="Narrative systems, worldbuilding structure, story bibles, quest frameworks, tone guides, pitch materials, and development-ready documentation for story-driven games and creative IP." />
+  <meta name="keywords" content="narrative systems consultant, worldbuilding consultant, development documentation, story bible, quest framework, lore documentation, RPG quest design, visual novel writer, tone guide, pitch materials, narrative design support" />
+  <meta property="og:title" content="The Revealed Cosmos Studio" />
+  <meta property="og:description" content="Development-ready narrative systems, worldbuilding documentation, quest frameworks, and pitch materials for story-driven games and creative IP." />
   <meta property="og:image" content="hero_brand.jpg" />
   <meta property="og:type" content="website" />
   <style>
@@ -97,9 +97,9 @@
     .brand:focus-visible .logo { color: #fff; }
 
     .logo {
-      font-size: clamp(19px, 1.15vw + 12px, 23px);
+      font-size: clamp(18px, 1.1vw + 12px, 23px);
       font-weight: 900;
-      letter-spacing: 1.4px;
+      letter-spacing: 1.25px;
       text-transform: uppercase;
       white-space: nowrap;
     }
@@ -113,7 +113,7 @@
       white-space: nowrap;
     }
 
-    nav { display: flex; gap: clamp(18px, 2vw, 30px); align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+    nav { display: flex; gap: clamp(16px, 2vw, 28px); align-items: center; flex-wrap: wrap; justify-content: flex-end; }
     nav a {
       color: var(--muted);
       font-size: clamp(13px, .35vw + 11px, 15px);
@@ -122,6 +122,14 @@
       text-transform: uppercase;
     }
     nav a:hover { color: var(--text); }
+
+    .nav-cta {
+      color: var(--text);
+      border: 1px solid var(--gold);
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: rgba(195,169,106,.08);
+    }
 
     section {
       padding: clamp(58px, 6vw, 80px) 0;
@@ -159,7 +167,7 @@
       filter: saturate(.96) contrast(1.04) brightness(.9);
     }
 
-    .hero-copy { max-width: 900px; }
+    .hero-copy { max-width: 980px; }
 
     .eyebrow, .kicker, .tag {
       color: var(--gold);
@@ -182,19 +190,26 @@
       color: #ded8cf;
       font-size: clamp(17px, .45vw + 16px, 20px);
       margin: 0 auto;
-      max-width: 850px;
+      max-width: 900px;
     }
 
     .support-note {
       color: var(--muted);
-      font-size: clamp(15.5px, .28vw + 15px, 17px);
-      max-width: 850px;
-      margin: 15px auto 0;
+      font-size: clamp(16px, .35vw + 15px, 17px);
+      max-width: 900px;
+      margin: 16px auto 0;
     }
 
-    .support-note strong { color: var(--gold); }
+    .micro-line {
+      color: var(--gold);
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 1.15px;
+      text-transform: uppercase;
+      margin: 22px 0 0;
+    }
 
-    .buttons { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 24px; }
+    .buttons { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 28px; }
     .button {
       display: inline-flex;
       align-items: center;
@@ -235,36 +250,27 @@
 
     .mini-card strong { display: block; color: var(--text); margin-bottom: 5px; font-size: clamp(16px, .25vw + 15px, 17px); }
 
-    .hero-review-note {
-      margin: 24px auto 0;
-      width: min(var(--max), 100%);
+    .hero-review-note, .services-cta, .contract-cta {
+      margin-top: 26px;
       padding: clamp(22px, 2.2vw, 29px);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: linear-gradient(180deg, var(--panel2), var(--panel));
-      color: #ded8cf;
-      box-shadow: 0 16px 48px rgba(0,0,0,.26);
       display: flex;
-      align-items: center;
       justify-content: space-between;
       gap: 22px;
-      text-align: left;
+      align-items: center;
     }
 
-    .hero-review-note p {
-      color: #d7d0c7;
-      margin: 0;
-      max-width: 760px;
-      font-size: clamp(17px, .35vw + 16px, 18px);
-    }
+    .hero-review-note p, .services-cta p, .contract-cta p { color: #d7d0c7; margin-bottom: 0; max-width: 820px; font-size: clamp(17px, .35vw + 16px, 18px); }
 
-    .section-intro { max-width: 850px; color: var(--muted); font-size: clamp(17px, .35vw + 16px, 18px); margin-bottom: 36px; }
+    .section-intro { max-width: 880px; color: var(--muted); font-size: clamp(17px, .35vw + 16px, 18px); margin-bottom: 32px; }
+    .small-note { color: var(--soft); font-size: 14px; max-width: 820px; margin: -16px 0 34px; }
 
-    .portfolio-grid, .services-grid {
+    .portfolio-grid, .services-grid, .fit-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 22px;
     }
+
+    .fit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 28px; }
 
     .card {
       background: linear-gradient(180deg, var(--panel2), var(--panel));
@@ -286,7 +292,9 @@
 
     .card-body { padding: clamp(22px, 2vw, 25px); }
     .portfolio-grid h3 { text-transform: uppercase; letter-spacing: -.015em; font-size: clamp(22px, .55vw + 20px, 24px); }
-    .card p { color: #d7d0c7; margin-bottom: 20px; font-size: clamp(16px, .25vw + 15px, 17px); }
+    .card p { color: #d7d0c7; margin-bottom: 16px; font-size: clamp(16px, .25vw + 15px, 17px); }
+    .demonstrates { color: var(--soft); font-size: 14px; margin-bottom: 20px; }
+    .demonstrates strong { color: var(--gold); }
 
     .sample-link {
       display: inline-block;
@@ -304,21 +312,11 @@
     .sample-link:hover { color: #a9e7ff; }
 
     .services-grid { margin-top: 28px; align-items: stretch; }
-    .service { padding: clamp(24px, 2.2vw, 29px); position: relative; }
-    .service h3 { font-size: clamp(24px, .65vw + 21px, 26px); }
-    .service p { color: #ded8cf; }
-    .service ul { color: #d7d0c7; padding-left: 21px; margin: 0 0 24px; }
-    .service li { margin: 8px 0; }
-
-    .services-cta {
-      margin-top: 26px;
-      padding: clamp(22px, 2.2vw, 29px);
-      display: flex;
-      justify-content: space-between;
-      gap: 22px;
-      align-items: center;
-    }
-    .services-cta p { color: #d7d0c7; margin-bottom: 0; max-width: 750px; font-size: clamp(17px, .35vw + 16px, 18px); }
+    .service, .fit-card, .contract-card { padding: clamp(24px, 2.2vw, 29px); position: relative; }
+    .service h3, .fit-card h3, .contract-card h3 { font-size: clamp(24px, .65vw + 21px, 26px); }
+    .service p, .fit-card p, .contract-card p { color: #ded8cf; }
+    .service ul, .fit-card ul, .contract-card ul { color: #d7d0c7; padding-left: 21px; margin: 0 0 24px; }
+    .service li, .fit-card li, .contract-card li { margin: 8px 0; }
 
     .process-grid {
       display: grid;
@@ -356,7 +354,7 @@
     .bio-list { margin: 18px 0 0; padding: 0; list-style: none; display: grid; gap: 9px; }
     .bio-list li { color: #d7d0c7; font-size: 15px; border-top: 1px solid rgba(255,255,255,.07); padding-top: 9px; }
     .bio-list strong { color: var(--text); }
-    .about-copy p { color: #d7d0c7; font-size: clamp(17px, .35vw + 16px, 18px); max-width: 880px; }
+    .about-copy p { color: #d7d0c7; font-size: clamp(17px, .35vw + 16px, 18px); max-width: 900px; }
 
     .contact-grid {
       display: grid;
@@ -378,11 +376,12 @@
       font: inherit;
       font-size: 16px;
     }
-    textarea { min-height: 135px; resize: vertical; }
+    textarea { min-height: 145px; resize: vertical; }
     .honeypot { display: none !important; }
 
     .response-note, .form-status, .direct-email-note { color: var(--muted); font-size: 16px; }
     .response-note { margin-top: 18px; }
+    .qualifier { color: var(--soft); font-size: 15px; margin-top: 12px; }
     .form-status { margin: 0; font-size: 14px; line-height: 1.45; }
     .form-status.error { color: #f3b4a8; }
     .form-status.success { color: #bce8c2; }
@@ -492,13 +491,13 @@
     }
     .modal-viewer { position: relative; min-height: 0; overflow: auto; -webkit-overflow-scrolling: touch; }
     .modal-viewer::before {
-      content: "THE REVEALED COSMOS";
+      content: "THE REVEALED COSMOS STUDIO";
       position: absolute;
       inset: 0;
       display: grid;
       place-items: center;
       color: rgba(255,255,255,.11);
-      font-size: clamp(46px, 8.5vw, 96px);
+      font-size: clamp(42px, 8vw, 90px);
       font-weight: 900;
       letter-spacing: 3px;
       transform: rotate(-18deg);
@@ -509,10 +508,10 @@
     .modal-viewer iframe { width: 100%; height: 100%; border: 0; background: white; display: block; }
 
     @media (max-width: 960px) {
-      .split, .contact-grid { grid-template-columns: 1fr; }
+      .split, .contact-grid, .fit-grid { grid-template-columns: 1fr; }
       .portfolio-grid, .services-grid, .pain-points, .process-grid { grid-template-columns: 1fr 1fr; }
       .hero { padding: 54px 0 62px; }
-      .services-cta, .hero-review-note { display: grid; }
+      .services-cta, .hero-review-note, .contract-cta { display: grid; }
     }
 
     @media (max-width: 680px) {
@@ -523,6 +522,7 @@
       .brand-subtitle { white-space: normal; }
       nav { margin-top: 14px; gap: 12px 18px; }
       nav a { font-size: 13px; }
+      .nav-cta { padding: 0; border: 0; background: transparent; }
       h1 { font-size: clamp(35px, 10.5vw, 46px); }
       h2 { font-size: 31px; }
       .lead, .section-intro, .about-copy p { font-size: 16.5px; }
@@ -548,15 +548,16 @@
 <body>
   <header>
     <div class="nav">
-      <a class="brand" href="#top" aria-label="Return to the top of The Revealed Cosmos homepage">
-        <div class="logo">The Revealed Cosmos</div>
-        <div class="brand-subtitle">Multi-Medium Narrative Design Studio</div>
+      <a class="brand" href="#top" aria-label="Return to the top of The Revealed Cosmos Studio homepage">
+        <div class="logo">The Revealed Cosmos Studio</div>
+        <div class="brand-subtitle">Narrative Systems & Development Documentation</div>
       </a>
       <nav aria-label="Main navigation">
-        <a href="#portfolio">Portfolio</a>
         <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
+        <a class="nav-cta" href="#contact" data-help="Project-fit review">Request a Project-Fit Review</a>
       </nav>
     </div>
   </header>
@@ -564,27 +565,62 @@
   <main>
     <section id="top" class="hero">
       <div class="wrap hero-inner">
-        <aside class="hero-card" aria-label="Revealed Cosmos brand visual">
-          <img src="hero_brand.jpg" alt="The Revealed Cosmos eye and cosmic brand visual" />
+        <aside class="hero-card" aria-label="The Revealed Cosmos Studio brand visual">
+          <img src="hero_brand.jpg" alt="The Revealed Cosmos Studio cosmic brand visual" />
         </aside>
         <div class="hero-copy">
-          <div class="eyebrow">For indie developers, creative teams, and story-driven IP projects</div>
-          <h1>Worldbuilding systems for story-driven projects.</h1>
-          <p class="lead">The Revealed Cosmos helps creators turn early world ideas — lore notes, characters, factions, quests, visual references, and tone direction — into clear worldbuilding systems, story bibles, quest frameworks, and pitch-ready development materials.</p>
-          <p class="support-note"><strong>*</strong>Services can include lore documentation, quest and faction design, tone guides, visual direction, keyframe references, and sound atmosphere notes. Additional scope can be discussed after a project review or short call.</p>
+          <div class="eyebrow">Narrative Systems / Worldbuilding / Development Documentation</div>
+          <h1>Narrative systems and development documentation for story-driven games and creative IP.</h1>
+          <p class="lead">The Revealed Cosmos Studio helps creators and teams turn scattered world ideas — lore notes, characters, factions, quests, visual references, gameplay goals, and tone direction — into clear materials a team can actually use.</p>
+          <p class="support-note">For projects moving toward pre-production, pitch preparation, collaboration, vertical slice development, or internal handoff, I help shape messy creative material into usable story bibles, worldbuilding systems, quest frameworks, faction structures, tone guides, visual direction notes, and pitch-ready summaries.</p>
+          <p class="micro-line">Built for projects with strong ideas, unclear structure, and a real development need.</p>
           <div class="pain-points" aria-label="Common problems solved">
-            <div class="mini-card"><strong>Lore systems</strong><span>Lore, rules, factions, and history become organized.</span></div>
-            <div class="mini-card"><strong>Quest frameworks</strong><span>Hooks, choices, outcomes, and player logic become clearer.</span></div>
-            <div class="mini-card"><strong>Tone guides</strong><span>Voice, atmosphere, motifs, and style direction get defined.</span></div>
-            <div class="mini-card"><strong>Pitch materials</strong><span>Samples, summaries, and proof become easier for teams to read.</span></div>
+            <div class="mini-card"><strong>World logic</strong><span>Rules, factions, history, metaphysics, and setting pressure become easier to understand and use.</span></div>
+            <div class="mini-card"><strong>Quest structure</strong><span>Objectives, choices, stakes, outcomes, and player-facing logic become clearer.</span></div>
+            <div class="mini-card"><strong>Tone direction</strong><span>Voice, atmosphere, motifs, visual references, and style direction become more consistent.</span></div>
+            <div class="mini-card"><strong>Pitch & handoff</strong><span>Summaries, samples, documentation, and project proof become easier for teams, clients, collaborators, or funders to read.</span></div>
           </div>
-          <article class="hero-review-note">
-            <p><strong>*</strong>Send a short message about what you are building. I will review the current materials, identify what feels unclear, and suggest a focused next step if there is a good fit.</p>
-            <a class="button" href="#contact" data-service="Free project review">Request a free review</a>
+          <article class="card hero-review-note">
+            <p>Not sure what kind of support fits? Send a short note about what already exists, what feels unclear, and what decision the material needs to support. I’ll review the project fit and suggest a focused next step.</p>
+            <a class="button" href="#contact" data-help="Project-fit review">Request a Project-Fit Review</a>
           </article>
           <div class="buttons">
-            <a class="button secondary" href="#portfolio">View portfolio samples</a>
+            <a class="button secondary" href="#portfolio">View Portfolio Samples</a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="best-fit">
+      <div class="wrap">
+        <div class="kicker">Best Fit</div>
+        <h2>Best for projects with real material, real scope, and a real development need.</h2>
+        <p class="section-intro">The Revealed Cosmos Studio is best suited for creators, teams, and IP projects that already have some material — notes, characters, factions, quest ideas, visual references, early builds, pitch drafts, or tone direction — and need clearer structure for production, collaboration, presentation, or handoff.</p>
+        <div class="fit-grid">
+          <article class="card fit-card">
+            <h3>Good fit</h3>
+            <ul>
+              <li>Funded or serious indie teams preparing documentation</li>
+              <li>RPG, visual novel, sci-fi, fantasy, or narrative-heavy projects</li>
+              <li>Creative IP projects moving from idea to presentation</li>
+              <li>Teams preparing pitch, funding, publisher, or internal development materials</li>
+              <li>Projects needing world logic, quest structure, tone control, or visual-narrative direction</li>
+              <li>Defined part-time or contract narrative systems support</li>
+              <li>Early-stage creators with focused scope and useful existing material</li>
+            </ul>
+          </article>
+          <article class="card fit-card">
+            <h3>Not the right fit</h3>
+            <ul>
+              <li>Unpaid or exposure-only requests</li>
+              <li>Bulk lore or content-mill requests</li>
+              <li>Vague “write my whole universe” requests with no development goal</li>
+              <li>Huge scope with tiny budget and no clear deliverable</li>
+              <li>Unlimited revision expectations</li>
+              <li>Projects with no materials, no timeline, no decision to support, and no defined next step</li>
+              <li>Requests that require private systems, raw prompts, or internal project files to be published</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
@@ -592,69 +628,84 @@
     <section id="portfolio">
       <div class="wrap">
         <div class="kicker">Selected Portfolio Samples</div>
-        <h2>Examples of structure, tone, quest logic, and world presentation.</h2>
-        <p class="section-intro">These samples show the kind of thinking I can bring to a project: organizing world rules, clarifying faction pressure, shaping quest logic, controlling tone, and turning creative direction into readable material. If your project does not match one of these examples exactly, send a message — the work can be adapted to the project.</p>
+        <h2>Proof samples for structure, world logic, tone control, and pitch-ready presentation.</h2>
+        <p class="section-intro">These samples show how scattered creative material can become readable development support: world rules, faction pressure, quest logic, tone systems, visual direction, and presentation-ready summaries.</p>
+        <p class="section-intro">Some samples are self-directed portfolio pieces. They are designed to show the kind of thinking and documentation I can bring to story-driven games, fictional IP, cinematic projects, and worldbuilding-heavy teams.</p>
+        <p class="small-note">Selected samples may be shortened or redacted for portfolio use. Full private world systems, raw prompts, and internal project structures are not published publicly.</p>
 
         <div class="portfolio-grid">
-          <article class="card"><div class="card-visual" aria-hidden="true"></div><div class="card-body"><div class="tag">Original IP / Lore Architecture</div><h3>ATLAS 3I / Second Earth</h3><p>Sci-fi worldbuilding sample showing how setting rules, social structure, metaphysics, and atmosphere can become a usable lore framework.</p><button class="sample-link" type="button" onclick="openSample('atlas3i-second-earth-sample.pdf','ATLAS 3I / Second Earth')">See sample</button></div></article>
-          <article class="card"><div class="card-visual" aria-hidden="true"></div><div class="card-body"><div class="tag">Fantasy Worldbuilding / Lore Bible</div><h3>The Siamic Peninsula</h3><p>Fantasy lore sample showing factions, history, magic rules, tone, and story hooks shaped into a clear world reference.</p><button class="sample-link" type="button" onclick="openSample('siamic-peninsula-lore-bible.pdf','The Siamic Peninsula')">See sample</button></div></article>
-          <article class="card"><div class="card-visual" aria-hidden="true"></div><div class="card-body"><div class="tag">RPG Quest Design / Branching Structure</div><h3>The Artifact of Silent Ruin</h3><p>Quest-design sample showing objectives, investigation flow, faction pressure, player choice, and alternate outcomes.</p><button class="sample-link" type="button" onclick="openSample('artifact-of-silent-ruin-quest-design.pdf','The Artifact of Silent Ruin')">See sample</button></div></article>
-          <article class="card"><div class="card-visual" aria-hidden="true"></div><div class="card-body"><div class="tag">Tone Bible / Style Architecture</div><h3>Psychopunk Tone Bible</h3><p>Tone-control sample showing voice, motifs, imagery, rhythm, and style rules for a consistent creative direction.</p><button class="sample-link" type="button" onclick="openSample('psychopunk-tone-bible.pdf','Psychopunk Tone Bible')">See sample</button></div></article>
-          <article class="card"><div class="card-visual" aria-hidden="true"></div><div class="card-body"><div class="tag">Narrative Prose / Atmosphere</div><h3>PROTOTEUS: The Waking Cycle</h3><p>Atmospheric prose sample showing scene rhythm, sensory detail, character perspective, and cinematic mood.</p><button class="sample-link" type="button" onclick="openSample('prototeus-waking-cycle-sample.pdf','PROTOTEUS: The Waking Cycle')">See sample</button></div></article>
-          <article class="card"><div class="card-visual" aria-hidden="true"></div><div class="card-body"><div class="tag">Visual Design / Keyframes / Music Direction</div><h3>Atmosphere, Keyframes & Sound Notes</h3><p>Support area for moodboards, keyframe direction, visual references, and sound atmosphere notes when they help define the world.</p><a class="sample-link" href="#contact" data-service="Visual / music support question">Ask about visual / music support</a></div></article>
+          <article class="card"><div class="card-visual" role="img" aria-label="Portfolio sample for ATLAS 3I / Second Earth"></div><div class="card-body"><div class="tag">Original IP / Lore Architecture</div><h3>ATLAS 3I / Second Earth</h3><p>Sci-fi worldbuilding sample showing how setting rules, social structure, metaphysical pressure, and atmosphere can become a usable lore framework.</p><p class="demonstrates"><strong>Demonstrates:</strong> World rules, setting logic, atmosphere, lore architecture.</p><button class="sample-link" type="button" onclick="openSample('atlas3i-second-earth-sample.pdf','ATLAS 3I / Second Earth')">See Sample</button></div></article>
+          <article class="card"><div class="card-visual" role="img" aria-label="Portfolio sample for The Siamic Peninsula"></div><div class="card-body"><div class="tag">Fantasy Worldbuilding / Lore Bible</div><h3>The Siamic Peninsula</h3><p>Fantasy lore sample showing how factions, history, magic rules, geography, tone, and story hooks can be shaped into a clear world reference.</p><p class="demonstrates"><strong>Demonstrates:</strong> Factions, history, magic rules, tone, lore bible structure.</p><button class="sample-link" type="button" onclick="openSample('siamic-peninsula-lore-bible.pdf','The Siamic Peninsula')">See Sample</button></div></article>
+          <article class="card"><div class="card-visual" role="img" aria-label="Portfolio sample for The Artifact of Silent Ruin"></div><div class="card-body"><div class="tag">RPG Quest Design / Branching Structure</div><h3>The Artifact of Silent Ruin</h3><p>Quest-design sample showing objectives, investigation flow, faction pressure, player choice, alternate outcomes, and consequence logic.</p><p class="demonstrates"><strong>Demonstrates:</strong> Quest objectives, player choice, branching outcomes, stakes.</p><button class="sample-link" type="button" onclick="openSample('artifact-of-silent-ruin-quest-design.pdf','The Artifact of Silent Ruin')">See Sample</button></div></article>
+          <article class="card"><div class="card-visual" role="img" aria-label="Portfolio sample for Psychopunk Tone Bible"></div><div class="card-body"><div class="tag">Tone Bible / Style Architecture</div><h3>Psychopunk Tone Bible</h3><p>Tone-control sample showing voice, motifs, imagery, rhythm, emotional pressure, and style rules for a consistent creative direction.</p><p class="demonstrates"><strong>Demonstrates:</strong> Tone control, motifs, voice, style rules.</p><button class="sample-link" type="button" onclick="openSample('psychopunk-tone-bible.pdf','Psychopunk Tone Bible')">See Sample</button></div></article>
+          <article class="card"><div class="card-visual" role="img" aria-label="Portfolio sample for PROTEUS: The Waking Cycle"></div><div class="card-body"><div class="tag">Narrative Prose / Atmosphere</div><h3>PROTEUS: The Waking Cycle</h3><p>Atmospheric prose sample showing scene rhythm, sensory detail, character perspective, symbolic pressure, and cinematic mood.</p><p class="demonstrates"><strong>Demonstrates:</strong> Prose atmosphere, sensory writing, character perspective, mood.</p><button class="sample-link" type="button" onclick="openSample('prototeus-waking-cycle-sample.pdf','PROTEUS: The Waking Cycle')">See Sample</button></div></article>
+          <article class="card"><div class="card-visual" role="img" aria-label="Portfolio sample for Atmosphere, Keyframes & Sound Notes"></div><div class="card-body"><div class="tag">Visual Design / Keyframes / Sound Direction</div><h3>Atmosphere, Keyframes & Sound Notes</h3><p>Visual-narrative direction sample showing how moodboards, keyframe references, sound atmosphere, and tone notes can support a clearer production path.</p><p class="demonstrates"><strong>Demonstrates:</strong> Visual direction, keyframe logic, moodboards, sound atmosphere.</p><a class="sample-link" href="#contact" data-help="Visual / tone direction">Ask About This Option</a></div></article>
         </div>
-
-        <article class="card services-cta">
-          <p>Do not see your exact project type here? Send a short message. I can review the idea, ask the right clarifying questions, and suggest whether lore, quest, tone, pitch, visual, or sound-direction support makes sense.</p>
-          <a class="button" href="#contact" data-service="General question">Send me a message</a>
-        </article>
       </div>
     </section>
 
     <section id="services">
       <div class="wrap">
         <div class="kicker">Services</div>
-        <h2>Flexible worldbuilding support for different project stages.</h2>
-        <p class="section-intro">These service packs are sample starting points, not rigid limits. After a short review, the scope can be adjusted around your project’s stage, existing materials, budget, and the kind of deliverable that would help most.</p>
+        <h2>Structured narrative and worldbuilding support for different project stages.</h2>
+        <p class="section-intro">These service options are sample starting points, not rigid packages. After a project-fit review, the scope can be shaped around the project’s stage, existing materials, budget, timeline, and the kind of deliverable that would help most.</p>
 
         <div class="services-grid">
-          <article class="card service"><div class="tag">Starting Point</div><h3>Project Review + Lore Cleanup</h3><p>A focused first step for creators who need clarity before committing to a larger documentation package.</p><ul><li>Review of existing notes and materials</li><li>Core world pillars and rule cleanup</li><li>Faction, conflict, or continuity gaps</li><li>Priority fixes and recommended next steps</li></ul><a class="sample-link" href="#contact" data-service="Question about services">Ask about this option</a></article>
-          <article class="card service"><div class="tag">Core Support</div><h3>World + Quest Structure</h3><p>For story-driven games, RPGs, visual novels, or fictional IPs that need setting logic connected to player-facing goals and choices.</p><ul><li>World structure and internal rules</li><li>Faction pressure and conflict map</li><li>Quest hooks, objectives, and stakes</li><li>Branching outcomes and player-facing logic</li><li>Optional visual reference notes</li></ul><a class="sample-link" href="#contact" data-service="Question about services">Ask about this option</a></article>
-          <article class="card service"><div class="tag">Expanded Package</div><h3>Story Bible + Pitch Materials</h3><p>For creators preparing clearer documentation for collaborators, clients, teams, funding, outreach, or internal development.</p><ul><li>Story bible / lore documentation</li><li>Tone and world identity guide</li><li>Visual reference or keyframe direction</li><li>Optional music/sound atmosphere notes</li><li>Pitch-ready project summary</li></ul><a class="sample-link" href="#contact" data-service="Question about services">Ask about this option</a></article>
+          <article class="card service"><div class="tag">Starting Point</div><h3>Project Clarity Audit</h3><p>A focused first step for creators or teams who already have material but need to understand what is working, what is unclear, and what should be defined next before committing to a larger documentation package.</p><ul><li>Review of existing notes, references, or project materials</li><li>Core world pillars and rule clarity</li><li>Faction, continuity, tone, or structure gaps</li><li>Recommended next deliverable</li><li>Priority fixes and development path notes</li></ul><a class="sample-link" href="#contact" data-help="Project clarity audit">Ask About This Option</a></article>
+          <article class="card service"><div class="tag">Core Support</div><h3>World + Quest Structure</h3><p>For story-driven games, RPGs, visual novels, fictional IPs, or interactive projects that need world logic connected to player-facing goals, choices, and progression.</p><ul><li>World structure and internal rules</li><li>Faction pressure and conflict map</li><li>Quest hooks, objectives, and stakes</li><li>Branching outcomes and player-facing logic</li><li>Optional visual reference or keyframe notes</li></ul><a class="sample-link" href="#contact" data-help="World / lore structure">Ask About This Option</a></article>
+          <article class="card service"><div class="tag">Expanded Package</div><h3>Story Bible + Pitch Materials</h3><p>For creators and teams preparing clearer documentation for collaborators, clients, internal development, funding conversations, publisher outreach, production planning, or creative handoff.</p><ul><li>Story bible or lore documentation</li><li>World identity and tone guide</li><li>Faction, character, or quest structure</li><li>Visual reference and keyframe direction</li><li>Optional music or sound atmosphere notes</li><li>Pitch-ready project summary</li></ul><a class="sample-link" href="#contact" data-help="Story bible / pitch materials">Ask About This Option</a></article>
         </div>
 
-        <article class="card services-cta"><p>Not sure which option fits? Send a short message with what already exists, what feels unclear, and what kind of result you need. The final scope can be shaped around your actual project.</p><a class="button" href="#contact" data-service="Free project review">Request a free review</a></article>
+        <article class="card services-cta"><p>Not sure which option fits? Send a short message with what already exists, what feels unclear, and what kind of result you need. I’ll suggest a focused next step if the project is a good fit.</p><a class="button" href="#contact" data-help="Project-fit review">Request a Project-Fit Review</a></article>
+      </div>
+    </section>
 
-        <div class="process-grid">
-          <div class="step"><strong>1. Review</strong><span>We identify what already works, what is unclear, and what blocks production or presentation.</span></div>
-          <div class="step"><strong>2. Scope</strong><span>We choose the right level of support instead of forcing the project into a rigid package.</span></div>
-          <div class="step"><strong>3. Build</strong><span>You receive clearer story material your collaborators, clients, or team can read and use.</span></div>
-        </div>
+    <section id="contract-support">
+      <div class="wrap">
+        <div class="kicker">Contract Support</div>
+        <h2>Available for focused consulting, documentation packages, and part-time narrative systems support.</h2>
+        <p class="section-intro">In addition to fixed-scope packages, I can support defined narrative/worldbuilding tasks for teams that need help clarifying world logic, quest structure, faction pressure, tone direction, pitch materials, or internal documentation.</p>
+        <article class="card contract-card">
+          <ul>
+            <li>Narrative documentation cleanup and structure</li>
+            <li>World bible or lore system support</li>
+            <li>Quest, objective, and branching logic review</li>
+            <li>Faction pressure and conflict mapping</li>
+            <li>Tone, atmosphere, and visual-reference direction</li>
+            <li>Pitch-ready summaries and handoff materials</li>
+          </ul>
+        </article>
+        <article class="card contract-cta">
+          <p>For contract or part-time support, the best starting point is a defined scope: project stage, materials available, timeline, and the decision or deliverable the work needs to support.</p>
+          <a class="button" href="#contact" data-help="Contract narrative/worldbuilding support">Ask About Contract Support</a>
+        </article>
       </div>
     </section>
 
     <section id="about">
       <div class="wrap split">
         <aside class="bio-card">
-          <img src="profile.jpg" alt="Aaron A." />
+          <img src="profile.jpg" alt="Aaron A., Narrative Systems and Worldbuilding Consultant" />
           <h3>Aaron A.</h3>
           <p>Narrative Systems & Worldbuilding Consultant</p>
           <ul class="bio-list">
             <li><strong>M.A. in Linguistics & Translation</strong></li>
             <li><strong>B.A. in English & Writing Composition</strong></li>
             <li><strong>10+ years</strong> building fiction, lore systems, and worldbuilding frameworks</li>
-            <li><strong>10+ years in education & coaching</strong> translating complex ideas into clear next steps</li>
-            <li><strong>Interactive narrative analysis:</strong> player motivation, objective clarity, progression flow, faction pressure, and story–gameplay alignment</li>
+            <li><strong>10+ years in education and coaching</strong>, translating complex ideas into clear next steps</li>
+            <li><strong>Interactive narrative analysis:</strong> player motivation, objective clarity, progression flow, faction pressure, and story-gameplay alignment</li>
             <li><strong>Language and tone background:</strong> English/Russian bilingual, Spanish study, translation training, naming, voice, and cross-cultural story awareness</li>
+            <li><strong>Available for focused consulting</strong>, documentation packages, and contract narrative/worldbuilding support with defined scope</li>
           </ul>
         </aside>
         <div class="about-copy">
           <div class="kicker">About</div>
-          <h2>I help creators and teams organize concepts into clear development materials.</h2>
-          <p>I work with indie developers, creative teams, and story-driven IP projects that need clearer lore, quest logic, faction structure, tone, and presentation. My role is to help organize those pieces into practical materials a team can read, discuss, revise, and build from.</p>
-          <p>Some projects already have a strong premise, characters, setting ideas, visual references, or gameplay goals, but the structure is not yet easy to use. I help identify what is working, what is unclear, what needs to be defined next, and how the material can support the project’s actual development path.</p>
-          <p>Depending on the project, support can include lore packs, story bibles, faction arcs, quest progression, branching outcomes, dialogue and character networks, tone guides, visual reference direction, keyframe notes, moodboards, or pitch-ready summaries.</p>
-          <p>I work collaboratively and adapt the scope to the project. The goal is to protect what makes the world distinct while making it easier to understand, present, hand off, and continue building.</p>
+          <h2>I help teams turn complex story worlds into development-ready structure.</h2>
+          <p>I work with story-driven games, fictional IP projects, creative teams, and independent creators who already have strong ideas but need clearer structure.</p>
+          <p>A project may have lore notes, characters, factions, quest ideas, gameplay goals, visual references, tone notes, or early pitch material — but the pieces are not always easy to read, discuss, revise, or build from.</p>
+          <p>My role is to clarify the material: what is working, what is unclear, what needs to be defined next, and how the story, world, quests, factions, tone, and presentation can support the project’s actual development path.</p>
+          <p>Depending on the scope, support can include story bibles, lore documentation, faction structures, quest frameworks, branching outcomes, tone guides, visual reference direction, keyframe notes, moodboards, pitch summaries, and project clarity audits.</p>
+          <p>The goal is not to overwrite what makes the world distinct. The goal is to protect the strongest idea and make it easier to understand, present, hand off, and continue building.</p>
         </div>
       </div>
     </section>
@@ -663,8 +714,10 @@
       <div class="wrap contact-grid">
         <div>
           <div class="kicker">Contact</div>
-          <h2>Request a free project review or ask a question.</h2>
-          <p class="section-intro">Send a short note about what already exists and what feels unclear. I will respond with whether the project is a fit for lore cleanup, quest structure, a story bible, a pitch package, or another focused support option.</p>
+          <h2>Request a project-fit review or ask a question.</h2>
+          <p class="section-intro">Send a short note about what already exists, what feels unclear, and what kind of outcome would help the project move forward.</p>
+          <p class="section-intro">I’ll respond with whether the project seems like a fit for a clarity audit, world/quest structure, story bible, pitch package, visual-narrative direction, contract narrative support, or another focused option.</p>
+          <p class="qualifier">A project-fit review is a brief first look, not a full documentation pass. If the project needs deeper work, I’ll suggest a clear next step and possible scope.</p>
           <p class="response-note">I usually respond within 24 business hours.</p>
           <div class="social-block">
             <p>Connect with me on social media:</p>
@@ -678,9 +731,14 @@
             <input type="checkbox" name="botcheck" id="botcheck" class="honeypot" tabindex="-1" autocomplete="off" />
             <div><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required /></div>
             <div><label for="email">Email</label><input id="email" name="email" type="email" placeholder="your@email.com" autocomplete="email" required /></div>
-            <div><label for="service">What would you like help with?</label><select id="service" name="service"><option>Free project review</option><option>Question about services</option><option>General question</option><option>Visual / music support question</option><option>Other</option></select></div>
-            <div><label for="message">Project details</label><textarea id="message" name="message" placeholder="What already exists? What feels unclear? What would a useful outcome look like?" required></textarea></div>
-            <button id="submitButton" class="button" type="submit">Send message</button>
+            <div><label for="helpType">What would you like help with?</label><select id="helpType" name="help_type"><option>Project-fit review</option><option>Project clarity audit</option><option>World / lore structure</option><option>Quest framework</option><option>Story bible / pitch materials</option><option>Visual / tone direction</option><option>Contract narrative/worldbuilding support</option><option>Not sure yet</option></select></div>
+            <div><label for="projectType">Project type</label><select id="projectType" name="project_type"><option>Story-driven game</option><option>RPG / visual novel</option><option>Fictional IP / worldbuilding project</option><option>AI film / cinematic project</option><option>Pitch / funding preparation</option><option>Internal documentation</option><option>Portfolio / proof package</option><option>Other</option></select></div>
+            <div><label for="projectStage">Project stage</label><select id="projectStage" name="project_stage"><option>Early idea</option><option>Existing notes / rough material</option><option>Prototype / vertical slice</option><option>Pre-production</option><option>Pitch / funding preparation</option><option>Ongoing development</option><option>Existing draft or documentation</option><option>Other</option></select></div>
+            <div><label for="timeline">Timeline</label><select id="timeline" name="timeline"><option>No rush</option><option>1–2 weeks</option><option>This month</option><option>Deadline-based</option><option>Not sure yet</option></select></div>
+            <div><label for="budgetScope">Budget / scope range</label><select id="budgetScope" name="budget_scope"><option>Small focused audit</option><option>Moderate documentation support</option><option>Larger package</option><option>Part-time / ongoing support</option><option>Not sure yet</option></select></div>
+            <div><label for="existingMaterials">Existing materials</label><select id="existingMaterials" name="existing_materials"><option>Notes / lore document</option><option>Character or faction notes</option><option>Quest or gameplay notes</option><option>Visual references / moodboard</option><option>Pitch deck or summary</option><option>Prototype / build</option><option>No organized materials yet</option><option>Other</option></select></div>
+            <div><label for="message">Project details</label><textarea id="message" name="message" placeholder="What already exists? What feels unclear? What decision, document, pitch, or development step does this material need to support?" required></textarea></div>
+            <button id="submitButton" class="button" type="submit">Send Project Details</button>
             <p id="formStatus" class="form-status" aria-live="polite">Your message will be sent directly through the contact form.</p>
           </form>
         </div>
@@ -688,14 +746,14 @@
     </section>
   </main>
 
-  <footer><div class="wrap">© 2026 The Revealed Cosmos. All rights reserved.</div></footer>
+  <footer><div class="wrap">© 2026 The Revealed Cosmos Studio. All rights reserved.</div></footer>
   <button id="backToTop" type="button" aria-label="Back to top">↑ Top</button>
 
   <div id="sampleModal" class="sample-modal" aria-hidden="true" role="dialog" aria-label="Portfolio sample viewer" onclick="if(event.target === this) closeSample()">
     <div class="modal-shell">
       <div class="modal-bar"><strong id="sampleTitle">Portfolio Sample</strong><button class="modal-close" type="button" onclick="closeSample()">Close ×</button></div>
       <div class="modal-viewer"><iframe id="sampleFrame" src="" title="Portfolio sample PDF"></iframe></div>
-      <div class="modal-footer"><span>© 2026 The Revealed Cosmos • Portfolio sample • All rights reserved</span><a id="mobilePdfLink" class="mobile-pdf-link" href="#" target="_blank" rel="noopener">Open readable PDF</a></div>
+      <div class="modal-footer"><span>© 2026 The Revealed Cosmos Studio • Portfolio sample • All rights reserved</span><a id="mobilePdfLink" class="mobile-pdf-link" href="#" target="_blank" rel="noopener">Open readable PDF</a></div>
     </div>
   </div>
 
@@ -706,11 +764,14 @@
     const CONTACT_EMAIL = 'revealedcosmosstudio@gmail.com';
 
     const messagePrompts = {
-      'Free project review': 'What already exists? What feels unclear? What would a useful outcome look like?',
-      'Question about services': 'Which service option are you considering? What stage is your project in? What kind of support are you unsure about?',
-      'General question': 'What would you like to ask? Add any useful context, links, or project details.',
-      'Visual / music support question': 'What kind of visual, keyframe, moodboard, or sound atmosphere support are you exploring?',
-      'Other': 'Briefly describe what you need, what you are building, and what kind of reply would help.'
+      'Project-fit review': 'What already exists? What feels unclear? What decision, document, pitch, or development step does this material need to support?',
+      'Project clarity audit': 'What materials do you already have, and what feels unclear or hard to use right now?',
+      'World / lore structure': 'What world rules, factions, history, geography, or continuity issues need clearer structure?',
+      'Quest framework': 'What kind of quest, objective, branching path, or player-facing logic needs support?',
+      'Story bible / pitch materials': 'What needs to be easier to present, pitch, hand off, or share with collaborators?',
+      'Visual / tone direction': 'What kind of visual references, tone notes, keyframes, or atmosphere direction are you exploring?',
+      'Contract narrative/worldbuilding support': 'What defined task, timeline, and deliverable would the team need support with?',
+      'Not sure yet': 'Briefly describe what you are building, what exists now, and what kind of next step would help.'
     };
 
     function cleanUrl() {
@@ -733,15 +794,15 @@
       try { return document.querySelector(hash); } catch (error) { return null; }
     }
 
-    function applyServiceIntent(serviceValue) {
-      if (!serviceValue) return;
-      const service = document.getElementById('service');
+    function applyHelpIntent(helpValue) {
+      if (!helpValue) return;
+      const helpType = document.getElementById('helpType');
       const message = document.getElementById('message');
-      if (!service) return;
+      if (!helpType) return;
 
-      const matchingOption = Array.from(service.options).find((option) => option.value === serviceValue || option.textContent === serviceValue);
+      const matchingOption = Array.from(helpType.options).find((option) => option.value === helpValue || option.textContent === helpValue);
       if (matchingOption) {
-        service.value = matchingOption.value;
+        helpType.value = matchingOption.value;
         updateMessagePlaceholder();
       }
 
@@ -750,14 +811,14 @@
       }
     }
 
-    function scrollToSection(hash, shouldCleanUrl = true, serviceValue = '') {
+    function scrollToSection(hash, shouldCleanUrl = true, helpValue = '') {
       const target = getTarget(hash || '#top');
       if (!target) return;
       updateScrollOffset();
       const top = Math.max(target.getBoundingClientRect().top + window.scrollY - getHeaderOffset(), 0);
       window.scrollTo({ top, behavior: 'smooth' });
       if (shouldCleanUrl) cleanUrl();
-      if (hash === '#contact' && serviceValue) applyServiceIntent(serviceValue);
+      if (hash === '#contact' && helpValue) applyHelpIntent(helpValue);
     }
 
     document.querySelectorAll('a[href^="#"]').forEach((link) => {
@@ -765,7 +826,7 @@
         const hash = link.getAttribute('href');
         if (!getTarget(hash)) return;
         event.preventDefault();
-        scrollToSection(hash, true, link.dataset.service || '');
+        scrollToSection(hash, true, link.dataset.help || '');
       });
     });
 
@@ -780,14 +841,14 @@
     window.addEventListener('orientationchange', () => setTimeout(updateScrollOffset, 250));
 
     function updateMessagePlaceholder() {
-      const service = document.getElementById('service');
+      const helpType = document.getElementById('helpType');
       const message = document.getElementById('message');
-      if (!service || !message) return;
-      message.placeholder = messagePrompts[service.value] || messagePrompts.Other;
+      if (!helpType || !message) return;
+      message.placeholder = messagePrompts[helpType.value] || messagePrompts['Project-fit review'];
     }
 
-    const serviceSelect = document.getElementById('service');
-    if (serviceSelect) serviceSelect.addEventListener('change', updateMessagePlaceholder);
+    const helpSelect = document.getElementById('helpType');
+    if (helpSelect) helpSelect.addEventListener('change', updateMessagePlaceholder);
 
     function setFormStatus(message, type = '') {
       const status = document.getElementById('formStatus');
@@ -803,7 +864,12 @@
       const submitButton = document.getElementById('submitButton');
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
-      const service = document.getElementById('service').value;
+      const helpType = document.getElementById('helpType').value;
+      const projectType = document.getElementById('projectType').value;
+      const projectStage = document.getElementById('projectStage').value;
+      const timeline = document.getElementById('timeline').value;
+      const budgetScope = document.getElementById('budgetScope').value;
+      const existingMaterials = document.getElementById('existingMaterials').value;
       const message = document.getElementById('message').value.trim();
       const botcheck = document.getElementById('botcheck');
 
@@ -823,11 +889,16 @@
 
       const payload = {
         access_key: WEB3FORMS_ACCESS_KEY,
-        subject: 'TRC project inquiry — ' + service,
-        from_name: 'The Revealed Cosmos Contact Form',
+        subject: 'TRCS project inquiry — ' + helpType,
+        from_name: 'The Revealed Cosmos Studio Contact Form',
         name,
         email,
-        service,
+        help_type: helpType,
+        project_type: projectType,
+        project_stage: projectStage,
+        timeline,
+        budget_scope: budgetScope,
+        existing_materials: existingMaterials,
         message,
         page: window.location.href
       };
@@ -845,7 +916,7 @@
         const result = await response.json();
 
         if (result.success) {
-          setFormStatus('✓ Message sent. I will reply within 24 business hours.', 'success');
+          setFormStatus('✓ Project details sent. I will reply within 24 business hours.', 'success');
           if (form) form.reset();
           updateMessagePlaceholder();
         } else {
@@ -856,7 +927,7 @@
       } finally {
         if (submitButton) {
           submitButton.disabled = false;
-          submitButton.textContent = originalButtonText || 'Send message';
+          submitButton.textContent = originalButtonText || 'Send Project Details';
         }
       }
     }
