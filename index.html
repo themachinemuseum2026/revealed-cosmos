@@ -187,20 +187,12 @@
 
     .support-note {
       color: var(--muted);
-      font-size: clamp(16px, .35vw + 15px, 17px);
+      font-size: clamp(15.5px, .28vw + 15px, 17px);
       max-width: 850px;
       margin: 15px auto 0;
     }
 
-    .scope-note {
-      color: var(--soft);
-      font-size: 14px;
-      line-height: 1.5;
-      max-width: 790px;
-      margin: 13px auto 0;
-    }
-
-    .scope-note strong { color: var(--gold); }
+    .support-note strong { color: var(--gold); }
 
     .buttons { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 24px; }
     .button {
@@ -245,30 +237,25 @@
 
     .hero-review-note {
       margin: 24px auto 0;
-      width: min(900px, 100%);
-      padding: clamp(20px, 2vw, 26px) clamp(22px, 3vw, 34px);
+      width: min(var(--max), 100%);
+      padding: clamp(22px, 2.2vw, 29px);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: linear-gradient(180deg, var(--panel2), var(--panel));
       color: #ded8cf;
       box-shadow: 0 16px 48px rgba(0,0,0,.26);
-      text-align: center;
-    }
-
-    .note-label {
-      display: block;
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 1.6px;
-      font-size: 13px;
-      font-weight: 900;
-      margin-bottom: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      text-align: left;
     }
 
     .hero-review-note p {
-      margin: 0 auto;
+      color: #d7d0c7;
+      margin: 0;
       max-width: 760px;
-      font-size: clamp(15.5px, .25vw + 15px, 16.5px);
+      font-size: clamp(17px, .35vw + 16px, 18px);
     }
 
     .section-intro { max-width: 850px; color: var(--muted); font-size: clamp(17px, .35vw + 16px, 18px); margin-bottom: 36px; }
@@ -525,7 +512,7 @@
       .split, .contact-grid { grid-template-columns: 1fr; }
       .portfolio-grid, .services-grid, .pain-points, .process-grid { grid-template-columns: 1fr 1fr; }
       .hero { padding: 54px 0 62px; }
-      .services-cta { display: grid; }
+      .services-cta, .hero-review-note { display: grid; }
     }
 
     @media (max-width: 680px) {
@@ -546,7 +533,7 @@
       .logo { font-size: 18px; }
       .hero-card { padding: 12px; border-radius: 20px; }
       .hero-card img { border-radius: 14px; }
-      .hero-review-note { margin-top: 22px; }
+      .hero-review-note { margin-top: 22px; text-align: center; }
       #backToTop { right: 14px; bottom: calc(14px + env(safe-area-inset-bottom)); min-height: 42px; padding: 9px 13px; font-size: 12px; }
       .sample-modal { padding: 0; }
       .modal-shell { width: 100vw; height: 100dvh; border-radius: 0; }
@@ -584,20 +571,18 @@
           <div class="eyebrow">For indie developers, creative teams, and story-driven IP projects</div>
           <h1>Worldbuilding systems for story-driven projects.</h1>
           <p class="lead">The Revealed Cosmos helps creators turn early world ideas — lore notes, characters, factions, quests, visual references, and tone direction — into clear worldbuilding systems, story bibles, quest frameworks, and pitch-ready development materials.</p>
-          <p class="support-note">Services can include* lore documentation, quest and faction design, tone guides, visual direction, draft concept-art/keyframe references, and music/sound atmosphere notes when they help define the world.</p>
-          <p class="scope-note"><strong>*</strong> Additional scope can be discussed after a project review or short call. If your project needs something outside the examples below, send a message and we can define the right fit.</p>
+          <p class="support-note"><strong>*</strong>Services can include lore documentation, quest and faction design, tone guides, visual direction, draft concept-art/keyframe references, and music/sound atmosphere notes when they help define the world. Additional scope can be discussed after a project review or short call; if your project needs something outside the examples below, send a message and we can define the right fit.</p>
           <div class="pain-points" aria-label="Common problems solved">
             <div class="mini-card"><strong>Lore systems</strong><span>Lore, rules, factions, and history become organized.</span></div>
             <div class="mini-card"><strong>Quest frameworks</strong><span>Hooks, choices, outcomes, and player logic become clearer.</span></div>
             <div class="mini-card"><strong>Tone guides</strong><span>Voice, atmosphere, motifs, and style direction get defined.</span></div>
             <div class="mini-card"><strong>Pitch materials</strong><span>Samples, summaries, and proof become easier for teams to read.</span></div>
           </div>
-          <div class="hero-review-note">
-            <span class="note-label">Free Project Review</span>
-            <p>Send a short note about what you are building. I will review the current materials, identify what feels unclear, and suggest a focused next step if there is a good fit.</p>
-          </div>
+          <article class="hero-review-note">
+            <p><strong>*</strong>The free review is a starting point. Send a short message about what you are building, and I will review the current materials, identify what feels unclear, and suggest a focused next step if there is a good fit.</p>
+            <a class="button" href="#contact" data-service="Free project review">Request a free review</a>
+          </article>
           <div class="buttons">
-            <a class="button" href="#contact" data-service="Free project review">Request a free review of your project</a>
             <a class="button secondary" href="#portfolio">View portfolio samples</a>
           </div>
         </div>
