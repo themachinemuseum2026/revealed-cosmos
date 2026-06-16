@@ -130,13 +130,13 @@
     }
 
     .hero {
-      padding: clamp(46px, 6vw, 72px) 0 clamp(58px, 6vw, 78px);
+      padding: clamp(46px, 6vw, 72px) 0 clamp(54px, 5vw, 70px);
       border-bottom: 1px solid var(--line);
     }
 
     .hero-inner {
       display: grid;
-      gap: clamp(26px, 4vw, 34px);
+      gap: clamp(24px, 3.5vw, 32px);
       justify-items: center;
       text-align: center;
     }
@@ -192,7 +192,7 @@
       margin: 15px auto 0;
     }
 
-    .buttons { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 28px; }
+    .buttons { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 24px; }
     .button {
       display: inline-flex;
       align-items: center;
@@ -218,7 +218,7 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 13px;
-      margin-top: 34px;
+      margin-top: 32px;
       text-align: left;
     }
 
@@ -234,24 +234,24 @@
     .mini-card strong { display: block; color: var(--text); margin-bottom: 5px; font-size: clamp(16px, .25vw + 15px, 17px); }
 
     .hero-review-note {
-      margin-top: 28px;
-      width: min(780px, 100%);
-      padding: clamp(20px, 2vw, 26px);
+      margin-top: 24px;
+      width: min(720px, 100%);
+      padding: clamp(18px, 1.8vw, 22px);
       border: 1px solid rgba(195,169,106,.28);
       border-radius: var(--radius);
-      background: rgba(195,169,106,.055);
+      background: rgba(195,169,106,.045);
       color: #ded8cf;
-      box-shadow: 0 16px 46px rgba(0,0,0,.24);
+      box-shadow: 0 14px 38px rgba(0,0,0,.20);
     }
 
     .hero-review-note strong {
       display: block;
       color: var(--text);
-      font-size: clamp(18px, .5vw + 17px, 21px);
-      margin-bottom: 6px;
+      font-size: clamp(18px, .45vw + 16px, 20px);
+      margin-bottom: 5px;
     }
 
-    .hero-review-note p { margin-bottom: 0; }
+    .hero-review-note p { margin-bottom: 0; font-size: clamp(15.5px, .25vw + 15px, 16.5px); }
 
     .section-intro { max-width: 850px; color: var(--muted); font-size: clamp(17px, .35vw + 16px, 18px); margin-bottom: 36px; }
 
@@ -528,6 +528,7 @@
       .logo { font-size: 18px; }
       .hero-card { padding: 12px; border-radius: 20px; }
       .hero-card img { border-radius: 14px; }
+      .hero-review-note { margin-top: 22px; }
       #backToTop { right: 14px; bottom: calc(14px + env(safe-area-inset-bottom)); min-height: 42px; padding: 9px 13px; font-size: 12px; }
       .sample-modal { padding: 0; }
       .modal-shell { width: 100vw; height: 100dvh; border-radius: 0; }
@@ -577,7 +578,7 @@
             <p>Start with a free review of your project. Send a short note, describe what you are building, and I will suggest the clearest next step if the project is a fit.</p>
           </div>
           <div class="buttons">
-            <a class="button" href="#contact">Request a free review of your project</a>
+            <a class="button" href="#contact" data-service="Free project review">Request a free review of your project</a>
             <a class="button secondary" href="#portfolio">View portfolio samples</a>
           </div>
         </div>
@@ -596,12 +597,12 @@
           <article class="card"><div class="card-visual" aria-hidden="true"></div><div class="card-body"><div class="tag">RPG Quest Design / Branching Structure</div><h3>The Artifact of Silent Ruin</h3><p>Quest-design sample showing objectives, investigation flow, faction pressure, player choice, and alternate outcomes.</p><button class="sample-link" type="button" onclick="openSample('artifact-of-silent-ruin-quest-design.pdf','The Artifact of Silent Ruin')">See sample</button></div></article>
           <article class="card"><div class="card-visual" aria-hidden="true"></div><div class="card-body"><div class="tag">Tone Bible / Style Architecture</div><h3>Psychopunk Tone Bible</h3><p>Tone-control sample showing voice, motifs, imagery, rhythm, and style rules for a consistent creative direction.</p><button class="sample-link" type="button" onclick="openSample('psychopunk-tone-bible.pdf','Psychopunk Tone Bible')">See sample</button></div></article>
           <article class="card"><div class="card-visual" aria-hidden="true"></div><div class="card-body"><div class="tag">Narrative Prose / Atmosphere</div><h3>PROTOTEUS: The Waking Cycle</h3><p>Atmospheric prose sample showing scene rhythm, sensory detail, character perspective, and cinematic mood.</p><button class="sample-link" type="button" onclick="openSample('prototeus-waking-cycle-sample.pdf','PROTOTEUS: The Waking Cycle')">See sample</button></div></article>
-          <article class="card"><div class="card-visual" aria-hidden="true"></div><div class="card-body"><div class="tag">Visual Design / Keyframes / Music Direction</div><h3>Atmosphere, Keyframes & Sound Notes</h3><p>Support area for moodboards, keyframe direction, visual references, and sound atmosphere notes when they help define the world.</p><a class="sample-link" href="#contact">Ask about visual / music support</a></div></article>
+          <article class="card"><div class="card-visual" aria-hidden="true"></div><div class="card-body"><div class="tag">Visual Design / Keyframes / Music Direction</div><h3>Atmosphere, Keyframes & Sound Notes</h3><p>Support area for moodboards, keyframe direction, visual references, and sound atmosphere notes when they help define the world.</p><a class="sample-link" href="#contact" data-service="Visual / music support question">Ask about visual / music support</a></div></article>
         </div>
 
         <article class="card services-cta">
           <p>Do not see your exact project type here? Send a short message. I can review the idea, ask the right clarifying questions, and suggest whether lore, quest, tone, pitch, visual, or sound-direction support makes sense.</p>
-          <a class="button" href="#contact">Send me a message</a>
+          <a class="button" href="#contact" data-service="General question">Send me a message</a>
         </article>
       </div>
     </section>
@@ -613,12 +614,12 @@
         <p class="section-intro">These service packs are sample starting points, not rigid limits. After a short review, the scope can be adjusted around your project’s stage, existing materials, budget, and the kind of deliverable that would help most.</p>
 
         <div class="services-grid">
-          <article class="card service"><div class="tag">Starting Point</div><h3>Project Review + Lore Cleanup</h3><p>A focused first step for creators who need clarity before committing to a larger documentation package.</p><ul><li>Review of existing notes and materials</li><li>Core world pillars and rule cleanup</li><li>Faction, conflict, or continuity gaps</li><li>Priority fixes and recommended next steps</li></ul><a class="sample-link" href="#contact">Ask about this option</a></article>
-          <article class="card service"><div class="tag">Core Support</div><h3>World + Quest Structure</h3><p>For story-driven games, RPGs, visual novels, or fictional IPs that need setting logic connected to player-facing goals and choices.</p><ul><li>World structure and internal rules</li><li>Faction pressure and conflict map</li><li>Quest hooks, objectives, and stakes</li><li>Branching outcomes and player-facing logic</li><li>Optional visual reference notes</li></ul><a class="sample-link" href="#contact">Ask about this option</a></article>
-          <article class="card service"><div class="tag">Expanded Package</div><h3>Story Bible + Pitch Materials</h3><p>For creators preparing clearer documentation for collaborators, clients, teams, funding, outreach, or internal development.</p><ul><li>Story bible / lore documentation</li><li>Tone and world identity guide</li><li>Visual reference or keyframe direction</li><li>Optional music/sound atmosphere notes</li><li>Pitch-ready project summary</li></ul><a class="sample-link" href="#contact">Ask about this option</a></article>
+          <article class="card service"><div class="tag">Starting Point</div><h3>Project Review + Lore Cleanup</h3><p>A focused first step for creators who need clarity before committing to a larger documentation package.</p><ul><li>Review of existing notes and materials</li><li>Core world pillars and rule cleanup</li><li>Faction, conflict, or continuity gaps</li><li>Priority fixes and recommended next steps</li></ul><a class="sample-link" href="#contact" data-service="Question about services">Ask about this option</a></article>
+          <article class="card service"><div class="tag">Core Support</div><h3>World + Quest Structure</h3><p>For story-driven games, RPGs, visual novels, or fictional IPs that need setting logic connected to player-facing goals and choices.</p><ul><li>World structure and internal rules</li><li>Faction pressure and conflict map</li><li>Quest hooks, objectives, and stakes</li><li>Branching outcomes and player-facing logic</li><li>Optional visual reference notes</li></ul><a class="sample-link" href="#contact" data-service="Question about services">Ask about this option</a></article>
+          <article class="card service"><div class="tag">Expanded Package</div><h3>Story Bible + Pitch Materials</h3><p>For creators preparing clearer documentation for collaborators, clients, teams, funding, outreach, or internal development.</p><ul><li>Story bible / lore documentation</li><li>Tone and world identity guide</li><li>Visual reference or keyframe direction</li><li>Optional music/sound atmosphere notes</li><li>Pitch-ready project summary</li></ul><a class="sample-link" href="#contact" data-service="Question about services">Ask about this option</a></article>
         </div>
 
-        <article class="card services-cta"><p>Not sure which option fits? Send a short message with what already exists, what feels unclear, and what kind of result you need. The final scope can be shaped around your actual project.</p><a class="button" href="#contact">Request a free review</a></article>
+        <article class="card services-cta"><p>Not sure which option fits? Send a short message with what already exists, what feels unclear, and what kind of result you need. The final scope can be shaped around your actual project.</p><a class="button" href="#contact" data-service="Free project review">Request a free review</a></article>
 
         <div class="process-grid">
           <div class="step"><strong>1. Review</strong><span>We identify what already works, what is unclear, and what blocks production or presentation.</span></div>
@@ -638,7 +639,7 @@
             <li><strong>M.A. in Linguistics & Translation</strong></li>
             <li><strong>B.A. in English & Writing Composition</strong></li>
             <li><strong>10+ years</strong> building fiction, lore systems, and worldbuilding frameworks</li>
-            <li><strong>Game narrative analysis:</strong> player motivation, objective clarity, progression logic, faction pressure, and story–gameplay alignment</li>
+            <li><strong>Interactive narrative analysis:</strong> player motivation, objective clarity, progression flow, faction pressure, and story–gameplay alignment</li>
             <li><strong>Language and tone background:</strong> English/Russian bilingual, Spanish study, translation training, naming, voice, and cross-cultural story awareness</li>
           </ul>
         </aside>
@@ -726,13 +727,31 @@
       try { return document.querySelector(hash); } catch (error) { return null; }
     }
 
-    function scrollToSection(hash, shouldCleanUrl = true) {
+    function applyServiceIntent(serviceValue) {
+      if (!serviceValue) return;
+      const service = document.getElementById('service');
+      const message = document.getElementById('message');
+      if (!service) return;
+
+      const matchingOption = Array.from(service.options).find((option) => option.value === serviceValue || option.textContent === serviceValue);
+      if (matchingOption) {
+        service.value = matchingOption.value;
+        updateMessagePlaceholder();
+      }
+
+      if (message) {
+        setTimeout(() => message.focus({ preventScroll: true }), 450);
+      }
+    }
+
+    function scrollToSection(hash, shouldCleanUrl = true, serviceValue = '') {
       const target = getTarget(hash || '#top');
       if (!target) return;
       updateScrollOffset();
       const top = Math.max(target.getBoundingClientRect().top + window.scrollY - getHeaderOffset(), 0);
       window.scrollTo({ top, behavior: 'smooth' });
       if (shouldCleanUrl) cleanUrl();
+      if (hash === '#contact' && serviceValue) applyServiceIntent(serviceValue);
     }
 
     document.querySelectorAll('a[href^="#"]').forEach((link) => {
@@ -740,7 +759,7 @@
         const hash = link.getAttribute('href');
         if (!getTarget(hash)) return;
         event.preventDefault();
-        scrollToSection(hash, true);
+        scrollToSection(hash, true, link.dataset.service || '');
       });
     });
 
