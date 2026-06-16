@@ -192,6 +192,16 @@
       margin: 15px auto 0;
     }
 
+    .scope-note {
+      color: var(--soft);
+      font-size: 14px;
+      line-height: 1.5;
+      max-width: 790px;
+      margin: 13px auto 0;
+    }
+
+    .scope-note strong { color: var(--gold); }
+
     .buttons { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 24px; }
     .button {
       display: inline-flex;
@@ -234,24 +244,32 @@
     .mini-card strong { display: block; color: var(--text); margin-bottom: 5px; font-size: clamp(16px, .25vw + 15px, 17px); }
 
     .hero-review-note {
-      margin-top: 24px;
-      width: min(720px, 100%);
-      padding: clamp(18px, 1.8vw, 22px);
-      border: 1px solid rgba(195,169,106,.28);
+      margin: 24px auto 0;
+      width: min(900px, 100%);
+      padding: clamp(20px, 2vw, 26px) clamp(22px, 3vw, 34px);
+      border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: rgba(195,169,106,.045);
+      background: linear-gradient(180deg, var(--panel2), var(--panel));
       color: #ded8cf;
-      box-shadow: 0 14px 38px rgba(0,0,0,.20);
+      box-shadow: 0 16px 48px rgba(0,0,0,.26);
+      text-align: center;
     }
 
-    .hero-review-note strong {
+    .note-label {
       display: block;
-      color: var(--text);
-      font-size: clamp(18px, .45vw + 16px, 20px);
-      margin-bottom: 5px;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 7px;
     }
 
-    .hero-review-note p { margin-bottom: 0; font-size: clamp(15.5px, .25vw + 15px, 16.5px); }
+    .hero-review-note p {
+      margin: 0 auto;
+      max-width: 760px;
+      font-size: clamp(15.5px, .25vw + 15px, 16.5px);
+    }
 
     .section-intro { max-width: 850px; color: var(--muted); font-size: clamp(17px, .35vw + 16px, 18px); margin-bottom: 36px; }
 
@@ -566,7 +584,8 @@
           <div class="eyebrow">For indie developers, creative teams, and story-driven IP projects</div>
           <h1>Worldbuilding systems for story-driven projects.</h1>
           <p class="lead">The Revealed Cosmos helps creators turn early world ideas — lore notes, characters, factions, quests, visual references, and tone direction — into clear worldbuilding systems, story bibles, quest frameworks, and pitch-ready development materials.</p>
-          <p class="support-note">Services can include lore documentation, quest and faction design, tone guides, visual direction, draft concept-art/keyframe references, and music/sound atmosphere notes when they help define the world.</p>
+          <p class="support-note">Services can include* lore documentation, quest and faction design, tone guides, visual direction, draft concept-art/keyframe references, and music/sound atmosphere notes when they help define the world.</p>
+          <p class="scope-note"><strong>*</strong> Additional scope can be discussed after a project review or short call. If your project needs something outside the examples below, send a message and we can define the right fit.</p>
           <div class="pain-points" aria-label="Common problems solved">
             <div class="mini-card"><strong>Lore systems</strong><span>Lore, rules, factions, and history become organized.</span></div>
             <div class="mini-card"><strong>Quest frameworks</strong><span>Hooks, choices, outcomes, and player logic become clearer.</span></div>
@@ -574,8 +593,8 @@
             <div class="mini-card"><strong>Pitch materials</strong><span>Samples, summaries, and proof become easier for teams to read.</span></div>
           </div>
           <div class="hero-review-note">
-            <strong>Not sure how I can help yet?</strong>
-            <p>Start with a free review of your project. Send a short note, describe what you are building, and I will suggest the clearest next step if the project is a fit.</p>
+            <span class="note-label">Free Project Review</span>
+            <p>Send a short note about what you are building. I will review the current materials, identify what feels unclear, and suggest a focused next step if there is a good fit.</p>
           </div>
           <div class="buttons">
             <a class="button" href="#contact" data-service="Free project review">Request a free review of your project</a>
