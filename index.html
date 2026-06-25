@@ -983,13 +983,23 @@
       }
     }
 
-    function scrollToSection(hash, shouldCleanUrl = true, helpValue = '') {
+    function updateHash(hash) {
+      if (!hash || hash === '#top' || hash === '#') {
+        cleanUrl();
+        return;
+      }
+      if (history.pushState && window.location.hash !== hash) {
+        history.pushState(null, '', hash);
+      }
+    }
+
+    function scrollToSection(hash, shouldUpdateHash = true, helpValue = '') {
       const target = getTarget(hash || '#top');
       if (!target) return;
       updateScrollOffset();
       const top = Math.max(target.getBoundingClientRect().top + window.scrollY - getHeaderOffset(), 0);
       window.scrollTo({ top, behavior: 'smooth' });
-      if (shouldCleanUrl) cleanUrl();
+      if (shouldUpdateHash) updateHash(hash);
       if (hash === '#contact' && helpValue) applyHelpIntent(helpValue);
     }
 
@@ -1107,15 +1117,14 @@
     const inquiryForm = document.getElementById('inquiryForm');
     if (inquiryForm) inquiryForm.addEventListener('submit', sendInquiry);
 
-    function forceHeroTopOnInitialLoad() {
+    function scrollToInitialHash() {
       const initialHash = window.location.hash;
-      if (!initialHash || initialHash === '#portfolio') {
-        if (initialHash === '#portfolio') cleanUrl();
+      if (!initialHash) {
         window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
         setTimeout(() => window.scrollTo({ top: 0, left: 0, behavior: 'auto' }), 80);
       } else {
         setTimeout(() => {
-          scrollToSection(initialHash, true);
+          scrollToSection(initialHash, false);
         }, 120);
       }
     }
@@ -1147,7 +1156,12 @@
     window.openSample = openSample;
     window.closeSample = closeSample;
     document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeSample(); });
-    window.addEventListener('pageshow', forceHeroTopOnInitialLoad);
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', scrollToInitialHash);
+    } else {
+      scrollToInitialHash();
+    }
+    window.addEventListener('pageshow', (event) => { if (event.persisted) scrollToInitialHash(); });
     updateScrollOffset();
     updateBackToTop();
     updateMessagePlaceholder();
