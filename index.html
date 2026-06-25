@@ -329,35 +329,68 @@
     .demonstrates strong { color: var(--gold); }
 
     .transformation-snapshot {
-      margin: 28px 0 34px;
-      padding: clamp(24px, 2.4vw, 32px);
+      margin: 30px 0 36px;
+      padding: clamp(28px, 2.6vw, 38px);
       height: auto;
       overflow: visible;
     }
 
     .transformation-snapshot h3 {
-      font-size: clamp(24px, 1.4vw + 21px, 32px);
-      max-width: 780px;
+      font-size: clamp(22px, 1.1vw + 20px, 29px);
+      line-height: 1.12;
+      max-width: 760px;
+      margin-bottom: 8px;
+    }
+
+    .transformation-snapshot .small-note {
+      margin: 0 0 24px;
+      max-width: 720px;
+      line-height: 1.6;
+    }
+
+    .transformation-snapshot .process-grid {
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .transformation-snapshot .step {
+      padding: 20px;
+      line-height: 1.58;
+    }
+
+    .transformation-snapshot .step strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--text);
     }
 
     .transformation-proof {
-      margin-top: 22px;
+      margin-top: 24px;
       color: #d7d0c7;
     }
 
     .transformation-proof strong {
       color: var(--gold);
       display: block;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .transformation-proof ul {
       margin: 0;
-      padding-left: 21px;
+      padding-left: 20px;
+      columns: 2;
+      column-gap: 34px;
+      max-width: 680px;
     }
 
     .transformation-proof li {
-      margin: 6px 0;
+      margin: 7px 0;
+      break-inside: avoid;
+    }
+
+    .transformation-snapshot .buttons {
+      margin-top: 24px;
+      gap: 12px;
     }
 
     .sample-link {
@@ -595,6 +628,7 @@
       .support-note { font-size: 15.5px; }
       .micro-line { font-size: 12px; }
       .portfolio-grid, .services-grid, .pain-points, .process-grid { grid-template-columns: 1fr; }
+      .transformation-proof ul { columns: 1; }
       section { padding: 54px 0; }
       .button { width: 100%; }
       .logo { font-size: 18px; }
@@ -697,7 +731,7 @@
     <section id="portfolio">
       <div class="wrap">
         <div class="kicker">Selected Portfolio Samples</div>
-        <h2>Proof samples for structure, world logic, tone control, and pitch-ready presentation.</h2>
+        <h2>Portfolio examples for narrative structure, worldbuilding, and pitch-ready documentation.</h2>
         <p class="section-intro">These samples show how scattered creative material can become readable development support: world rules, faction pressure, quest logic, tone systems, visual direction, and presentation-ready summaries.</p>
         <p class="section-intro">Some samples are self-directed portfolio demonstrations rather than client case studies. They are included to show how I think, structure, document, and present story-world material for practical development use.</p>
         <p class="small-note">Selected samples may be shortened or redacted for portfolio use. Full private world systems, raw prompts, and internal project structures are not published publicly.</p>
@@ -705,7 +739,7 @@
         <article class="card transformation-snapshot">
           <div class="kicker">Transformation Snapshot</div>
           <h3>From scattered quest ideas to a usable quest framework.</h3>
-          <p class="small-note">Self-directed portfolio demonstration based on an existing sample — not a live client case study.</p>
+          <p class="small-note">Portfolio demonstration using an original sample. Not a client project.</p>
 
           <div class="process-grid">
             <div class="step">
@@ -734,8 +768,8 @@
           </div>
 
           <div class="buttons">
-            <button class="button" type="button" onclick="openSample('artifact-of-silent-ruin-quest-design.pdf','The Artifact of Silent Ruin')">View the Full Sample</button>
-            <a class="button secondary" href="#contact" data-help="Project clarity audit">Ask About a Project Clarity Audit</a>
+            <button class="button" type="button" onclick="openSample('artifact-of-silent-ruin-quest-design.pdf','The Artifact of Silent Ruin')">View Sample</button>
+            <a class="button secondary" href="#contact" data-help="Project clarity audit">Request Project Clarity Audit</a>
           </div>
         </article>
 
