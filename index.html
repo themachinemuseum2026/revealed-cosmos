@@ -328,6 +328,38 @@
     .demonstrates { color: var(--soft); font-size: 14px; margin-bottom: 20px; }
     .demonstrates strong { color: var(--gold); }
 
+    .transformation-snapshot {
+      margin: 28px 0 34px;
+      padding: clamp(24px, 2.4vw, 32px);
+      height: auto;
+      overflow: visible;
+    }
+
+    .transformation-snapshot h3 {
+      font-size: clamp(24px, 1.4vw + 21px, 32px);
+      max-width: 780px;
+    }
+
+    .transformation-proof {
+      margin-top: 22px;
+      color: #d7d0c7;
+    }
+
+    .transformation-proof strong {
+      color: var(--gold);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .transformation-proof ul {
+      margin: 0;
+      padding-left: 21px;
+    }
+
+    .transformation-proof li {
+      margin: 6px 0;
+    }
+
     .sample-link {
       display: inline-block;
       padding: 0;
@@ -609,7 +641,7 @@
           <div class="eyebrow">Narrative Systems / Worldbuilding / Development Documentation</div>
           <h1>Narrative systems and development documentation for story-driven games and creative IP.</h1>
           <p class="lead">The Revealed Cosmos Studio helps creators and teams turn scattered world ideas — lore notes, characters, factions, quests, visual references, gameplay goals, and tone direction — into clear materials a team can actually use.</p>
-          <p class="support-note">For projects moving toward pre-production, pitch preparation, collaboration, vertical slice development, or internal handoff, I help shape messy creative material into usable story bibles, worldbuilding systems, quest frameworks, faction structures, tone guides, visual direction notes, and pitch-ready summaries.</p>
+          <p class="support-note">For projects moving toward pre-production, pitch preparation, collaboration, vertical slice development, or internal handoff, I help shape raw or loosely organized creative material into usable story bibles, worldbuilding systems, quest frameworks, faction structures, tone guides, visual direction notes, and pitch-ready summaries.</p>
           <p class="micro-line">Built for projects with strong ideas, unclear structure, and a real development need.</p>
           <div class="pain-points" aria-label="Common problems solved">
             <div class="mini-card"><strong>World logic</strong><span>Rules, factions, history, metaphysics, and setting pressure become easier to understand and use.</span></div>
@@ -667,8 +699,45 @@
         <div class="kicker">Selected Portfolio Samples</div>
         <h2>Proof samples for structure, world logic, tone control, and pitch-ready presentation.</h2>
         <p class="section-intro">These samples show how scattered creative material can become readable development support: world rules, faction pressure, quest logic, tone systems, visual direction, and presentation-ready summaries.</p>
-        <p class="section-intro">Some samples are self-directed portfolio pieces. They are designed to show the kind of thinking and documentation I can bring to story-driven games, fictional IP, cinematic projects, and worldbuilding-heavy teams.</p>
+        <p class="section-intro">Some samples are self-directed portfolio demonstrations rather than client case studies. They are included to show how I think, structure, document, and present story-world material for practical development use.</p>
         <p class="small-note">Selected samples may be shortened or redacted for portfolio use. Full private world systems, raw prompts, and internal project structures are not published publicly.</p>
+
+        <article class="card transformation-snapshot">
+          <div class="kicker">Transformation Snapshot</div>
+          <h3>From scattered quest ideas to a usable quest framework.</h3>
+          <p class="small-note">Self-directed portfolio demonstration based on an existing sample — not a live client case study.</p>
+
+          <div class="process-grid">
+            <div class="step">
+              <strong>Starting Material</strong>
+              A quest concept with investigation beats, faction pressure, possible outcomes, and strong story potential — but without a clean structure for player-facing flow, escalation, and consequence.
+            </div>
+            <div class="step">
+              <strong>Structural Pass</strong>
+              The material is organized around a clearer quest objective, investigation sequence, faction involvement, branching logic, and choice consequences.
+            </div>
+            <div class="step">
+              <strong>Development-Ready Output</strong>
+              The result becomes a clearer quest framework: easier to read, easier to revise, easier to discuss with collaborators, and easier to use for production, iteration, or pitch support.
+            </div>
+          </div>
+
+          <div class="transformation-proof">
+            <strong>What this demonstrates:</strong>
+            <ul>
+              <li>Objective clarity</li>
+              <li>Branching structure</li>
+              <li>Faction pressure</li>
+              <li>Consequence logic</li>
+              <li>Development-ready presentation</li>
+            </ul>
+          </div>
+
+          <div class="buttons">
+            <button class="button" type="button" onclick="openSample('artifact-of-silent-ruin-quest-design.pdf','The Artifact of Silent Ruin')">View the Full Sample</button>
+            <a class="button secondary" href="#contact" data-help="Project clarity audit">Ask About a Project Clarity Audit</a>
+          </div>
+        </article>
 
         <div class="portfolio-grid">
           <article class="card"><div class="card-visual" role="img" aria-label="Portfolio sample for ATLAS 3I / Second Earth"></div><div class="card-body"><div class="tag">Original IP / Lore Architecture</div><h3>ATLAS 3I / Second Earth</h3><p>Sci-fi worldbuilding sample showing how setting rules, social structure, metaphysical pressure, and atmosphere can become a usable lore framework.</p><p class="demonstrates"><strong>Demonstrates:</strong> World rules, setting logic, atmosphere, lore architecture.</p><button class="sample-link" type="button" onclick="openSample('atlas3i-second-earth-sample.pdf','ATLAS 3I / Second Earth')">See Sample</button></div></article>
