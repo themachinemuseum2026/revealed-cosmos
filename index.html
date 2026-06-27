@@ -177,8 +177,8 @@
     .eyebrow, .kicker, .tag {
       color: var(--gold);
       text-transform: uppercase;
-      letter-spacing: 1.85px;
-      font-size: clamp(12px, .26vw + 11px, 14px);
+      letter-spacing: 1.25px;
+      font-size: clamp(13px, .18vw + 12px, 14.5px);
       font-weight: 900;
     }
 
@@ -186,21 +186,23 @@
     .tag { margin-bottom: 11px; }
 
     h1, h2, h3 { margin-top: 0; line-height: 1.1; letter-spacing: -.035em; }
-    h1 { font-size: clamp(36px, 4.15vw, 58px); margin: 0 auto 24px; max-width: 1060px; }
-    h2 { font-size: clamp(28px, 3.05vw, 42px); margin-bottom: 18px; max-width: 940px; }
-    h3 { font-size: clamp(22px, .65vw + 19px, 25px); margin-bottom: 12px; }
-    p { margin-top: 0; }
+    h1 { font-size: clamp(40px, 6vw, 72px); line-height: 1.02; margin: 0 auto 24px; max-width: 1060px; }
+    h2 { font-size: clamp(28px, 4vw, 44px); line-height: 1.1; margin-bottom: 18px; max-width: 940px; }
+    h3 { font-size: clamp(20px, .55vw + 19px, 24px); line-height: 1.2; margin-bottom: 12px; }
+    p { margin-top: 0; margin-bottom: 1.05rem; }
 
     .lead {
       color: #ded8cf;
-      font-size: clamp(16.5px, .38vw + 15.5px, 19px);
+      font-size: clamp(17px, .38vw + 15.8px, 19px);
+      line-height: 1.68;
       margin: 0 auto;
       max-width: 860px;
     }
 
     .support-note {
       color: var(--muted);
-      font-size: clamp(15.5px, .3vw + 14.5px, 17px);
+      font-size: clamp(16px, .26vw + 15px, 17.5px);
+      line-height: 1.65;
       max-width: 860px;
       margin: 16px auto 0;
     }
@@ -219,18 +221,18 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 46px;
-      padding: 12px 20px;
+      min-height: 48px;
+      padding: 13px 22px;
       border-radius: 999px;
       border: 1px solid var(--gold);
       background: rgba(195,169,106,.10);
       color: var(--text);
-      font-size: clamp(14px, .22vw + 13px, 15px);
+      font-size: clamp(14.5px, .18vw + 13.5px, 16px);
       font-weight: 900;
       letter-spacing: .35px;
       text-transform: uppercase;
       cursor: pointer;
-      line-height: 1.18;
+      line-height: 1.25;
       text-align: center;
     }
 
@@ -330,7 +332,7 @@
       filter: saturate(.86) contrast(1.05) brightness(.82);
     }
 
-    .card-body { padding: clamp(22px, 2vw, 25px); }
+    .card-body { padding: clamp(24px, 2.2vw, 28px); }
     .portfolio-grid h3 { text-transform: uppercase; letter-spacing: -.015em; font-size: clamp(21px, .48vw + 19px, 24px); }
     .card p { color: #d7d0c7; margin-bottom: 16px; font-size: clamp(16px, .18vw + 15px, 17px); line-height: 1.65; }
     .demonstrates { color: var(--soft); font-size: 15px; margin-bottom: 20px; line-height: 1.6; }
@@ -432,11 +434,11 @@
     .sample-link:hover { color: #a9e7ff; }
 
     .services-grid { margin-top: 28px; align-items: stretch; }
-    .service, .fit-card, .contract-card { padding: clamp(24px, 2.2vw, 29px); position: relative; }
+    .service, .fit-card, .contract-card { padding: clamp(26px, 2.4vw, 32px); position: relative; }
     .service h3, .fit-card h3, .contract-card h3 { font-size: clamp(23px, .58vw + 20px, 25px); }
     .service p, .fit-card p, .contract-card p { color: #ded8cf; font-size: clamp(16px, .18vw + 15px, 17px); line-height: 1.65; }
-    .service ul, .fit-card ul, .contract-card ul { color: #d7d0c7; padding-left: 21px; margin: 0 0 24px; }
-    .service li, .fit-card li, .contract-card li { margin: 10px 0; font-size: clamp(15.5px, .16vw + 14.5px, 16.5px); line-height: 1.6; }
+    .service ul, .fit-card ul, .contract-card ul { color: #d7d0c7; padding-left: 21px; margin: 0 0 26px; }
+    .service li, .fit-card li, .contract-card li { margin: 12px 0; font-size: clamp(15.8px, .16vw + 14.8px, 16.75px); line-height: 1.62; }
     .service .service-boundary { color: var(--soft); font-size: 15px; margin: -8px 0 18px; line-height: 1.6; }
 
     .process-grid {
@@ -472,15 +474,15 @@
       background: linear-gradient(180deg, var(--panel2), var(--panel));
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 29px;
+      padding: clamp(29px, 2.4vw, 34px);
     }
     .bio-card img { width: 96px; height: 96px; object-fit: cover; border-radius: 999px; border: 1px solid var(--line); margin-bottom: 18px; }
     .bio-card h3 { font-size: 31px; margin-bottom: 10px; }
-    .bio-card p { color: var(--muted); }
-    .bio-list { margin: 18px 0 0; padding: 0; list-style: none; display: grid; gap: 9px; }
-    .bio-list li { color: #d7d0c7; font-size: 15.5px; border-top: 1px solid rgba(255,255,255,.07); padding-top: 9px; line-height: 1.55; }
+    .bio-card p { color: var(--muted); font-size: 16px; line-height: 1.6; }
+    .bio-list { margin: 20px 0 0; padding: 0; list-style: none; display: grid; gap: 11px; }
+    .bio-list li { color: #d7d0c7; font-size: 16px; border-top: 1px solid rgba(255,255,255,.07); padding-top: 11px; line-height: 1.58; }
     .bio-list strong { color: var(--text); }
-    .about-copy p { color: #d7d0c7; font-size: clamp(16px, .3vw + 15px, 18px); max-width: 900px; }
+    .about-copy p { color: #d7d0c7; font-size: clamp(16.5px, .28vw + 15.5px, 18px); line-height: 1.72; max-width: 900px; margin-bottom: 1.15rem; }
 
     .contact-grid {
       display: grid;
@@ -489,18 +491,19 @@
       align-items: start;
     }
 
-    .contact-panel { background: linear-gradient(180deg, var(--panel2), var(--panel)); border: 1px solid var(--line); border-radius: var(--radius); padding: 29px; }
-    form { display: grid; gap: 14px; }
-    label { display: block; font-size: 14px; color: var(--muted); font-weight: 800; margin-bottom: 7px; }
+    .contact-panel { background: linear-gradient(180deg, var(--panel2), var(--panel)); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(29px, 2.4vw, 34px); }
+    form { display: grid; gap: 17px; }
+    label { display: block; font-size: 15px; color: var(--muted); font-weight: 800; margin-bottom: 8px; line-height: 1.45; }
     input, select, textarea {
       width: 100%;
       border: 1px solid rgba(255,255,255,.16);
       border-radius: 12px;
       background: #080a0f;
       color: var(--text);
-      padding: 14px 15px;
+      padding: 15px 16px;
       font: inherit;
       font-size: 16px;
+      min-height: 48px;
     }
     textarea { min-height: 145px; resize: vertical; }
     .honeypot { display: none !important; }
@@ -904,20 +907,18 @@
           <p>Narrative Systems & Worldbuilding Support</p>
           <ul class="bio-list">
             <li><strong>M.A. in Linguistics & Translation</strong></li>
-            <li><strong>20+ years with games and story-worlds</strong></li>
-            <li><strong>Reader, creative writer, and language-focused worldbuilder</strong></li>
+            <li><strong>Games, fiction, language, and story-world structure</strong></li>
+            <li><strong>Creative writing, tone, and narrative clarity</strong></li>
             <li><strong>Documentation, pitch materials, and visual-narrative direction</strong></li>
           </ul>
         </aside>
         <div class="about-copy">
           <div class="kicker">About</div>
-          <h2>I help story-world material become clearer, stronger, and easier to use.</h2>
-          <p>I’ve spent 20+ years with games and interactive worlds — not just as entertainment, but as systems: how quests create pressure, how factions shape choices, how tone makes a place feel alive, and how world details become meaningful to a player.</p>
-          <p>That background sits alongside a lifelong habit of reading, years of creative writing practice, university coursework in writing and fiction, and an M.A. in Linguistics & Translation. I tend to look at projects through several lenses at once: player experience, story logic, language, structure, tone, atmosphere, and what a collaborator would need to understand next.</p>
-          <p>I work with story-driven projects that already have something real taking shape — lore notes, characters, factions, quest ideas, visuals, tone direction, pitch material, or rough documentation — but need a clearer way to organize, develop, and use it.</p>
-          <p>My role is not to overwrite the heart of the project. My role is to help clarify what is already there: what feels strongest, what is still muddy, what needs structure, and what would make the next version easier to share, revise, pitch, or build from.</p>
-          <p>I’m especially drawn to projects with atmosphere, depth, and internal logic — worlds that want to feel distinct, emotionally readable, and coherent rather than random or overloaded. I like finding the shape inside the material: how lore connects to stakes, how factions create pressure, how tone supports identity, and how scattered pieces can start working together.</p>
-          <p>Depending on the project, that support can take the form of clarity reviews, worldbuilding structure, story bibles, faction or quest frameworks, tone guides, pitch materials, visual-narrative direction, or other focused narrative documentation.</p>
+          <h2>Story-world clarity shaped by language, structure, and genre fluency.</h2>
+          <p>For story-driven projects, strong ideas are usually already present: lore notes, characters, factions, quest ideas, visual references, tone direction, pitch material, or rough documentation. The challenge is making those pieces easier to organize, explain, revise, and use.</p>
+          <p>This work is shaped by a long-running foundation in games, fiction, reading, creative writing, linguistics, and education-style clarity. That background supports sharper questions about player experience, story logic, tone, atmosphere, stakes, faction pressure, and what collaborators need to understand next.</p>
+          <p>The goal is not to overwrite the heart of a project. The goal is to clarify what is already there: what feels strongest, what is still muddy, what needs structure, and what would make the next version easier to share, pitch, or build from.</p>
+          <p>Support can take the form of clarity reviews, worldbuilding structure, story bibles, faction or quest frameworks, tone guides, pitch materials, visual-narrative direction, or focused narrative documentation — depending on what the project actually needs next.</p>
         </div>
       </div>
     </section>
