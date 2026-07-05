@@ -160,7 +160,6 @@
     }
     nav a:hover::after { opacity: .72; transform: scaleX(1); }
     nav a:hover { color: var(--cyan); }
-
     .nav-cta {
       color: var(--text);
       border: 1px solid var(--gold-line);
@@ -866,20 +865,15 @@
       nav {
         width: 100%;
         margin-top: 0;
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        gap: 10px;
-        overflow-x: auto;
-        padding: 0 0 5px;
-        scrollbar-width: none;
-        -webkit-overflow-scrolling: touch;
-      }
-      nav::-webkit-scrollbar {
-        display: none;
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        justify-content: center;
+        align-items: center;
+        gap: 9px 13px;
+        overflow: visible;
+        padding: 0;
       }
       nav a {
-        flex: 0 0 auto;
         font-size: 12px;
         letter-spacing: .58px;
         white-space: nowrap;
@@ -887,10 +881,30 @@
       nav a::after {
         bottom: -5px;
       }
+      nav a.is-active {
+        color: #f5df9b;
+      }
+      nav a.is-active::after {
+        opacity: .9;
+        transform: scaleX(1);
+        background: linear-gradient(90deg, transparent, var(--gold-strong), transparent);
+      }
       .nav-cta {
+        grid-column: 1 / -1;
+        justify-self: center;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: min(100%, 320px);
         padding: 7px 10px;
         border: 1px solid var(--gold-line);
         background: rgba(195,169,106,.08);
+      }
+      #services,
+      #portfolio,
+      #about,
+      #contact {
+        scroll-margin-top: 136px;
       }
       .hero {
         padding: 36px 0 46px;
@@ -1032,13 +1046,20 @@
         letter-spacing: .95px;
       }
       nav {
-        gap: 9px;
+        gap: 8px 10px;
       }
       nav a {
         font-size: 11.75px;
       }
       .nav-cta {
-        padding: 6px 9px;
+        width: 100%;
+        padding: 8px 10px;
+      }
+      #services,
+      #portfolio,
+      #about,
+      #contact {
+        scroll-margin-top: 132px;
       }
       .hero {
         padding: 30px 0 40px;
@@ -1156,6 +1177,10 @@
       }
       nav a {
         font-size: 11.25px;
+      }
+      .nav-cta {
+        font-size: 11.75px;
+        letter-spacing: .5px;
       }
       h1 {
         font-size: clamp(32px, 8.8vw, 38px);
@@ -1720,10 +1745,60 @@
     window.openSample = openSample;
     window.closeSample = closeSample;
     document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeSample(); });
+
+    function initActiveSectionNav() {
+      const sectionIds = ['services', 'portfolio', 'about', 'contact'];
+      const navLinks = sectionIds
+        .map((id) => document.querySelector(`nav a[href="#${id}"]`))
+        .filter(Boolean);
+      const sections = sectionIds
+        .map((id) => document.getElementById(id))
+        .filter(Boolean);
+
+      if (!navLinks.length || !sections.length) return;
+
+      function setActiveNav(id) {
+        navLinks.forEach((link) => {
+          link.classList.toggle('is-active', link.getAttribute('href') === `#${id}`);
+        });
+      }
+
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          const visible = entries
+            .filter((entry) => entry.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+          if (visible && visible.target.id) setActiveNav(visible.target.id);
+        }, {
+          root: null,
+          rootMargin: '-34% 0px -52% 0px',
+          threshold: [0.05, 0.18, 0.32]
+        });
+
+        sections.forEach((section) => observer.observe(section));
+      } else {
+        function updateActiveFromScroll() {
+          const offset = getScrollOffset() + 24;
+          const current = sections.reduce((active, section) => {
+            return window.scrollY + offset >= section.offsetTop ? section : active;
+          }, sections[0]);
+          setActiveNav(current.id);
+        }
+
+        window.addEventListener('scroll', updateActiveFromScroll, { passive: true });
+        updateActiveFromScroll();
+      }
+    }
+
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', scrollToInitialHash);
+      document.addEventListener('DOMContentLoaded', () => {
+        scrollToInitialHash();
+        initActiveSectionNav();
+      });
     } else {
       scrollToInitialHash();
+      initActiveSectionNav();
     }
     window.addEventListener('pageshow', (event) => { if (event.persisted) scrollToInitialHash(); });
     updateScrollOffset();
