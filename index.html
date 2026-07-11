@@ -108,11 +108,13 @@
 
     .brand {
       display: grid;
+      align-content: center;
       gap: 4px;
       color: var(--text);
       cursor: pointer;
       flex: 0 1 auto;
       min-width: 0;
+      min-height: 44px;
     }
 
     .brand:hover .logo,
@@ -137,7 +139,12 @@
 
     nav { display: flex; gap: clamp(13px, 1.45vw, 24px); align-items: center; flex-wrap: wrap; justify-content: flex-end; }
     nav a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       position: relative;
+      min-width: 44px;
+      min-height: 44px;
       color: var(--muted);
       font-size: clamp(12.5px, .22vw + 11px, 14px);
       font-weight: 900;
@@ -177,6 +184,8 @@
       border-bottom: 1px solid rgba(255,255,255,.075);
       scroll-margin-top: var(--scroll-offset);
     }
+
+    #portfolio { padding-top: calc(var(--section-pad) - 30px); }
 
     .hero {
       padding: clamp(50px, 6vw, 76px) 0 clamp(58px, 5vw, 78px);
@@ -396,6 +405,13 @@
       box-shadow: 0 18px 48px rgba(0,0,0,.32), 0 0 22px rgba(195,169,106,.08);
     }
 
+    .priority-proof {
+      border-color: rgba(224,199,125,.46);
+      box-shadow: 0 20px 56px rgba(0,0,0,.36), 0 0 28px rgba(195,169,106,.12);
+    }
+
+    .priority-proof .tag { color: #f0d88d; }
+
     .card-visual {
       height: clamp(138px, 12vw, 156px);
       background-image:
@@ -514,8 +530,10 @@
     }
 
     .sample-link {
-      display: inline-block;
-      padding: 2px 0 4px;
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 9px 0;
       border: 0;
       border-bottom: 1px solid rgba(118,199,232,.35);
       background: transparent;
@@ -644,6 +662,7 @@
     .form-status.error { color: #f3b4a8; }
     .form-status.success { color: #bce8c2; }
     .form-status a, .direct-email-note a { color: var(--blue); font-weight: 800; }
+    .direct-email-note a { display: inline-flex; align-items: center; min-height: 44px; }
     .direct-email-note { color: var(--muted); font-size: 16px; margin-top: 14px; }
     .direct-email-note span { display: block; margin-bottom: 6px; }
     .direct-email-note a { font-size: 17px; overflow-wrap: anywhere; }
@@ -1158,7 +1177,7 @@
       #backToTop {
         right: 10px;
         bottom: calc(10px + env(safe-area-inset-bottom));
-        min-height: 38px;
+        min-height: 44px;
         padding: 8px 11px;
         font-size: 11px;
       }
@@ -1179,8 +1198,7 @@
         font-size: 11.25px;
       }
       .nav-cta {
-        font-size: 11.75px;
-        letter-spacing: .5px;
+        display: none;
       }
       h1 {
         font-size: clamp(32px, 8.8vw, 38px);
@@ -1236,7 +1254,7 @@
           <div class="eyebrow">Narrative Systems • Worldbuilding Structure • Visual-Narrative Direction</div>
           <h1>Turn story-world material into clearer systems.</h1>
           <p class="lead">The Revealed Cosmos Studio helps story-driven games, RPG/VN projects, cinematic IP, writers, and serious creators shape lore notes, factions, quests, characters, visuals, tone direction, and pitch ideas into clearer story-world structure, documentation, and creative direction.</p>
-          <p class="support-note">Useful when a project has strong ideas, but the material is hard to organize, explain, revise, pitch, or build from.</p>
+          <p class="support-note">Useful when a project has strong ideas, but the material is hard to organize, explain, revise, pitch, or develop further.</p>
           <div class="pain-points" aria-label="Common problems solved">
             <div class="mini-card"><strong>World logic</strong><span>Rules, factions, history, pressure, and setting logic become easier to explain and use.</span></div>
             <div class="mini-card"><strong>Quest structure</strong><span>Objectives, branches, stakes, outcomes, and player-facing logic become clearer.</span></div>
@@ -1264,7 +1282,7 @@
           <div class="mini-card"><strong>Strong world idea → cleaner pitch path</strong><span>Shape the core premise, audience-facing hook, and proof material into a clearer presentation path.</span></div>
           <div class="mini-card"><strong>Faction / quest / tone chaos → usable framework</strong><span>Organize pressure, objectives, branches, stakes, voice, and consequence into a structure that is easier to follow.</span></div>
           <div class="mini-card"><strong>Visual references → story direction</strong><span>Translate moodboards, keyframes, and visual references into notes with story purpose.</span></div>
-          <div class="mini-card"><strong>Existing material → collaborator-ready support</strong><span>Prepare story bible, team reference, or collaborator-facing documents from what already exists.</span></div>
+          <div class="mini-card"><strong>Existing material → easier to share with collaborators</strong><span>Prepare story bible, team reference, or collaborator-facing documents from what already exists.</span></div>
           <div class="mini-card"><strong>Unclear structure → focused review</strong><span>Use a clarity review to identify what feels muddy and what should be defined next.</span></div>
         </div>
       </div>
@@ -1290,12 +1308,9 @@
             <h3>Not the right fit</h3>
             <ul>
               <li>Unpaid or exposure-only requests</li>
-              <li>“Write my whole universe from nothing” requests</li>
-              <li>Huge scope with no clear budget, timeline, or decision-maker</li>
-              <li>Unlimited revision expectations</li>
-              <li>Prompt-only or generic image-generation requests</li>
-              <li>Requests for a full free written audit before scope is defined</li>
-              <li>Projects with no material, no goal, and no clear next step</li>
+              <li>Open-ended scope or unlimited revision expectations</li>
+              <li>Requests for detailed written analysis before scope is agreed</li>
+              <li>Projects with no existing material, goal, or concrete next step</li>
             </ul>
           </article>
         </div>
@@ -1306,12 +1321,12 @@
       <div class="wrap">
         <div class="kicker">First Step</div>
         <h2>How the first step works.</h2>
-        <p class="section-intro">The first step is a focused conversation, not a full story bible. Share what already exists: notes, factions, quest ideas, visuals, pitch copy, prototype material, rough documentation, or a simple description of the project.</p>
+        <p class="section-intro">Start with a short description of the existing material, the current difficulty, and the next milestone or decision.</p>
         <div class="process-grid">
-          <div class="step"><strong>1. Share the current material</strong>Send notes, factions, quest ideas, visuals, pitch copy, prototype material, rough docs, or a short project description.</div>
+          <div class="step"><strong>1. Share the current material</strong>Send a short description or the most relevant notes, draft, visual reference, pitch, or prototype segment.</div>
           <div class="step"><strong>2. Identify the gap</strong>I look for the gap between what the project has now, what it is trying to become, and what feels unclear, scattered, or hard to organize.</div>
           <div class="step"><strong>3. Suggest a focused next step</strong>If there is a useful fit, I suggest a clarity review, world/quest structure pass, story bible or pitch package, visual-narrative direction note, or defined contract support.</div>
-          <div class="step"><strong>4. Keep the scope clear</strong>A project-fit review is a brief first look. Deeper written analysis or documentation belongs inside a scoped audit or package.</div>
+          <div class="step"><strong>4. Define the boundary</strong>Any deeper written analysis or documentation begins only after a contained scope is agreed.</div>
         </div>
         <article class="card services-cta">
           <p>The goal is to understand what would actually help next — before turning the project into a larger scope.</p>
@@ -1324,14 +1339,12 @@
       <div class="wrap">
         <div class="kicker">Proof Samples</div>
         <h2>Proof Samples: How story material becomes usable structure.</h2>
-        <p class="section-intro">Each sample shows how a raw creative idea can be clarified into a usable storyworld artifact: a stronger system, clearer emotional stakes, concrete visual anchors, and a more pitchable or playable structure.</p>
-        <p class="small-note">Private project material, full world systems, and internal process files stay protected.</p>
-        <p class="small-note">Visuals and AI-assisted references can support exploration, but the useful part is the direction behind them: story purpose, tone, structure, and how the material connects to the larger project.</p>
+        <p class="section-intro">Selected samples show how existing story-world material can be organized into clearer narrative structures for review, revision, planning, and presentation.</p>
 
         <article class="card transformation-snapshot">
           <div class="kicker">Transformation Snapshot</div>
           <h3>Loose Quest Concept → Usable Quest Framework</h3>
-          <p class="small-note">Portfolio demonstration using an original sample. Not a client project.</p>
+          <p class="small-note">Independent original-IP portfolio case.</p>
 
           <div class="process-grid">
             <div class="step">
@@ -1344,7 +1357,7 @@
             </div>
             <div class="step">
               <strong>Clearer Output</strong>
-              The result becomes a clearer quest framework: easier to read, easier to revise, easier to discuss with collaborators, and easier to use for production, iteration, or pitch support.
+              The result becomes a clearer quest framework: easier to read, revise, discuss with collaborators, and use for planning, iteration, or pitch support.
             </div>
           </div>
 
@@ -1367,12 +1380,12 @@
         </article>
 
         <div class="portfolio-grid">
-          <article class="card"><div class="card-visual" role="img" aria-label="Portfolio sample for ATLAS 3I / Second Earth"></div><div class="card-body"><div class="tag">Lore Architecture: World Rules, Pressure, and Setting Logic</div><h3>ATLAS 3I / Second Earth</h3><p><strong>Starting problem:</strong> broad sci-fi setting material needed clearer rules, social pressure, and atmosphere. <strong>Structural pass:</strong> organize world logic into a readable lore architecture. <strong>Output:</strong> a stronger reference for pitch or team discussion.</p><p class="demonstrates"><strong>What this proves:</strong> Setting logic, world rules, pressure, and usable lore framing.</p><button class="sample-link" type="button" onclick="openSample('atlas3i-second-earth-sample.pdf','ATLAS 3I / Second Earth')" data-cta="view-proof-samples" data-section="portfolio">See Sample</button></div></article>
-          <article class="card"><div class="card-visual" role="img" aria-label="Portfolio sample for The Siamic Peninsula"></div><div class="card-body"><div class="tag">Fantasy Worldbuilding: Factions, History, Magic Rules, and Tone</div><h3>The Siamic Peninsula</h3><p><strong>Starting problem:</strong> fantasy world material needed faction clarity, history, magic logic, and tone. <strong>Structural pass:</strong> shape the material into a lore-bible style reference. <strong>Output:</strong> a clearer guide for revision, expansion, or sharing.</p><p class="demonstrates"><strong>What this proves:</strong> Faction structure, magic rules, world tone, and reference-document clarity.</p><button class="sample-link" type="button" onclick="openSample('siamic-peninsula-lore-bible.pdf','The Siamic Peninsula')" data-cta="view-proof-samples" data-section="portfolio">See Sample</button></div></article>
-          <article class="card"><div class="card-visual" role="img" aria-label="Portfolio sample for The Artifact of Silent Ruin"></div><div class="card-body"><div class="tag">RPG Quest Structure: Objectives, Branches, Stakes, and Consequences</div><h3>The Artifact of Silent Ruin</h3><p><strong>Starting problem:</strong> a quest idea needed clearer objectives, investigation flow, and player-facing consequences. <strong>Structural pass:</strong> define faction pressure, branches, outcomes, and stakes. <strong>Output:</strong> a usable quest framework.</p><p class="demonstrates"><strong>What this proves:</strong> Quest logic, branching structure, stakes, and consequence mapping.</p><button class="sample-link" type="button" onclick="openSample('artifact-of-silent-ruin-quest-design.pdf','The Artifact of Silent Ruin')" data-cta="view-proof-samples" data-section="portfolio">See Sample</button></div></article>
-          <article class="card"><div class="card-visual" role="img" aria-label="Portfolio sample for Psychopunk Tone Bible"></div><div class="card-body"><div class="tag">Tone Bible: Voice, Motifs, Atmosphere, and Style Rules</div><h3>Psychopunk Tone Bible</h3><p><strong>Starting problem:</strong> a project tone needed repeatable rules instead of scattered mood language. <strong>Structural pass:</strong> clarify voice, motifs, imagery, rhythm, and emotional pressure. <strong>Output:</strong> a tone bible for consistent direction.</p><p class="demonstrates"><strong>What this proves:</strong> Tone control, style rules, motifs, and atmosphere documentation.</p><button class="sample-link" type="button" onclick="openSample('psychopunk-tone-bible.pdf','Psychopunk Tone Bible')" data-cta="view-proof-samples" data-section="portfolio">See Sample</button></div></article>
-          <article class="card"><div class="card-visual" role="img" aria-label="Portfolio sample for PROTEUS: The Waking Cycle"></div><div class="card-body"><div class="tag">Narrative Prose: Scene Rhythm, Perspective, and Mood</div><h3>PROTEUS: The Waking Cycle</h3><p><strong>Starting problem:</strong> atmospheric story material needed controlled scene rhythm and perspective. <strong>Structural pass:</strong> shape sensory detail, symbolic pressure, and character viewpoint. <strong>Output:</strong> prose that can support tone, pitch, or world identity.</p><p class="demonstrates"><strong>What this proves:</strong> Narrative atmosphere, scene rhythm, sensory writing, and mood control.</p><button class="sample-link" type="button" onclick="openSample('prototeus-waking-cycle-sample.pdf','PROTEUS: The Waking Cycle')" data-cta="view-proof-samples" data-section="portfolio">See Sample</button></div></article>
-          <article class="card"><div class="card-visual" role="img" aria-label="Portfolio sample for Atmosphere, Keyframes & Sound Notes"></div><div class="card-body"><div class="tag">Visual-Narrative Direction / Keyframe & Tone Notes</div><h3>Atmosphere, Keyframes & Sound Notes</h3><p><strong>Starting problem:</strong> visual references and sound ideas needed story purpose. <strong>Structural pass:</strong> connect moodboards, keyframes, atmosphere, and tone notes to a clearer creative path. <strong>Output:</strong> visual-narrative direction with story purpose.</p><p class="demonstrates"><strong>What this proves:</strong> Curation, visual-story logic, mood direction, and project-facing tone notes.</p></div></article>
+          <article class="card priority-proof"><div class="card-visual" role="img" aria-label="Featured portfolio sample for The Artifact of Silent Ruin"></div><div class="card-body"><div class="tag">Featured Game-Relevant Proof / RPG Quest Structure</div><h3>The Artifact of Silent Ruin</h3><p><strong>Starting problem:</strong> a quest idea needed clearer objectives, investigation flow, and player-facing consequences. <strong>Structural pass:</strong> define faction pressure, branches, outcomes, and stakes. <strong>Output:</strong> a usable quest framework.</p><p class="demonstrates"><strong>What this sample demonstrates:</strong> Quest logic, branching structure, stakes, and consequence mapping.</p><button class="sample-link" type="button" onclick="openSample('artifact-of-silent-ruin-quest-design.pdf','The Artifact of Silent Ruin')" data-cta="view-proof-samples" data-section="portfolio">See Sample</button></div></article>
+          <article class="card"><div class="card-visual" role="img" aria-label="Portfolio sample for ATLAS 3I / Second Earth"></div><div class="card-body"><div class="tag">Lore Architecture: World Rules, Pressure, and Setting Logic</div><h3>ATLAS 3I / Second Earth</h3><p><strong>Starting problem:</strong> broad sci-fi setting material needed clearer rules, social pressure, and atmosphere. <strong>Structural pass:</strong> organize world logic into a readable lore architecture. <strong>Output:</strong> a stronger reference for pitch or team discussion.</p><p class="demonstrates"><strong>What this sample demonstrates:</strong> Setting logic, world rules, pressure, and usable lore framing.</p><button class="sample-link" type="button" onclick="openSample('atlas3i-second-earth-sample.pdf','ATLAS 3I / Second Earth')" data-cta="view-proof-samples" data-section="portfolio">See Sample</button></div></article>
+          <article class="card"><div class="card-visual" role="img" aria-label="Portfolio sample for The Siamic Peninsula"></div><div class="card-body"><div class="tag">Fantasy Worldbuilding: Factions, History, Magic Rules, and Tone</div><h3>The Siamic Peninsula</h3><p><strong>Starting problem:</strong> fantasy world material needed faction clarity, history, magic logic, and tone. <strong>Structural pass:</strong> shape the material into a lore-bible style reference. <strong>Output:</strong> a clearer guide for revision, expansion, or sharing.</p><p class="demonstrates"><strong>What this sample demonstrates:</strong> Faction structure, magic rules, world tone, and reference-document clarity.</p><button class="sample-link" type="button" onclick="openSample('siamic-peninsula-lore-bible.pdf','The Siamic Peninsula')" data-cta="view-proof-samples" data-section="portfolio">See Sample</button></div></article>
+          <article class="card"><div class="card-visual" role="img" aria-label="Portfolio sample for Psychopunk Tone Bible"></div><div class="card-body"><div class="tag">Tone Bible: Voice, Motifs, Atmosphere, and Style Rules</div><h3>Psychopunk Tone Bible</h3><p><strong>Starting problem:</strong> a project tone needed repeatable rules instead of scattered mood language. <strong>Structural pass:</strong> clarify voice, motifs, imagery, rhythm, and emotional pressure. <strong>Output:</strong> a tone bible for consistent direction.</p><p class="demonstrates"><strong>What this sample demonstrates:</strong> Tone control, style rules, motifs, and atmosphere documentation.</p><button class="sample-link" type="button" onclick="openSample('psychopunk-tone-bible.pdf','Psychopunk Tone Bible')" data-cta="view-proof-samples" data-section="portfolio">See Sample</button></div></article>
+          <article class="card"><div class="card-visual" role="img" aria-label="Portfolio sample for PROTEUS: The Waking Cycle"></div><div class="card-body"><div class="tag">Narrative Prose: Scene Rhythm, Perspective, and Mood</div><h3>PROTEUS: The Waking Cycle</h3><p><strong>Starting problem:</strong> atmospheric story material needed controlled scene rhythm and perspective. <strong>Structural pass:</strong> shape sensory detail, symbolic pressure, and character viewpoint. <strong>Output:</strong> prose that can support tone, pitch, or world identity.</p><p class="demonstrates"><strong>What this sample demonstrates:</strong> Narrative atmosphere, scene rhythm, sensory writing, and mood control.</p><button class="sample-link" type="button" onclick="openSample('prototeus-waking-cycle-sample.pdf','PROTEUS: The Waking Cycle')" data-cta="view-proof-samples" data-section="portfolio">See Sample</button></div></article>
+          <article class="card"><div class="card-visual" role="img" aria-label="Capability area for atmosphere, keyframes, and tone notes"></div><div class="card-body"><div class="tag">Capability Area / Sample Available on Request</div><h3>Atmosphere, Keyframes & Tone Notes</h3><p>Optional visual references, keyframes, and tone notes can be connected to a defined story purpose when that supports project alignment or presentation.</p><p class="demonstrates"><strong>Current evidence boundary:</strong> No public sample is linked for this capability area.</p></div></article>
         </div>
       </div>
     </section>
@@ -1381,14 +1394,14 @@
       <div class="wrap">
         <div class="kicker">Services</div>
         <h2>Ways the Studio can help.</h2>
-        <p class="section-intro">Not just more lore — clearer storyworld structure. I help organize raw creative material into documents and frameworks that teams can actually use: story bibles, quest structures, faction maps, tone guides, pitch summaries, and visual-narrative briefs.</p>
+        <p class="section-intro">I organize existing creative material into clearer documents and frameworks for review, revision, handoff, or presentation.</p>
 
         <div class="services-grid">
-          <article class="card service" data-service="project-fit-review"><div class="tag">Light First Step</div><h3>Project-Fit Review</h3><p>For creators or teams who want a brief first look before deciding what kind of support makes sense.</p><ul><li>Clarifies what already exists</li><li>Identifies what feels unclear or hard to organize</li><li>Looks at the likely next useful step</li><li>Suggests whether a clarity review, structure pass, pitch package, or other support makes sense</li></ul><p class="service-boundary">This is a brief first look, not a full written analysis.</p><a class="sample-link" href="#contact" data-help="Project-fit review" data-cta="project-fit-review" data-section="services">Request a Project-Fit Review</a></article>
-          <article class="card service" data-service="project-clarity-audit"><div class="tag">Focused Review</div><h3>Project Clarity Audit</h3><p>For existing material that needs a clearer read on what is working, what is scattered, and what should come first.</p><ul><li>Current-state / desired-direction / obstacle diagnosis</li><li>Lore, pitch, visual reference, or early documentation review</li><li>Top clarity, organization, tone, or continuity risks</li><li>Recommended next step: what document, structure, or clarity pass should come first</li></ul><p class="service-boundary">Best when the project already has material and needs a clearer next version.</p><a class="sample-link" href="#contact" data-help="Project clarity audit" data-cta="service-option" data-section="services">Ask About This Option</a></article>
-          <article class="card service" data-service="world-quest-structure"><div class="tag">Core Support</div><h3>World + Quest Structure</h3><p>For story-driven games, RPGs, visual novels, and interactive projects that need clearer world logic connected to quests, choices, stakes, and progression.</p><ul><li>World structure and internal rules</li><li>Faction pressure and conflict map</li><li>Quest hooks, objectives, and stakes</li><li>Branching outcomes and player-facing logic</li><li>Optional visual reference or keyframe notes</li></ul><p class="service-boundary">Best when world logic, quests, choices, or faction pressure need to become easier to follow.</p><a class="sample-link" href="#contact" data-help="World / lore structure" data-cta="service-option" data-section="services">Ask About This Option</a></article>
-          <article class="card service" data-service="story-bible-pitch-materials"><div class="tag">Expanded Package</div><h3>Story Bible + Pitch Materials</h3><p>For creators or teams preparing clearer materials for collaborators, campaign pages, pitch conversations, prototype support, internal review, or presentation.</p><ul><li>Story bible or lore documentation</li><li>World identity and tone guide</li><li>Faction, character, or quest structure</li><li>Visual reference and keyframe direction</li><li>Pitch-ready summary or presentation notes</li></ul><p class="service-boundary">Best when the project needs clearer material for collaborators, backers, funders, or internal planning.</p><a class="sample-link" href="#contact" data-help="Story bible / pitch materials" data-cta="service-option" data-section="services">Ask About This Option</a></article>
-          <article class="card service" data-service="contract-support"><div class="tag">Ongoing / Contract</div><h3>Narrative Systems Support</h3><p>For defined part-time or contract help with documentation cleanup, story-world structure, quest logic, faction pressure, tone direction, or pitch support.</p><ul><li>Scoped narrative documentation tasks</li><li>World bible or lore system support</li><li>Quest, objective, and branching logic review</li><li>Pitch, campaign, or team-support material for a defined use case</li></ul><p class="service-boundary">Best for defined tasks where the team knows what material needs to be clarified or prepared.</p><a class="sample-link" href="#contact" data-help="Contract narrative/worldbuilding support" data-cta="service-option" data-section="services">Ask About This Option</a></article>
+          <article class="card service" data-service="project-fit-review"><div class="tag">Light First Step</div><h3>Project-Fit Review</h3><p>A brief conversation to understand the existing material, current difficulty, and next milestone.</p><ul><li>Clarifies the immediate question</li><li>Checks whether a contained outside scope is useful</li><li>Identifies the most relevant next step</li></ul><p class="service-boundary">Deeper analysis begins only after scope is agreed.</p><a class="sample-link" href="#contact" data-help="Focused project review" data-cta="project-fit-review" data-section="services">Request a Project-Fit Review</a></article>
+          <article class="card service" data-service="project-clarity-audit"><div class="tag">Focused Review</div><h3>Project Clarity Audit</h3><p>For existing material that needs a clearer read on what is working, what is scattered, and what should come first.</p><ul><li>Current-state / desired-direction / obstacle diagnosis</li><li>Lore, pitch, visual reference, or early documentation review</li><li>Top clarity, organization, tone, or continuity risks</li><li>Recommended next step: what document, structure, or clarity pass should come first</li></ul><p class="service-boundary">Best when the project already has material and needs a clearer next version.</p><a class="sample-link" href="#contact" data-help="Focused project review" data-cta="service-option" data-section="services">Ask About This Option</a></article>
+          <article class="card service" data-service="world-quest-structure"><div class="tag">Core Support</div><h3>World + Quest Structure</h3><p>For story-driven games, RPGs, visual novels, and interactive projects that need clearer world logic connected to quests, choices, stakes, and progression.</p><ul><li>World structure and internal rules</li><li>Faction pressure and conflict map</li><li>Quest hooks, objectives, and stakes</li><li>Branching outcomes and player-facing logic</li><li>Optional visual reference or keyframe notes</li></ul><p class="service-boundary">Best when world logic, quests, choices, or faction pressure need to become easier to follow.</p><a class="sample-link" href="#contact" data-help="Story-world / quest structure" data-cta="service-option" data-section="services">Ask About This Option</a></article>
+          <article class="card service" data-service="story-bible-pitch-materials"><div class="tag">Expanded Package</div><h3>Story Bible + Pitch Materials</h3><p>For creators or teams preparing clearer materials for collaborators, campaign pages, pitch conversations, prototype support, internal review, or presentation.</p><ul><li>Story bible or lore documentation</li><li>World identity and tone guide</li><li>Faction, character, or quest structure</li><li>Visual reference and keyframe direction</li><li>Pitch-ready summary or presentation notes</li></ul><p class="service-boundary">Best when the project needs clearer material for collaborators, backers, funders, or internal planning.</p><a class="sample-link" href="#contact" data-help="Story-world / quest structure" data-cta="service-option" data-section="services">Ask About This Option</a></article>
+          <article class="card service" data-service="contract-support"><div class="tag">Ongoing / Contract</div><h3>Narrative Systems Support</h3><p>For defined part-time or contract help with documentation cleanup, story-world structure, quest logic, faction pressure, tone direction, or pitch support.</p><ul><li>Scoped narrative documentation tasks</li><li>World bible or lore system support</li><li>Quest, objective, and branching logic review</li><li>Pitch, campaign, or team-support material for a defined use case</li></ul><p class="service-boundary">Best for defined tasks where the team knows what material needs to be clarified or prepared.</p><a class="sample-link" href="#contact" data-help="Contract or part-time support" data-cta="service-option" data-section="services">Ask About This Option</a></article>
         </div>
 
         <article class="card services-cta"><p>Have a project that does not fit neatly into one category? Send a short note about what exists, what feels unclear, and what you are trying to prepare next.</p><a class="button" href="#contact" data-help="Not sure yet" data-cta="start-project-conversation" data-section="services">Start a Project Conversation</a></article>
@@ -1412,7 +1425,7 @@
         </article>
         <article class="card contract-cta">
           <p>For contract or part-time support, the best starting point is a defined scope: project stage, materials available, timeline, and the next useful outcome for the team or project.</p>
-          <a class="button" href="#contact" data-help="Contract narrative/worldbuilding support" data-cta="service-option" data-section="contract-support">Ask About This Option</a>
+          <a class="button" href="#contact" data-help="Contract or part-time support" data-cta="service-option" data-section="contract-support">Ask About This Option</a>
         </article>
       </div>
     </section>
@@ -1421,7 +1434,7 @@
       <div class="wrap">
         <div class="kicker">Method</div>
         <h2>What this work helps clarify.</h2>
-        <p class="section-intro">The value is not more lore for its own sake. The value is identifying the system, wound, anchor, event, and package that make a story-world easier to understand, shape, present, and build from.</p>
+        <p class="section-intro">The value is not more lore for its own sake. The value is identifying the system, wound, anchor, event, and package that make a story-world easier to understand, shape, present, and develop further.</p>
         <article class="card contract-card">
           <ul>
             <li><strong>System:</strong> What force governs the world, project, conflict, or playable structure?</li>
@@ -1437,12 +1450,12 @@
     <section id="about">
       <div class="wrap split">
         <aside class="bio-card">
-          <img src="profile.jpg" alt="Aaron A., Narrative Systems and Worldbuilding Consultant" />
-          <h3>Aaron A.</h3>
+          <img src="profile.jpg" alt="Aaron Asaad, Narrative Systems and Worldbuilding Consultant" />
+          <h3>Aaron Asaad</h3>
           <p>Narrative Systems & Worldbuilding Support</p>
           <ul class="bio-list">
             <li><strong>M.A. in Linguistics & Translation</strong></li>
-            <li><strong>10+ years in education and structured feedback</strong></li>
+            <li><strong>Professional experience across education, writing evaluation, and structured feedback</strong></li>
             <li><strong>English, creative writing, fiction, and language structure</strong></li>
             <li><strong>Games, story-worlds, tone, and narrative clarity</strong></li>
             <li><strong>Documentation, pitch materials, and visual-narrative direction</strong></li>
@@ -1451,9 +1464,9 @@
         <div class="about-copy">
           <div class="kicker">About</div>
           <h2>How I help story-world projects become clearer.</h2>
-          <p>I help creators and small teams turn scattered world ideas into development-ready narrative systems: story bibles, quest frameworks, faction structures, tone guides, pitch summaries, and visual direction briefs.</p>
+          <p>I help creators and small teams organize existing story-world material into clearer narrative systems and development documentation: story bibles, quest frameworks, faction structures, tone guides, pitch summaries, and visual direction briefs.</p>
           <p>My work looks for the storyworld engine underneath the material: the pressure system shaping the world, the human stakes that make it matter, the concrete anchors that make it visible, and the cinematic or playable moments that make it usable.</p>
-          <p>The goal is not just more lore. The goal is clearer storyworld structure a team can discuss, revise, pitch, build from, or show.</p>
+          <p>The goal is not just more lore. The goal is clearer storyworld structure a team can review, discuss, revise, pitch, and develop further.</p>
         </div>
       </div>
     </section>
@@ -1463,10 +1476,7 @@
         <div>
           <div class="kicker">Contact</div>
           <h2>Start a project conversation.</h2>
-          <p class="section-intro">Send a short note about what already exists, what feels unclear, and what kind of support might be useful.</p>
-          <p class="section-intro">I’ll respond with whether there seems to be a useful fit and what a focused next step could look like.</p>
-          <p class="qualifier">A project-fit review is a brief first look, not a full written audit.</p>
-          <p class="response-note">I usually respond within 24 business hours.</p>
+          <p class="section-intro">Send a short note about what already exists, what feels unclear, and the next milestone or decision. I’ll reply with whether there appears to be a useful fit and what a focused next step could look like.</p>
           <p class="direct-email-note"><span>Direct email:</span><a href="mailto:revealedcosmosstudio@gmail.com">revealedcosmosstudio@gmail.com</a></p>
         </div>
 
@@ -1475,18 +1485,12 @@
             <input type="checkbox" name="botcheck" id="botcheck" class="honeypot" tabindex="-1" autocomplete="off" />
             <div><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required /></div>
             <div><label for="email">Email</label><input id="email" name="email" type="email" placeholder="your@email.com" autocomplete="email" required /></div>
-            <div><label for="helpType">What would you like help with?</label><select id="helpType" name="help_type"><option>Project-fit review</option><option>Project clarity audit</option><option>World / lore structure</option><option>Quest framework</option><option>Story bible / pitch materials</option><option>Visual / tone direction</option><option>Contract narrative/worldbuilding support</option><option>Not sure yet</option></select></div>
+            <div><label for="helpType">What would you like help with?</label><select id="helpType" name="help_type"><option>Focused project review</option><option>Story-world / quest structure</option><option>Contract or part-time support</option><option>Not sure yet</option></select></div>
             <div><label for="projectType">Project type</label><select id="projectType" name="project_type"><option>Story-driven game</option><option>RPG / visual novel</option><option>Fictional IP / worldbuilding project</option><option>Cinematic IP / film project</option><option>Pitch / funding preparation</option><option>Internal documentation</option><option>Portfolio / proof package</option><option>Other</option></select></div>
             <div><label for="projectStage">Project stage</label><select id="projectStage" name="project_stage"><option>Early idea</option><option>Existing notes / rough material</option><option>Prototype / vertical slice</option><option>Pre-production</option><option>Pitch / funding preparation</option><option>Ongoing development</option><option>Existing draft or documentation</option><option>Other</option></select></div>
             <div><label for="timeline">Timeline</label><select id="timeline" name="timeline"><option>No rush</option><option>1–2 weeks</option><option>This month</option><option>Deadline-based</option><option>Not sure yet</option></select></div>
             <div><label for="budgetScope">Budget / scope range</label><select id="budgetScope" name="budget_scope"><option>Small focused audit</option><option>Moderate documentation support</option><option>Larger package</option><option>Part-time / ongoing support</option><option>Not sure yet</option></select></div>
-            <div><label for="existingMaterials">Existing materials</label><select id="existingMaterials" name="existing_materials"><option>Notes / lore document</option><option>Character or faction notes</option><option>Quest or gameplay notes</option><option>Visual references / moodboard</option><option>Pitch deck or summary</option><option>Prototype / build</option><option>No organized materials yet</option><option>Other</option></select></div>
-            <div><label for="decisionSupport">What decision does this material need to support?</label><select id="decisionSupport" name="decision_support"><option>Pitch / funding decision</option><option>Production planning</option><option>Internal handoff</option><option>Kickstarter / Steam page</option><option>Story bible cleanup</option><option>Team alignment</option><option>Not sure yet</option></select></div>
-            <div><label for="deliverableUser">Who will use the deliverable?</label><select id="deliverableUser" name="deliverable_user"><option>Founder / project lead</option><option>Writer or narrative designer</option><option>Game designer or developer</option><option>Artist / visual team</option><option>Publisher / backers / funders</option><option>Internal team</option><option>Players / public page</option><option>Not sure yet</option></select></div>
-            <div><label for="decisionMaker">Is there a decision-maker for scope and budget?</label><select id="decisionMaker" name="decision_maker"><option>Yes, I am the decision-maker</option><option>Yes, another lead will decide</option><option>Shared team decision</option><option>Not yet</option><option>Not sure</option></select></div>
-            <div><label for="proofRestrictions">Can any result be shown publicly after approval?</label><select id="proofRestrictions" name="proof_restrictions"><option>Yes</option><option>Redacted only</option><option>No</option><option>Not sure yet</option></select></div>
-            <div><label for="mainUncertainty">What keeps getting rewritten or causing confusion?</label><textarea id="mainUncertainty" name="main_uncertainty" placeholder="Optional examples: faction logic, quest flow, tone, pitch summary, story bible structure, visual direction, team handoff, continuity, scope."></textarea></div>
-            <div><label for="message">Project details</label><textarea id="message" name="message" placeholder="What already exists? What feels unclear? What decision, document, pitch, or development step does this material need to support?" required></textarea></div>
+            <div><label for="message">Current material, difficulty, and next milestone</label><textarea id="message" name="message" placeholder="What already exists? What feels unclear or keeps changing? What milestone, handoff, pitch, or revision decision comes next?" required></textarea></div>
             <button id="submitButton" class="button" type="submit" data-cta="contact-form-submit" data-section="contact">Send Message</button>
             <p id="formStatus" class="form-status" aria-live="polite">Your message will be sent directly through the contact form.</p>
           </form>
@@ -1513,13 +1517,9 @@
     const CONTACT_EMAIL = 'revealedcosmosstudio@gmail.com';
 
     const messagePrompts = {
-      'Project-fit review': 'What already exists? What decision does the next document need to support? What obstacle is blocking the project right now?',
-      'Project clarity audit': 'What materials do you already have, what keeps getting rewritten, and what next document would help most?',
-      'World / lore structure': 'What world rules, factions, history, geography, or continuity issues need clearer structure for production or collaboration?',
-      'Quest framework': 'What quest objective, branching path, faction pressure, or player-facing logic needs support?',
-      'Story bible / pitch materials': 'What needs to be easier to present, pitch, hand off, or share with collaborators, backers, or a team?',
-      'Visual / tone direction': 'What visual references, tone notes, keyframes, or atmosphere direction need story purpose and production clarity?',
-      'Contract narrative/worldbuilding support': 'What defined task, timeline, deliverable, and team use case would the support need to serve?',
+      'Focused project review': 'What already exists? What decision does the next document need to support? What obstacle is blocking the project right now?',
+      'Story-world / quest structure': 'What world rules, factions, quest objectives, branches, stakes, or continuity issues need clearer structure?',
+      'Contract or part-time support': 'What defined task, timeline, deliverable, and team use case would the support need to serve?',
       'Not sure yet': 'Briefly describe what you are building, what exists now, and what kind of next step would help.'
     };
 
@@ -1603,7 +1603,7 @@
       const helpType = document.getElementById('helpType');
       const message = document.getElementById('message');
       if (!helpType || !message) return;
-      message.placeholder = messagePrompts[helpType.value] || messagePrompts['Project-fit review'];
+      message.placeholder = messagePrompts[helpType.value] || messagePrompts['Focused project review'];
     }
 
     const helpSelect = document.getElementById('helpType');
@@ -1628,12 +1628,6 @@
       const projectStage = document.getElementById('projectStage').value;
       const timeline = document.getElementById('timeline').value;
       const budgetScope = document.getElementById('budgetScope').value;
-      const existingMaterials = document.getElementById('existingMaterials').value;
-      const decisionSupport = document.getElementById('decisionSupport').value;
-      const deliverableUser = document.getElementById('deliverableUser').value;
-      const decisionMaker = document.getElementById('decisionMaker').value;
-      const proofRestrictions = document.getElementById('proofRestrictions').value;
-      const mainUncertainty = document.getElementById('mainUncertainty').value.trim();
       const message = document.getElementById('message').value.trim();
       const botcheck = document.getElementById('botcheck');
 
@@ -1662,12 +1656,6 @@
         project_stage: projectStage,
         timeline,
         budget_scope: budgetScope,
-        existing_materials: existingMaterials,
-        decision_support: decisionSupport,
-        deliverable_user: deliverableUser,
-        decision_maker: decisionMaker,
-        proof_restrictions: proofRestrictions,
-        main_uncertainty: mainUncertainty,
         message,
         page: window.location.href
       };
@@ -1685,7 +1673,7 @@
         const result = await response.json();
 
         if (result.success) {
-          setFormStatus('✓ Project details sent. I will reply within 24 business hours.', 'success');
+          setFormStatus('✓ Project details sent. I will reply with whether there appears to be a useful fit.', 'success');
           if (form) form.reset();
           updateMessagePlaceholder();
         } else {
