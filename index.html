@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>The Revealed Cosmos Studio — Narrative Systems & Story-World Clarity</title>
-  <meta name="description" content="Narrative systems, worldbuilding structure, story-world clarity, development documentation, pitch support, and visual-narrative direction for story-driven projects." />
-  <meta name="keywords" content="narrative systems consultant, worldbuilding consultant, development documentation, story bible, quest framework, lore documentation, RPG quest design, visual novel writer, tone guide, pitch materials, narrative design support" />
-  <meta property="og:title" content="The Revealed Cosmos Studio" />
-  <meta property="og:description" content="Narrative systems, worldbuilding structure, story-world clarity, development documentation, pitch support, and visual-narrative direction for story-driven projects." />
+  <title>The Revealed Cosmos Studio | Worldbuilding & Narrative Systems</title>
+  <meta name="description" content="Independent proof of how original science-fiction and fantasy concepts can become coherent world systems, story-ready structure, and clear narrative documentation." />
+  <meta name="keywords" content="Aaron Asaad, narrative systems portfolio, science fiction worldbuilding, original IP development, canon architecture, story bible, quest framework, lore architecture, tone guide" />
+  <meta property="og:title" content="The Revealed Cosmos Studio | Worldbuilding & Narrative Systems" />
+  <meta property="og:description" content="Independent proof of how original science-fiction and fantasy concepts can become coherent world systems, story-ready structure, and clear narrative documentation." />
   <meta property="og:image" content="hero_brand.jpg" />
   <meta property="og:type" content="website" />
   <style>
@@ -34,14 +34,14 @@
       --business-line: rgba(195,169,106,.24);
       --primary-line: rgba(224,199,125,.48);
       --max: 1160px;
-      --radius: 20px;
-      --card-radius: 18px;
-      --button-radius: 999px;
+      --radius: 16px;
+      --card-radius: 14px;
+      --button-radius: 9px;
       --shadow: 0 24px 80px rgba(0,0,0,.46);
       --shadow-soft: 0 16px 44px rgba(0,0,0,.32);
       --glow-gold: 0 0 28px rgba(195,169,106,.13);
       --glow-cyan: 0 0 28px rgba(118,199,232,.11);
-      --section-pad: clamp(64px, 7vw, 92px);
+      --section-pad: clamp(52px, 5.5vw, 72px);
       --scroll-offset: 112px;
     }
 
@@ -57,12 +57,11 @@
       margin: 0;
       overflow-x: hidden;
       background:
-        radial-gradient(circle at 50% -10%, rgba(118,199,232,.12), transparent 34%),
-        radial-gradient(circle at 18% 4%, rgba(195,169,106,.075), transparent 28%),
-        radial-gradient(circle at 82% 34%, rgba(118,199,232,.055), transparent 25%),
+        radial-gradient(circle at 50% -12%, rgba(118,199,232,.085), transparent 36%),
+        radial-gradient(circle at 14% 8%, rgba(195,169,106,.05), transparent 26%),
         linear-gradient(180deg, var(--bg) 0%, #07090d 48%, var(--bg2) 100%);
       color: var(--text);
-      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       font-size: clamp(16.5px, 0.22vw + 15px, 18.5px);
       line-height: 1.7;
     }
@@ -99,7 +98,7 @@
     .nav {
       width: min(1300px, calc(100% - clamp(30px, 6vw, 64px)));
       margin: 0 auto;
-      min-height: 78px;
+      min-height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -109,7 +108,7 @@
     .brand {
       display: grid;
       align-content: center;
-      gap: 4px;
+      gap: 3px;
       color: var(--text);
       cursor: pointer;
       flex: 0 1 auto;
@@ -121,18 +120,20 @@
     .brand:focus-visible .logo { color: #fff; }
 
     .logo {
-      font-size: clamp(17px, 1vw + 12px, 22px);
-      font-weight: 900;
-      letter-spacing: 1.15px;
+      font-size: clamp(16px, .72vw + 12px, 20px);
+      font-weight: 800;
+      letter-spacing: .82px;
+      line-height: 1.08;
       text-transform: uppercase;
       white-space: nowrap;
     }
 
     .brand-subtitle {
       color: #b0a796;
-      font-size: clamp(10px, .3vw + 9px, 12px);
-      font-weight: 900;
-      letter-spacing: 1.15px;
+      font-size: clamp(9.5px, .2vw + 8.5px, 10.75px);
+      font-weight: 750;
+      letter-spacing: .88px;
+      line-height: 1.2;
       text-transform: uppercase;
       white-space: nowrap;
     }
@@ -146,9 +147,9 @@
       min-width: 44px;
       min-height: 44px;
       color: var(--muted);
-      font-size: clamp(12.5px, .22vw + 11px, 14px);
-      font-weight: 900;
-      letter-spacing: .78px;
+      font-size: clamp(12px, .18vw + 10.8px, 13px);
+      font-weight: 800;
+      letter-spacing: .66px;
       text-transform: uppercase;
       line-height: 1.15;
       transition: color .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease;
@@ -170,7 +171,7 @@
     .nav-cta {
       color: var(--text);
       border: 1px solid var(--gold-line);
-      border-radius: 999px;
+      border-radius: var(--button-radius);
       padding: 9px 14px;
       background: linear-gradient(180deg, rgba(195,169,106,.14), rgba(195,169,106,.055));
       white-space: nowrap;
@@ -185,16 +186,16 @@
       scroll-margin-top: var(--scroll-offset);
     }
 
-    #portfolio { padding-top: calc(var(--section-pad) - 30px); }
+    #portfolio { padding-top: calc(var(--section-pad) - 12px); }
 
     .hero {
-      padding: clamp(50px, 6vw, 76px) 0 clamp(58px, 5vw, 78px);
+      padding: clamp(42px, 4.8vw, 60px) 0 clamp(46px, 4.5vw, 64px);
       border-bottom: 1px solid rgba(255,255,255,.08);
     }
 
     .hero-inner {
       display: grid;
-      gap: clamp(24px, 3.5vw, 32px);
+      gap: clamp(20px, 2.8vw, 30px);
       justify-items: center;
       text-align: center;
     }
@@ -204,9 +205,9 @@
       position: relative;
       background: linear-gradient(180deg, rgba(23,28,38,.82), rgba(8,10,15,.96));
       border: 1px solid rgba(195,169,106,.24);
-      border-radius: clamp(18px, 2vw, 26px);
-      padding: clamp(10px, 1.5vw, 18px);
-      box-shadow: var(--shadow), var(--glow-cyan);
+      border-radius: var(--card-radius);
+      padding: 7px;
+      box-shadow: var(--shadow-soft);
       overflow: hidden;
     }
     .hero-card::before {
@@ -221,61 +222,55 @@
 
     .hero-card img {
       width: 100%;
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 3.6 / 1;
       object-fit: cover;
       display: block;
-      border-radius: clamp(12px, 1.5vw, 18px);
-      filter: saturate(.96) contrast(1.04) brightness(.9);
+      border-radius: 9px;
+      filter: saturate(.9) contrast(1.04) brightness(.84);
     }
 
-    .hero-copy { max-width: 960px; }
+    .hero-copy { max-width: 900px; }
 
     .eyebrow, .kicker, .tag {
       color: var(--gold-strong);
       text-transform: uppercase;
-      letter-spacing: 1.42px;
-      font-size: clamp(13px, .18vw + 12px, 14.5px);
-      font-weight: 900;
+      letter-spacing: 1.18px;
+      font-size: clamp(12px, .14vw + 11.5px, 13.5px);
+      font-weight: 800;
     }
 
     .eyebrow, .kicker { margin-bottom: 18px; }
     .tag { margin-bottom: 11px; }
     .hero .eyebrow {
-      font-size: clamp(13.5px, .24vw + 12.5px, 15.5px);
-      letter-spacing: 1.65px;
-      margin-bottom: 22px;
+      font-size: clamp(12.5px, .18vw + 11.8px, 14px);
+      letter-spacing: 1.25px;
+      margin-bottom: 16px;
       color: #e5cb81;
     }
 
-    h1, h2, h3 { margin-top: 0; line-height: 1.1; letter-spacing: -.026em; }
-    h1 { font-size: clamp(40px, 6vw, 72px); line-height: 1.02; margin: 0 auto 24px; max-width: 1060px; }
-    h2 { font-size: clamp(28px, 4vw, 44px); line-height: 1.1; margin-bottom: 18px; max-width: 940px; }
-    h3 { font-size: clamp(21px, .58vw + 19px, 25px); line-height: 1.18; margin-bottom: 13px; }
+    h1, h2, h3 { margin-top: 0; line-height: 1.1; letter-spacing: -.018em; }
+    h1 { font-size: clamp(38px, 4.6vw, 58px); line-height: 1.04; font-weight: 800; margin: 0 auto 20px; max-width: 920px; }
+    h2 { font-size: clamp(28px, 3.2vw, 38px); line-height: 1.1; font-weight: 780; margin-bottom: 15px; max-width: 900px; }
+    h3 { font-size: clamp(20px, .5vw + 18px, 24px); line-height: 1.18; font-weight: 760; margin-bottom: 12px; }
     p { margin-top: 0; margin-bottom: 1.05rem; }
 
     .lead {
       color: #ded8cf;
-      font-size: clamp(17px, .38vw + 15.8px, 19px);
-      line-height: 1.68;
+      font-size: clamp(17px, .3vw + 15.5px, 18.5px);
+      line-height: 1.6;
       margin: 0 auto;
       max-width: 860px;
     }
 
-    .support-note {
-      color: var(--muted);
-      font-size: clamp(16px, .26vw + 15px, 17.5px);
-      line-height: 1.65;
-      max-width: 860px;
-      margin: 16px auto 0;
-    }
-
-    .micro-line {
-      color: var(--gold);
-      font-size: clamp(12px, .25vw + 11px, 14px);
-      font-weight: 900;
-      letter-spacing: 1.1px;
+    .capability-line {
+      color: var(--gold-strong);
+      font-size: clamp(12.5px, .2vw + 11.8px, 14px);
+      font-weight: 800;
+      letter-spacing: .92px;
+      line-height: 1.55;
       text-transform: uppercase;
-      margin: 22px 0 0;
+      margin: 18px auto 0;
+      max-width: 800px;
     }
 
     .buttons { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 28px; }
@@ -285,18 +280,17 @@
       justify-content: center;
       min-height: 50px;
       padding: 14px 24px;
-      border-radius: 999px;
+      border-radius: var(--button-radius);
       border: 1px solid rgba(224,199,125,.72);
-      background: linear-gradient(180deg, rgba(195,169,106,.24), rgba(115,86,34,.22));
+      background: rgba(195,169,106,.14);
       color: var(--text);
       font-size: clamp(15px, .18vw + 13.8px, 16px);
-      font-weight: 900;
-      letter-spacing: .58px;
-      text-transform: uppercase;
+      font-weight: 780;
+      letter-spacing: .18px;
       cursor: pointer;
       line-height: 1.25;
       text-align: center;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 12px 34px rgba(0,0,0,.28), var(--glow-gold);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 10px 28px rgba(0,0,0,.24);
       transition: transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease, color .18s ease;
     }
 
@@ -313,7 +307,7 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 13px;
-      margin: 32px auto 0;
+      margin: 24px auto 0;
       text-align: left;
       width: min(960px, 100%);
     }
@@ -321,8 +315,8 @@
     .mini-card {
       background: linear-gradient(180deg, rgba(255,255,255,.052), rgba(255,255,255,.026));
       border: 1px solid rgba(255,255,255,.105);
-      border-radius: 16px;
-      padding: 18px;
+      border-radius: 12px;
+      padding: 15px 16px;
       color: var(--muted);
       font-size: clamp(16px, .16vw + 15px, 16.75px);
       line-height: 1.66;
@@ -330,7 +324,7 @@
       box-shadow: inset 0 1px 0 rgba(255,255,255,.055), 0 12px 28px rgba(0,0,0,.18);
     }
 
-    .mini-card strong { display: block; color: var(--text); margin-bottom: 7px; font-size: clamp(16.5px, .22vw + 15px, 17.5px); letter-spacing: .01em; }
+    .mini-card strong { display: block; color: var(--text); margin-bottom: 5px; font-size: clamp(16px, .18vw + 15px, 17px); letter-spacing: .01em; }
 
     .outcome-grid {
       display: grid;
@@ -377,16 +371,19 @@
       padding-right: 22px;
     }
 
-    .section-intro { max-width: 900px; color: #d2cabf; font-size: clamp(17px, .28vw + 15.4px, 18.5px); line-height: 1.72; margin-bottom: 31px; }
+    .section-intro { max-width: 900px; color: #d2cabf; font-size: clamp(17px, .28vw + 15.4px, 18.5px); line-height: 1.68; margin-bottom: 24px; }
     .small-note { color: #aaa197; font-size: 14.5px; line-height: 1.58; max-width: 820px; margin: -14px 0 32px; }
 
     .portfolio-grid, .services-grid, .fit-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
     }
 
+    .portfolio-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
     .fit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 28px; }
+    .services-grid > .card:last-child:nth-child(odd) { grid-column: 1 / -1; }
 
     .card {
       background:
@@ -412,22 +409,10 @@
 
     .priority-proof .tag { color: #f0d88d; }
 
-    .card-visual {
-      height: clamp(138px, 12vw, 156px);
-      background-image:
-        linear-gradient(180deg, rgba(6,9,14,.12), rgba(6,9,14,.64)),
-        linear-gradient(135deg, rgba(195,169,106,.18), transparent 42%, rgba(118,199,232,.16)),
-        url('hero_brand.jpg');
-      background-size: cover;
-      background-position: center;
-      border-bottom: 1px solid rgba(195,169,106,.18);
-      filter: saturate(.82) contrast(1.08) brightness(.82);
-    }
-
-    .card-body { padding: clamp(27px, 2.35vw, 32px); }
-    .portfolio-grid h3 { text-transform: uppercase; letter-spacing: -.006em; font-size: clamp(22px, .5vw + 19px, 25px); margin-bottom: 14px; }
-    .card p { color: #e0d8cd; margin-bottom: 17px; font-size: clamp(16.5px, .16vw + 15.5px, 17.25px); line-height: 1.72; }
-    .demonstrates { color: #bbb1a4; font-size: 15.8px; margin-bottom: 24px; line-height: 1.65; }
+    .card-body { padding: clamp(22px, 1.9vw, 27px); }
+    .portfolio-grid h3 { text-transform: uppercase; letter-spacing: -.006em; font-size: clamp(20px, .38vw + 18px, 23px); margin-bottom: 12px; }
+    .card p { color: #e0d8cd; margin-bottom: 14px; font-size: clamp(15.5px, .14vw + 14.7px, 16.5px); line-height: 1.62; }
+    .demonstrates { color: #bbb1a4; font-size: 15px; margin-bottom: 17px; line-height: 1.56; }
     .demonstrates strong { color: var(--gold); }
 
     .transformation-snapshot {
@@ -462,7 +447,7 @@
       line-height: 1.58;
       padding: 7px 10px;
       border: 1px solid rgba(195,169,106,.18);
-      border-radius: 999px;
+      border-radius: var(--button-radius);
       background: rgba(195,169,106,.055);
     }
 
@@ -550,7 +535,7 @@
     .sample-link:hover { color: #d9f7ff; border-color: rgba(224,199,125,.72); transform: translateY(-1px); }
 
     .services-grid { margin-top: 30px; align-items: stretch; }
-    .service, .fit-card, .contract-card { padding: clamp(28px, 2.55vw, 34px); position: relative; border-color: var(--business-line); }
+    .service, .fit-card, .contract-card { padding: clamp(22px, 2vw, 28px); position: relative; border-color: var(--business-line); }
     .service::before, .fit-card::before, .contract-card::before {
       content: "";
       position: absolute;
@@ -564,8 +549,8 @@
     }
     .service h3, .fit-card h3, .contract-card h3 { font-size: clamp(24px, .58vw + 20px, 26px); margin-bottom: 14px; }
     .service p, .fit-card p, .contract-card p { color: var(--text2); font-size: clamp(16.5px, .16vw + 15.5px, 17.25px); line-height: 1.72; }
-    .service ul, .fit-card ul, .contract-card ul { color: #ddd5ca; padding-left: 22px; margin: 0 0 28px; }
-    .service li, .fit-card li, .contract-card li { margin: 13px 0; font-size: clamp(16px, .16vw + 15px, 17px); line-height: 1.68; }
+    .service ul, .fit-card ul, .contract-card ul { color: #ddd5ca; padding-left: 21px; margin: 0; }
+    .service li, .fit-card li, .contract-card li { margin: 10px 0; font-size: clamp(15.75px, .14vw + 15px, 16.7px); line-height: 1.58; }
     .service .service-boundary { color: #aaa197; font-size: 15.5px; margin: -8px 0 20px; line-height: 1.62; }
 
     .process-grid {
@@ -607,13 +592,14 @@
       padding: clamp(29px, 2.4vw, 34px);
       box-shadow: var(--shadow-soft);
     }
-    .bio-card img { width: 96px; height: 96px; object-fit: cover; border-radius: 999px; border: 1px solid rgba(195,169,106,.28); margin-bottom: 18px; box-shadow: 0 0 28px rgba(195,169,106,.09); }
     .bio-card h3 { font-size: 31px; margin-bottom: 10px; }
     .bio-card p { color: var(--muted); font-size: 16.5px; line-height: 1.66; }
     .bio-list { margin: 22px 0 0; padding: 0; list-style: none; display: grid; gap: 12px; }
     .bio-list li { color: #ddd5ca; font-size: 16.2px; border-top: 1px solid rgba(255,255,255,.08); padding-top: 12px; line-height: 1.62; }
     .bio-list strong { color: var(--text); }
     .about-copy p { color: #e0d8cd; font-size: clamp(17px, .28vw + 15.7px, 18.5px); line-height: 1.74; max-width: 920px; margin-bottom: 1.18rem; }
+    .supporting-media-note { margin: 24px 0 0; max-width: 920px; }
+    .supporting-media-note strong { color: var(--gold-strong); }
 
     .contact-grid {
       display: grid;
@@ -680,7 +666,7 @@
       min-height: 44px;
       padding: 10px 15px;
       border: 1px solid var(--gold);
-      border-radius: 999px;
+      border-radius: var(--button-radius);
       background: linear-gradient(180deg, rgba(22,27,37,.96), rgba(10,12,18,.96));
       color: var(--text);
       box-shadow: 0 14px 34px rgba(0,0,0,.34);
@@ -799,6 +785,8 @@
       .support-note { font-size: 16px; }
       .micro-line { font-size: 12.5px; }
       .portfolio-grid, .services-grid, .pain-points, .outcome-grid, .process-grid { grid-template-columns: 1fr; }
+      .portfolio-grid > .card:last-child:nth-child(odd),
+      .services-grid > .card:last-child:nth-child(odd) { grid-column: auto; }
       #project-fit-review .process-grid { grid-template-columns: 1fr; }
       .transformation-snapshot { padding: 26px 21px; }
       .transformation-snapshot .process-grid { grid-template-columns: 1fr; }
@@ -885,7 +873,7 @@
         width: 100%;
         margin-top: 0;
         display: grid;
-        grid-template-columns: repeat(4, auto);
+        grid-template-columns: repeat(3, auto);
         justify-content: center;
         align-items: center;
         gap: 9px 13px;
@@ -909,13 +897,13 @@
         background: linear-gradient(90deg, transparent, var(--gold-strong), transparent);
       }
       .nav-cta {
-        grid-column: 1 / -1;
+        grid-column: auto;
         justify-self: center;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: min(100%, 320px);
-        padding: 7px 10px;
+        width: auto;
+        padding: 7px 11px;
         border: 1px solid var(--gold-line);
         background: rgba(195,169,106,.08);
       }
@@ -1043,7 +1031,7 @@
     }
 
     @media (max-width: 520px) {
-      :root { --scroll-offset: 132px; --section-pad: 46px; }
+      :root { --scroll-offset: 102px; --section-pad: 40px; }
       body {
         font-size: 16px;
         line-height: 1.62;
@@ -1071,8 +1059,7 @@
         font-size: 11.75px;
       }
       .nav-cta {
-        width: 100%;
-        padding: 8px 10px;
+        display: inline-flex;
       }
       #services,
       #portfolio,
@@ -1080,15 +1067,13 @@
       #contact {
         scroll-margin-top: 132px;
       }
-      .hero {
-        padding: 30px 0 40px;
-      }
+      .hero { padding: 26px 0 34px; }
       .hero-card {
         padding: 7px;
         border-radius: 16px;
       }
       .hero-inner {
-        gap: 18px;
+        gap: 15px;
       }
       h1 {
         font-size: clamp(34px, 9vw, 42px);
@@ -1110,6 +1095,7 @@
         line-height: 1.58;
       }
       .support-note,
+      .distinctive-note,
       .small-note,
       .qualifier,
       .form-status {
@@ -1118,13 +1104,16 @@
       }
       .pain-points {
         margin-top: 20px;
+        grid-template-columns: 1fr;
+        gap: 8px;
       }
       .mini-card {
-        padding: 15px;
+        padding: 12px;
         font-size: 15.5px;
       }
       .mini-card strong {
         font-size: 16px;
+        margin-bottom: 4px;
       }
       .hero-review-note,
       .services-cta,
@@ -1137,7 +1126,7 @@
       .contract-card,
       .bio-card,
       .contact-panel {
-        padding: 20px;
+        padding: 18px;
       }
       .card p,
       .demonstrates,
@@ -1198,7 +1187,7 @@
         font-size: 11.25px;
       }
       .nav-cta {
-        display: none;
+        display: inline-flex;
       }
       h1 {
         font-size: clamp(32px, 8.8vw, 38px);
@@ -1225,6 +1214,465 @@
         letter-spacing: .42px;
       }
     }
+
+    /* Focused portfolio system: compact, consistent, and proof-led. */
+    :root {
+      --max: 1120px;
+      --section-pad: clamp(48px, 5vw, 64px);
+      --font-ui: "Aptos", "Segoe UI Variable Text", "Segoe UI", Inter, ui-sans-serif, system-ui, sans-serif;
+      --font-display: "Aptos Display", "Segoe UI Variable Display", "Segoe UI", Inter, ui-sans-serif, system-ui, sans-serif;
+    }
+
+    body {
+      font-family: var(--font-ui);
+      font-size: clamp(15.5px, .1vw + 15.15px, 16.5px);
+      line-height: 1.6;
+      font-weight: 400;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+    }
+
+    header {
+      background: rgba(5, 6, 8, .96);
+      border-bottom-color: rgba(195, 169, 106, .24);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, .26);
+    }
+
+    .nav {
+      min-height: 64px;
+      gap: 22px;
+    }
+
+    .brand { gap: 2px; }
+
+    .logo {
+      font-family: var(--font-display);
+      font-size: clamp(15px, .45vw + 12px, 18px);
+      font-weight: 750;
+      letter-spacing: .075em;
+    }
+
+    .brand-subtitle {
+      font-size: clamp(9px, .12vw + 8.3px, 10px);
+      font-weight: 700;
+      letter-spacing: .115em;
+      color: #aaa294;
+    }
+
+    nav { gap: clamp(14px, 1.5vw, 22px); }
+
+    nav a {
+      font-size: 12.5px;
+      font-weight: 750;
+      letter-spacing: .085em;
+    }
+
+    .nav-cta { padding: 8px 13px; }
+
+    section { padding: var(--section-pad) 0; }
+
+    .hero {
+      padding: clamp(28px, 3.2vw, 42px) 0 clamp(48px, 5vw, 64px);
+    }
+
+    .hero-inner { gap: clamp(17px, 2vw, 24px); }
+
+    .hero-card {
+      width: min(820px, 100%);
+      padding: 6px;
+      border-radius: 12px;
+      border-color: rgba(195, 169, 106, .22);
+      box-shadow: 0 14px 42px rgba(0, 0, 0, .31);
+    }
+
+    .hero-card img {
+      aspect-ratio: 4.8 / 1;
+      border-radius: 7px;
+      filter: saturate(.88) contrast(1.05) brightness(.82);
+    }
+
+    .hero-copy { max-width: 880px; }
+
+    .eyebrow,
+    .kicker,
+    .tag {
+      font-family: var(--font-ui);
+      font-size: clamp(10.5px, .12vw + 10px, 11.75px);
+      font-weight: 750;
+      letter-spacing: .135em;
+    }
+
+    .eyebrow { margin-bottom: 12px; }
+
+    .kicker {
+      margin-bottom: 11px;
+      color: #ead28b;
+      font-size: clamp(12.5px, .16vw + 11.8px, 14px);
+      font-weight: 820;
+      letter-spacing: .16em;
+    }
+
+    .hero .eyebrow {
+      margin-bottom: 12px;
+      font-size: clamp(10.5px, .1vw + 10.2px, 11.5px);
+      letter-spacing: .145em;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: var(--font-display);
+      letter-spacing: -.03em;
+      text-wrap: balance;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin-bottom: 15px;
+      font-size: clamp(30px, 3vw, 40px);
+      line-height: 1.08;
+      font-weight: 750;
+    }
+
+    h2 {
+      max-width: 820px;
+      margin-bottom: 12px;
+      font-size: clamp(23px, 1.9vw, 29px);
+      line-height: 1.14;
+      font-weight: 760;
+      letter-spacing: .035em;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      font-size: clamp(16.5px, .28vw + 15.8px, 19px);
+      line-height: 1.23;
+      font-weight: 760;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+    }
+
+    .lead {
+      max-width: 800px;
+      font-size: clamp(16px, .17vw + 15.4px, 17.5px);
+      line-height: 1.58;
+      color: #ddd7cf;
+      text-wrap: pretty;
+    }
+
+    .solution-statement {
+      max-width: 780px;
+      margin: 14px auto 0;
+      color: #f0ece5;
+      font-size: clamp(16px, .17vw + 15.4px, 17.5px);
+      line-height: 1.57;
+      font-weight: 620;
+      text-wrap: pretty;
+    }
+
+    .capability-line {
+      margin-top: 15px;
+      font-size: clamp(11px, .15vw + 10.5px, 12.5px);
+      line-height: 1.45;
+      letter-spacing: .11em;
+    }
+
+    .pain-points {
+      width: min(980px, 100%);
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .mini-card {
+      padding: 14px;
+      border-radius: 10px;
+      font-size: clamp(14px, .12vw + 13.6px, 15px);
+      line-height: 1.48;
+      background: linear-gradient(180deg, rgba(255, 255, 255, .045), rgba(255, 255, 255, .018));
+      border-color: rgba(255, 255, 255, .09);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .04), 0 8px 22px rgba(0, 0, 0, .14);
+    }
+
+    .mini-card strong {
+      margin-bottom: 6px;
+      font-size: clamp(14.5px, .12vw + 14px, 15.5px);
+      font-weight: 720;
+      letter-spacing: 0;
+    }
+
+    .mini-card .resolution { display: block; }
+
+    .mini-card .resolution {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      color: #bdb5aa;
+      font-weight: 420;
+    }
+
+    .buttons {
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .button {
+      min-height: 46px;
+      padding: 12px 20px;
+      font-size: 13px;
+      font-weight: 780;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+
+    #portfolio { padding-top: var(--section-pad); }
+
+    .section-intro {
+      max-width: 800px;
+      margin-bottom: 24px;
+      font-size: clamp(15.5px, .14vw + 15px, 16.5px);
+      line-height: 1.58;
+      color: #cec7bd;
+      text-wrap: pretty;
+    }
+
+    .system-map {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 9px;
+      margin: 26px 0 30px;
+    }
+
+    .system-step {
+      position: relative;
+      min-width: 0;
+      padding: 15px 14px;
+      border: 1px solid rgba(255, 255, 255, .09);
+      border-radius: 10px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, .042), rgba(255, 255, 255, .018));
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .035), 0 8px 22px rgba(0, 0, 0, .13);
+    }
+
+    .system-step:not(:last-child)::after {
+      content: "\203A";
+      position: absolute;
+      top: 50%;
+      right: -10px;
+      z-index: 2;
+      width: 19px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      transform: translateY(-50%);
+      background: #0c1016;
+      color: var(--gold-strong);
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .system-index {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--gold-strong);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .system-step strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--text);
+      font-size: 14.5px;
+      line-height: 1.24;
+      font-weight: 720;
+    }
+
+    .system-step span:last-child {
+      display: block;
+      color: #aaa298;
+      font-size: 13px;
+      line-height: 1.43;
+    }
+
+    .system-role {
+      margin: 0 0 14px;
+      padding: 10px 11px;
+      border-left: 2px solid rgba(224, 199, 125, .6);
+      background: rgba(195, 169, 106, .045);
+      color: #cfc7bc;
+      font-size: 13.5px;
+      line-height: 1.48;
+    }
+
+    .system-role strong { color: var(--gold-strong); }
+
+    .portfolio-grid { gap: 14px; }
+
+    .card {
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .22);
+    }
+
+    .card:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 38px rgba(0, 0, 0, .28);
+    }
+
+    .priority-proof {
+      border-color: rgba(224, 199, 125, .3);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, .26);
+    }
+
+    .card-body { padding: clamp(19px, 1.6vw, 23px); }
+
+    .portfolio-grid h3 {
+      margin-bottom: 14px;
+      font-size: clamp(16.5px, .27vw + 15.8px, 19px);
+      line-height: 1.23;
+      letter-spacing: .028em;
+      text-transform: uppercase;
+    }
+
+    .tag { margin-bottom: 9px; }
+
+    .card p {
+      margin-bottom: 13px;
+      font-size: clamp(14.25px, .08vw + 14px, 15px);
+      line-height: 1.54;
+      color: #d8d1c7;
+    }
+
+    .proof-label {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--gold);
+      font-size: 10.5px;
+      font-weight: 780;
+      letter-spacing: .105em;
+      line-height: 1.35;
+      text-transform: uppercase;
+    }
+
+    .demonstrates {
+      margin-bottom: 15px;
+      color: #b8b0a5;
+    }
+
+    .sample-link {
+      min-height: 40px;
+      padding: 7px 0;
+      font-size: 13px;
+      font-weight: 780;
+      letter-spacing: .075em;
+    }
+
+    .split {
+      grid-template-columns: .76fr 1.24fr;
+      gap: clamp(30px, 4vw, 48px);
+    }
+
+    .bio-card,
+    .contact-panel {
+      padding: clamp(24px, 2.2vw, 30px);
+      border-radius: 12px;
+      box-shadow: 0 14px 42px rgba(0, 0, 0, .27);
+    }
+
+    .bio-card h3 {
+      margin-bottom: 7px;
+      font-size: clamp(22px, .9vw + 19px, 27px);
+    }
+
+    .bio-card p,
+    .bio-list li {
+      font-size: 14.5px;
+      line-height: 1.52;
+    }
+
+    .bio-list {
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .bio-list li { padding-top: 10px; }
+
+    .about-copy p {
+      max-width: 760px;
+      margin-bottom: 1rem;
+      font-size: clamp(15.5px, .14vw + 15px, 16.5px);
+      line-height: 1.62;
+      text-wrap: pretty;
+    }
+
+    .contact-grid {
+      grid-template-columns: .85fr 1.15fr;
+      gap: clamp(30px, 4vw, 48px);
+    }
+
+    form { gap: 15px; }
+    label { margin-bottom: 7px; font-size: 14px; font-weight: 720; }
+
+    input,
+    select,
+    textarea {
+      min-height: 48px;
+      padding: 13px 15px;
+      border-radius: 10px;
+      font-size: 15.5px;
+    }
+
+    textarea { min-height: 132px; }
+    .form-status, .direct-email-note { font-size: 14.5px; }
+    .direct-email-note a { font-size: 15.5px; }
+    footer { padding: 26px 0; font-size: 13px; }
+
+    @media (max-width: 960px) {
+      .hero-card { width: min(760px, 100%); }
+      .system-map { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .system-step::after { display: none !important; }
+      .portfolio-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .portfolio-grid > .card:last-child:nth-child(odd) { grid-column: 1 / -1; }
+      .split, .contact-grid { grid-template-columns: 1fr; }
+      .bio-card, .about-copy, .contact-grid > * { width: 100%; min-width: 0; }
+    }
+
+    @media (max-width: 768px) {
+      :root { --section-pad: 48px; }
+      .nav { min-height: auto; }
+      .hero { padding: 26px 0 48px; }
+      .hero-card img { aspect-ratio: 3.9 / 1; }
+      .hero-inner { gap: 16px; }
+      h1 { font-size: clamp(28px, 6.5vw, 34px); }
+      h2 { font-size: clamp(22px, 5.2vw, 27px); }
+      h3, .portfolio-grid h3 { font-size: clamp(16px, 4vw, 18px); }
+      .lead, .section-intro, .about-copy p { font-size: 15.5px; line-height: 1.58; }
+      .solution-statement { font-size: 15.5px; line-height: 1.58; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .system-map { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .system-step:last-child { grid-column: 1 / -1; }
+      .portfolio-grid > .card:last-child:nth-child(odd) { grid-column: auto; }
+      .split, .contact-grid { gap: 28px; }
+      .card-body, .bio-card, .contact-panel { padding: 21px; }
+    }
+
+    @media (max-width: 520px) {
+      :root { --section-pad: 40px; }
+      .hero { padding: 20px 0 40px; }
+      .hero-card img { aspect-ratio: 3.15 / 1; }
+      .hero .eyebrow { font-size: 10.5px; }
+      h1 { font-size: clamp(27px, 7.6vw, 32px); line-height: 1.08; }
+      h2 { font-size: clamp(21px, 6vw, 25px); }
+      .kicker { font-size: 12px; }
+      .capability-line { font-size: 10.5px; }
+      .pain-points { gap: 8px; }
+      .system-map { grid-template-columns: 1fr; gap: 8px; }
+      .system-step:last-child { grid-column: auto; }
+      .mini-card { padding: 12px 13px; }
+      .card-body, .bio-card, .contact-panel { padding: 18px; }
+      .card p { font-size: 15px; }
+    }
   </style>
 </head>
 <body>
@@ -1232,14 +1680,12 @@
     <div class="nav">
       <a class="brand" href="#top" aria-label="Return to the top of The Revealed Cosmos Studio homepage">
         <div class="logo">The Revealed Cosmos Studio</div>
-        <div class="brand-subtitle">Narrative Systems & Development Documentation</div>
+        <div class="brand-subtitle">Science-Fiction &amp; Fantasy Worldbuilding &middot; Canon &middot; Narrative Systems</div>
       </a>
       <nav aria-label="Main navigation">
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
+        <a href="#portfolio">Workflow</a>
         <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a class="nav-cta" href="#contact" data-help="Not sure yet" data-cta="start-project-conversation">Start a Project Conversation</a>
+        <a class="nav-cta" href="#contact" data-cta="start-project-conversation">Connect</a>
       </nav>
     </div>
   </header>
@@ -1248,225 +1694,71 @@
     <section id="top" class="hero">
       <div class="wrap hero-inner">
         <aside class="hero-card" aria-label="The Revealed Cosmos Studio brand visual">
-          <img src="hero_brand.jpg" alt="The Revealed Cosmos Studio cosmic brand visual" />
+          <img src="hero_brand.jpg" alt="The Revealed Cosmos Studio cosmic eye brand artwork" />
         </aside>
         <div class="hero-copy">
-          <div class="eyebrow">Narrative Systems • Worldbuilding Structure • Visual-Narrative Direction</div>
-          <h1>Turn story-world material into clearer systems.</h1>
-          <p class="lead">The Revealed Cosmos Studio helps story-driven games, RPG/VN projects, cinematic IP, writers, and serious creators shape lore notes, factions, quests, characters, visuals, tone direction, and pitch ideas into clearer story-world structure, documentation, and creative direction.</p>
-          <p class="support-note">Useful when a project has strong ideas, but the material is hard to organize, explain, revise, pitch, or develop further.</p>
-          <div class="pain-points" aria-label="Common problems solved">
-            <div class="mini-card"><strong>World logic</strong><span>Rules, factions, history, pressure, and setting logic become easier to explain and use.</span></div>
-            <div class="mini-card"><strong>Quest structure</strong><span>Objectives, branches, stakes, outcomes, and player-facing logic become clearer.</span></div>
-            <div class="mini-card"><strong>Tone direction</strong><span>Voice, atmosphere, motifs, visual references, and style rules become more consistent.</span></div>
-            <div class="mini-card"><strong>Pitch & sharing</strong><span>Summaries, samples, and project documents become easier for teams, backers, or collaborators to read.</span></div>
+          <div class="eyebrow">Science-Fiction &amp; Fantasy Worldbuilding for Original IP</div>
+          <h1>A powerful creative vision is only the beginning. Production needs a world it can actually build from.</h1>
+          <p class="lead">Original IP often begins with compelling characters, settings, themes, and visual ideas. The real challenge is turning that material into clear canon, connected story logic, and usable direction across writing, design, art, quests, and future development.</p>
+          <p class="solution-statement">The transition from concept to production depends on a clear narrative foundation: coherent world systems, story-ready structure, and documentation that keeps creative intent visible throughout development.</p>
+          <p class="capability-line">Clear canon &middot; Story-ready worldbuilding &middot; Connected narrative direction &middot; Usable creative documentation</p>
+          <div class="pain-points" aria-label="Practical outcomes of a coherent narrative system">
+            <div class="mini-card"><strong>Creative intent made explicit</strong><span class="resolution">Canon, terminology, tone, and core rules become a reference instead of a collection of assumptions.</span></div>
+            <div class="mini-card"><strong>Worldbuilding that supports story</strong><span class="resolution">Cultures, technologies, and factions give writers and designers conflicts they can develop.</span></div>
+            <div class="mini-card"><strong>New material with clear stakes</strong><span class="resolution">Established world logic supports scenes, quests, choices, and meaningful consequences.</span></div>
+            <div class="mini-card"><strong>Direction every discipline can use</strong><span class="resolution">Writers, artists, designers, and production teams can develop from the same narrative foundation.</span></div>
           </div>
-          <article class="card hero-review-note">
-            <p>Not sure what kind of support fits? Send a short note about what already exists, what feels unclear, and what you are trying to prepare next. I’ll suggest a focused next step if there seems to be a useful fit.</p>
-            <a class="button" href="#contact" data-help="Not sure yet" data-cta="start-project-conversation" data-section="hero">Start a Project Conversation</a>
-          </article>
           <div class="buttons">
-            <a class="button secondary" href="#portfolio" data-cta="view-proof-samples" data-section="hero">View Proof Samples</a>
+            <a class="button" href="#portfolio" data-cta="view-proof-samples" data-section="hero">See How It Works</a>
+            <a class="button secondary" href="#contact" data-cta="start-project-conversation" data-section="hero">Start a Conversation</a>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section id="outcomes">
-      <div class="wrap">
-        <div class="kicker">What This Helps With</div>
-        <h2>What the Studio helps clarify.</h2>
-        <p class="section-intro">Many projects already have strong pieces. The work is helping those pieces become easier to organize, explain, revise, and use.</p>
-        <div class="outcome-grid" aria-label="Common project outcomes">
-          <div class="mini-card"><strong>Scattered lore → clearer structure</strong><span>Turn notes, backstory, and rules into clearer reference material.</span></div>
-          <div class="mini-card"><strong>Strong world idea → cleaner pitch path</strong><span>Shape the core premise, audience-facing hook, and proof material into a clearer presentation path.</span></div>
-          <div class="mini-card"><strong>Faction / quest / tone chaos → usable framework</strong><span>Organize pressure, objectives, branches, stakes, voice, and consequence into a structure that is easier to follow.</span></div>
-          <div class="mini-card"><strong>Visual references → story direction</strong><span>Translate moodboards, keyframes, and visual references into notes with story purpose.</span></div>
-          <div class="mini-card"><strong>Existing material → easier to share with collaborators</strong><span>Prepare story bible, team reference, or collaborator-facing documents from what already exists.</span></div>
-          <div class="mini-card"><strong>Unclear structure → focused review</strong><span>Use a clarity review to identify what feels muddy and what should be defined next.</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="best-fit">
-      <div class="wrap">
-        <div class="kicker">Best Fit</div>
-        <h2>Best for projects with material already taking shape.</h2>
-        <p class="section-intro">The best fit is usually a story-driven project that already has some material — notes, characters, factions, quest ideas, visuals, pitch copy, rough documentation, or a prototype — and needs help making the next version clearer.</p>
-        <div class="fit-grid">
-          <article class="card fit-card">
-            <h3>Good fit</h3>
-            <ul>
-              <li>Story-driven game, RPG/VN, cinematic IP, fictional world, or narrative-heavy creator/team</li>
-              <li>Existing notes, characters, factions, quest ideas, visuals, tone direction, rough docs, or prototype material</li>
-              <li>A creator, founder, writer, designer, or team trying to clarify direction</li>
-              <li>Need for story-world structure, documentation, pitch clarity, visual-narrative direction, or collaboration materials</li>
-              <li>Willingness to define a focused scope</li>
-            </ul>
-          </article>
-          <article class="card fit-card">
-            <h3>Not the right fit</h3>
-            <ul>
-              <li>Unpaid or exposure-only requests</li>
-              <li>Open-ended scope or unlimited revision expectations</li>
-              <li>Requests for detailed written analysis before scope is agreed</li>
-              <li>Projects with no existing material, goal, or concrete next step</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="project-fit-review">
-      <div class="wrap">
-        <div class="kicker">First Step</div>
-        <h2>How the first step works.</h2>
-        <p class="section-intro">Start with a short description of the existing material, the current difficulty, and the next milestone or decision.</p>
-        <div class="process-grid">
-          <div class="step"><strong>1. Share the current material</strong>Send a short description or the most relevant notes, draft, visual reference, pitch, or prototype segment.</div>
-          <div class="step"><strong>2. Identify the gap</strong>I look for the gap between what the project has now, what it is trying to become, and what feels unclear, scattered, or hard to organize.</div>
-          <div class="step"><strong>3. Suggest a focused next step</strong>If there is a useful fit, I suggest a clarity review, world/quest structure pass, story bible or pitch package, visual-narrative direction note, or defined contract support.</div>
-          <div class="step"><strong>4. Define the boundary</strong>Any deeper written analysis or documentation begins only after a contained scope is agreed.</div>
-        </div>
-        <article class="card services-cta">
-          <p>The goal is to understand what would actually help next — before turning the project into a larger scope.</p>
-          <a class="button" href="#contact" data-help="Not sure yet" data-cta="start-project-conversation" data-section="first-step">Start a Project Conversation</a>
-        </article>
       </div>
     </section>
 
     <section id="portfolio">
       <div class="wrap">
-        <div class="kicker">Proof Samples</div>
-        <h2>Proof Samples: How story material becomes usable structure.</h2>
-        <p class="section-intro">Selected samples show how existing story-world material can be organized into clearer narrative structures for review, revision, planning, and presentation.</p>
+        <div class="kicker">Workflow</div>
+        <h2>Five connected layers of one narrative system.</h2>
+        <p class="section-intro">These five layers show how creative intent becomes usable narrative direction. Tone defines the north star. World rules make the setting coherent. Factions create conflict. Quest structure turns conflict into choices. Narrative expression carries the system into the finished experience.</p>
 
-        <article class="card transformation-snapshot">
-          <div class="kicker">Transformation Snapshot</div>
-          <h3>Loose Quest Concept → Usable Quest Framework</h3>
-          <p class="small-note">Independent original-IP portfolio case.</p>
-
-          <div class="process-grid">
-            <div class="step">
-              <strong>Starting Material</strong>
-              A quest concept with investigation beats, faction pressure, possible outcomes, and strong story potential — but without a clean structure for player-facing flow, escalation, and consequence.
-            </div>
-            <div class="step">
-              <strong>Structural Pass</strong>
-              The material is organized around a clearer quest objective, investigation sequence, faction involvement, branching logic, and choice consequences.
-            </div>
-            <div class="step">
-              <strong>Clearer Output</strong>
-              The result becomes a clearer quest framework: easier to read, revise, discuss with collaborators, and use for planning, iteration, or pitch support.
-            </div>
-          </div>
-
-          <div class="transformation-footer">
-            <div class="transformation-proof">
-              <strong>This sample demonstrates:</strong>
-              <ul>
-                <li>Objective clarity</li>
-                <li>Branching structure</li>
-                <li>Faction pressure</li>
-                <li>Consequence logic</li>
-                <li>Clear presentation</li>
-              </ul>
-            </div>
-
-            <div class="buttons">
-              <button class="button" type="button" onclick="openSample('artifact-of-silent-ruin-quest-design.pdf','The Artifact of Silent Ruin')" data-cta="view-proof-samples" data-section="portfolio">View Sample</button>
-            </div>
-          </div>
-        </article>
+        <div class="system-map" aria-label="Five connected layers of the Revealed Cosmos narrative system">
+          <div class="system-step"><span class="system-index">Layer 01</span><strong>Tone Identity</strong><span>Turns mood and intent into a creative north star later work can follow.</span></div>
+          <div class="system-step"><span class="system-index">Layer 02</span><strong>World Rules</strong><span>Connects physical, social, and thematic ideas into one usable setting logic.</span></div>
+          <div class="system-step"><span class="system-index">Layer 03</span><strong>Faction Pressure</strong><span>Uses that logic to generate conflicts, goals, and consequences.</span></div>
+          <div class="system-step"><span class="system-index">Layer 04</span><strong>Quest &amp; Choice</strong><span>Converts pressure into objectives, decisions, branches, and outcomes.</span></div>
+          <div class="system-step"><span class="system-index">Layer 05</span><strong>Narrative Expression</strong><span>Carries the system into finished prose, scenes, and audience-facing experience.</span></div>
+        </div>
 
         <div class="portfolio-grid">
-          <article class="card priority-proof"><div class="card-visual" role="img" aria-label="Featured portfolio sample for The Artifact of Silent Ruin"></div><div class="card-body"><div class="tag">Featured Game-Relevant Proof / RPG Quest Structure</div><h3>The Artifact of Silent Ruin</h3><p><strong>Starting problem:</strong> a quest idea needed clearer objectives, investigation flow, and player-facing consequences. <strong>Structural pass:</strong> define faction pressure, branches, outcomes, and stakes. <strong>Output:</strong> a usable quest framework.</p><p class="demonstrates"><strong>What this sample demonstrates:</strong> Quest logic, branching structure, stakes, and consequence mapping.</p><button class="sample-link" type="button" onclick="openSample('artifact-of-silent-ruin-quest-design.pdf','The Artifact of Silent Ruin')" data-cta="view-proof-samples" data-section="portfolio">See Sample</button></div></article>
-          <article class="card"><div class="card-visual" role="img" aria-label="Portfolio sample for ATLAS 3I / Second Earth"></div><div class="card-body"><div class="tag">Lore Architecture: World Rules, Pressure, and Setting Logic</div><h3>ATLAS 3I / Second Earth</h3><p><strong>Starting problem:</strong> broad sci-fi setting material needed clearer rules, social pressure, and atmosphere. <strong>Structural pass:</strong> organize world logic into a readable lore architecture. <strong>Output:</strong> a stronger reference for pitch or team discussion.</p><p class="demonstrates"><strong>What this sample demonstrates:</strong> Setting logic, world rules, pressure, and usable lore framing.</p><button class="sample-link" type="button" onclick="openSample('atlas3i-second-earth-sample.pdf','ATLAS 3I / Second Earth')" data-cta="view-proof-samples" data-section="portfolio">See Sample</button></div></article>
-          <article class="card"><div class="card-visual" role="img" aria-label="Portfolio sample for The Siamic Peninsula"></div><div class="card-body"><div class="tag">Fantasy Worldbuilding: Factions, History, Magic Rules, and Tone</div><h3>The Siamic Peninsula</h3><p><strong>Starting problem:</strong> fantasy world material needed faction clarity, history, magic logic, and tone. <strong>Structural pass:</strong> shape the material into a lore-bible style reference. <strong>Output:</strong> a clearer guide for revision, expansion, or sharing.</p><p class="demonstrates"><strong>What this sample demonstrates:</strong> Faction structure, magic rules, world tone, and reference-document clarity.</p><button class="sample-link" type="button" onclick="openSample('siamic-peninsula-lore-bible.pdf','The Siamic Peninsula')" data-cta="view-proof-samples" data-section="portfolio">See Sample</button></div></article>
-          <article class="card"><div class="card-visual" role="img" aria-label="Portfolio sample for Psychopunk Tone Bible"></div><div class="card-body"><div class="tag">Tone Bible: Voice, Motifs, Atmosphere, and Style Rules</div><h3>Psychopunk Tone Bible</h3><p><strong>Starting problem:</strong> a project tone needed repeatable rules instead of scattered mood language. <strong>Structural pass:</strong> clarify voice, motifs, imagery, rhythm, and emotional pressure. <strong>Output:</strong> a tone bible for consistent direction.</p><p class="demonstrates"><strong>What this sample demonstrates:</strong> Tone control, style rules, motifs, and atmosphere documentation.</p><button class="sample-link" type="button" onclick="openSample('psychopunk-tone-bible.pdf','Psychopunk Tone Bible')" data-cta="view-proof-samples" data-section="portfolio">See Sample</button></div></article>
-          <article class="card"><div class="card-visual" role="img" aria-label="Portfolio sample for PROTEUS: The Waking Cycle"></div><div class="card-body"><div class="tag">Narrative Prose: Scene Rhythm, Perspective, and Mood</div><h3>PROTEUS: The Waking Cycle</h3><p><strong>Starting problem:</strong> atmospheric story material needed controlled scene rhythm and perspective. <strong>Structural pass:</strong> shape sensory detail, symbolic pressure, and character viewpoint. <strong>Output:</strong> prose that can support tone, pitch, or world identity.</p><p class="demonstrates"><strong>What this sample demonstrates:</strong> Narrative atmosphere, scene rhythm, sensory writing, and mood control.</p><button class="sample-link" type="button" onclick="openSample('prototeus-waking-cycle-sample.pdf','PROTEUS: The Waking Cycle')" data-cta="view-proof-samples" data-section="portfolio">See Sample</button></div></article>
-          <article class="card"><div class="card-visual" role="img" aria-label="Capability area for atmosphere, keyframes, and tone notes"></div><div class="card-body"><div class="tag">Capability Area / Sample Available on Request</div><h3>Atmosphere, Keyframes & Tone Notes</h3><p>Optional visual references, keyframes, and tone notes can be connected to a defined story purpose when that supports project alignment or presentation.</p><p class="demonstrates"><strong>Current evidence boundary:</strong> No public sample is linked for this capability area.</p></div></article>
+          <article class="card priority-proof"><div class="card-body"><div class="tag">Layer 01 &middot; Tone Identity</div><h3>Psychopunk Tone Bible</h3><p class="system-role"><strong>Role in the system:</strong> translates an aesthetic into a repeatable creative standard for later narrative and visual work.</p><p><span class="proof-label">Development problem</span>A distinctive aesthetic existed as volatile mood language that could drift from scene to scene.</p><p><span class="proof-label">Structured output</span>A tone bible defining voice, motifs, rhythm, image language, and emotional pressure.</p><p class="demonstrates"><span class="proof-label">Demonstrates</span>How atmosphere becomes a repeatable creative constraint.</p><button class="sample-link" type="button" onclick="openSample('psychopunk-tone-bible.pdf','Psychopunk Tone Bible')" data-cta="view-proof-samples" data-section="portfolio">See Sample</button></div></article>
+          <article class="card"><div class="card-body"><div class="tag">Layer 02 &middot; World Rules</div><h3>ATLAS 3I / Second Earth</h3><p class="system-role"><strong>Role in the system:</strong> turns a broad setting into clear rules that can guide stories, factions, and future development.</p><p><span class="proof-label">Development problem</span>A broad setting had depth, but its rules and social pressures were not yet easy to follow.</p><p><span class="proof-label">Structured output</span>A compact world system connecting physical rules, social pressure, and recurring atmosphere.</p><p class="demonstrates"><span class="proof-label">Demonstrates</span>How a setting can expand without weakening its central logic.</p><button class="sample-link" type="button" onclick="openSample('atlas3i-second-earth-sample.pdf','ATLAS 3I / Second Earth')" data-cta="view-proof-samples" data-section="portfolio">See Sample</button></div></article>
+          <article class="card"><div class="card-body"><div class="tag">Layer 03 &middot; Faction Pressure</div><h3>The Siamic Peninsula</h3><p class="system-role"><strong>Role in the system:</strong> organizes history, culture, and metaphysics into usable sources of conflict and consequence.</p><p><span class="proof-label">Development problem</span>History, factions, magic, and regional conflict competed for attention.</p><p><span class="proof-label">Structured output</span>A compact lore reference connecting rules, pressure, consequence, and tone.</p><p class="demonstrates"><span class="proof-label">Demonstrates</span>How several world systems remain readable without losing depth or mystery.</p><button class="sample-link" type="button" onclick="openSample('siamic-peninsula-lore-bible.pdf','The Siamic Peninsula')" data-cta="view-proof-samples" data-section="portfolio">See Sample</button></div></article>
+          <article class="card"><div class="card-body"><div class="tag">Layer 04 &middot; Quest &amp; Choice</div><h3>The Artifact of Silent Ruin</h3><p class="system-role"><strong>Role in the system:</strong> turns world and faction logic into objectives, choices, branches, and consequences.</p><p><span class="proof-label">Development problem</span>An investigation concept had mystery, but not yet a clear structure for player choice.</p><p><span class="proof-label">Structured output</span>Objectives, faction pressure, branches, stakes, and consequences mapped into one framework.</p><p class="demonstrates"><span class="proof-label">Demonstrates</span>How lore becomes a quest that can be evaluated and revised.</p><button class="sample-link" type="button" onclick="openSample('artifact-of-silent-ruin-quest-design.pdf','The Artifact of Silent Ruin')" data-cta="view-proof-samples" data-section="portfolio">See Sample</button></div></article>
+          <article class="card"><div class="card-body"><div class="tag">Layer 05 &middot; Narrative Expression</div><h3>PROTEUS: The Waking Cycle</h3><p class="system-role"><strong>Role in the system:</strong> shows how the underlying structure becomes a finished narrative experience.</p><p><span class="proof-label">Development problem</span>A rich atmosphere risked becoming decoration instead of carrying narrative pressure.</p><p><span class="proof-label">Structured output</span>Sensory language, symbolic pressure, viewpoint, and scene rhythm working as one system.</p><p class="demonstrates"><span class="proof-label">Demonstrates</span>How prose atmosphere can perform a clear story function.</p><button class="sample-link" type="button" onclick="openSample('prototeus-waking-cycle-sample.pdf','PROTEUS: The Waking Cycle')" data-cta="view-proof-samples" data-section="portfolio">See Sample</button></div></article>
         </div>
-      </div>
-    </section>
-
-    <section id="services">
-      <div class="wrap">
-        <div class="kicker">Services</div>
-        <h2>Ways the Studio can help.</h2>
-        <p class="section-intro">I organize existing creative material into clearer documents and frameworks for review, revision, handoff, or presentation.</p>
-
-        <div class="services-grid">
-          <article class="card service" data-service="project-fit-review"><div class="tag">Light First Step</div><h3>Project-Fit Review</h3><p>A brief conversation to understand the existing material, current difficulty, and next milestone.</p><ul><li>Clarifies the immediate question</li><li>Checks whether a contained outside scope is useful</li><li>Identifies the most relevant next step</li></ul><p class="service-boundary">Deeper analysis begins only after scope is agreed.</p><a class="sample-link" href="#contact" data-help="Focused project review" data-cta="project-fit-review" data-section="services">Request a Project-Fit Review</a></article>
-          <article class="card service" data-service="project-clarity-audit"><div class="tag">Focused Review</div><h3>Project Clarity Audit</h3><p>For existing material that needs a clearer read on what is working, what is scattered, and what should come first.</p><ul><li>Current-state / desired-direction / obstacle diagnosis</li><li>Lore, pitch, visual reference, or early documentation review</li><li>Top clarity, organization, tone, or continuity risks</li><li>Recommended next step: what document, structure, or clarity pass should come first</li></ul><p class="service-boundary">Best when the project already has material and needs a clearer next version.</p><a class="sample-link" href="#contact" data-help="Focused project review" data-cta="service-option" data-section="services">Ask About This Option</a></article>
-          <article class="card service" data-service="world-quest-structure"><div class="tag">Core Support</div><h3>World + Quest Structure</h3><p>For story-driven games, RPGs, visual novels, and interactive projects that need clearer world logic connected to quests, choices, stakes, and progression.</p><ul><li>World structure and internal rules</li><li>Faction pressure and conflict map</li><li>Quest hooks, objectives, and stakes</li><li>Branching outcomes and player-facing logic</li><li>Optional visual reference or keyframe notes</li></ul><p class="service-boundary">Best when world logic, quests, choices, or faction pressure need to become easier to follow.</p><a class="sample-link" href="#contact" data-help="Story-world / quest structure" data-cta="service-option" data-section="services">Ask About This Option</a></article>
-          <article class="card service" data-service="story-bible-pitch-materials"><div class="tag">Expanded Package</div><h3>Story Bible + Pitch Materials</h3><p>For creators or teams preparing clearer materials for collaborators, campaign pages, pitch conversations, prototype support, internal review, or presentation.</p><ul><li>Story bible or lore documentation</li><li>World identity and tone guide</li><li>Faction, character, or quest structure</li><li>Visual reference and keyframe direction</li><li>Pitch-ready summary or presentation notes</li></ul><p class="service-boundary">Best when the project needs clearer material for collaborators, backers, funders, or internal planning.</p><a class="sample-link" href="#contact" data-help="Story-world / quest structure" data-cta="service-option" data-section="services">Ask About This Option</a></article>
-          <article class="card service" data-service="contract-support"><div class="tag">Ongoing / Contract</div><h3>Narrative Systems Support</h3><p>For defined part-time or contract help with documentation cleanup, story-world structure, quest logic, faction pressure, tone direction, or pitch support.</p><ul><li>Scoped narrative documentation tasks</li><li>World bible or lore system support</li><li>Quest, objective, and branching logic review</li><li>Pitch, campaign, or team-support material for a defined use case</li></ul><p class="service-boundary">Best for defined tasks where the team knows what material needs to be clarified or prepared.</p><a class="sample-link" href="#contact" data-help="Contract or part-time support" data-cta="service-option" data-section="services">Ask About This Option</a></article>
-        </div>
-
-        <article class="card services-cta"><p>Have a project that does not fit neatly into one category? Send a short note about what exists, what feels unclear, and what you are trying to prepare next.</p><a class="button" href="#contact" data-help="Not sure yet" data-cta="start-project-conversation" data-section="services">Start a Project Conversation</a></article>
-      </div>
-    </section>
-
-    <section id="contract-support">
-      <div class="wrap">
-        <div class="kicker">Contract Support</div>
-        <h2>Available for defined narrative systems support.</h2>
-        <p class="section-intro">In addition to fixed-scope packages, I can support teams that need defined help with world logic, quest structure, faction pressure, tone direction, pitch materials, or internal documentation.</p>
-        <article class="card contract-card">
-          <ul>
-            <li>Narrative documentation cleanup and structure</li>
-            <li>World bible or lore system support</li>
-            <li>Quest, objective, and branching logic review</li>
-            <li>Faction pressure and conflict mapping</li>
-            <li>Tone, atmosphere, and visual-reference direction</li>
-            <li>Pitch-ready summaries and team-support materials</li>
-          </ul>
-        </article>
-        <article class="card contract-cta">
-          <p>For contract or part-time support, the best starting point is a defined scope: project stage, materials available, timeline, and the next useful outcome for the team or project.</p>
-          <a class="button" href="#contact" data-help="Contract or part-time support" data-cta="service-option" data-section="contract-support">Ask About This Option</a>
-        </article>
-      </div>
-    </section>
-
-    <section id="method">
-      <div class="wrap">
-        <div class="kicker">Method</div>
-        <h2>What this work helps clarify.</h2>
-        <p class="section-intro">The value is not more lore for its own sake. The value is identifying the system, wound, anchor, event, and package that make a story-world easier to understand, shape, present, and develop further.</p>
-        <article class="card contract-card">
-          <ul>
-            <li><strong>System:</strong> What force governs the world, project, conflict, or playable structure?</li>
-            <li><strong>Wound:</strong> What human fear, desire, pressure, or conflict makes it matter?</li>
-            <li><strong>Anchor:</strong> What object, place, faction, ritual, mechanic, or image makes the idea visible?</li>
-            <li><strong>Event:</strong> What cinematic or playable moment reveals the system in action?</li>
-            <li><strong>Package:</strong> How does the material become a story bible, quest framework, pitch summary, tone guide, visual direction brief, or usable sample?</li>
-          </ul>
-        </article>
       </div>
     </section>
 
     <section id="about">
       <div class="wrap split">
         <aside class="bio-card">
-          <img src="profile.jpg" alt="Aaron Asaad, Narrative Systems and Worldbuilding Consultant" />
           <h3>Aaron Asaad</h3>
-          <p>Narrative Systems & Worldbuilding Support</p>
+          <p>Worldbuilder &middot; Narrative Designer</p>
           <ul class="bio-list">
+            <li><strong>10+ years developing original science-fiction and fantasy fiction</strong></li>
+            <li><strong>B.A. in English</strong></li>
             <li><strong>M.A. in Linguistics & Translation</strong></li>
-            <li><strong>Professional experience across education, writing evaluation, and structured feedback</strong></li>
-            <li><strong>English, creative writing, fiction, and language structure</strong></li>
-            <li><strong>Games, story-worlds, tone, and narrative clarity</strong></li>
-            <li><strong>Documentation, pitch materials, and visual-narrative direction</strong></li>
+            <li><strong>Creator of The Revealed Cosmos original speculative-fiction universe</strong></li>
+            <li><strong>Background in writing evaluation, editing, localization, and education</strong></li>
           </ul>
         </aside>
         <div class="about-copy">
           <div class="kicker">About</div>
-          <h2>How I help story-world projects become clearer.</h2>
-          <p>I help creators and small teams organize existing story-world material into clearer narrative systems and development documentation: story bibles, quest frameworks, faction structures, tone guides, pitch summaries, and visual direction briefs.</p>
-          <p>My work looks for the storyworld engine underneath the material: the pressure system shaping the world, the human stakes that make it matter, the concrete anchors that make it visible, and the cinematic or playable moments that make it usable.</p>
-          <p>The goal is not just more lore. The goal is clearer storyworld structure a team can review, discuss, revise, pitch, and develop further.</p>
+          <h2>Original imagination, developed into coherent narrative structure.</h2>
+          <p>I am a worldbuilder and narrative designer focused on original science-fiction and fantasy IP. My strength is developing compelling concepts into connected characters, cultures, technologies, conflicts, and story systems without losing the atmosphere or identity that made the idea distinctive.</p>
+          <p>My degrees in English and Linguistics &amp; Translation, together with experience in localization, writing evaluation, and education, support this work: preserving terminology and voice, detecting contradictions, clarifying complex ideas, and communicating creative intent clearly enough for other collaborators to build from it.</p>
+          <p>The Revealed Cosmos is my independent working universe and the central proof of this approach. Its fiction, lore, quests, visual direction, and music are developed as connected expressions of the same narrative identity.</p>
         </div>
       </div>
     </section>
@@ -1475,8 +1767,8 @@
       <div class="wrap contact-grid">
         <div>
           <div class="kicker">Contact</div>
-          <h2>Start a project conversation.</h2>
-          <p class="section-intro">Send a short note about what already exists, what feels unclear, and the next milestone or decision. I’ll reply with whether there appears to be a useful fit and what a focused next step could look like.</p>
+          <h2>Start a conversation about the project.</h2>
+          <p class="section-intro">For inquiries concerning original science-fiction or fantasy IP, worldbuilding, narrative design, canon, or creative documentation, use the form or contact me directly.</p>
           <p class="direct-email-note"><span>Direct email:</span><a href="mailto:revealedcosmosstudio@gmail.com">revealedcosmosstudio@gmail.com</a></p>
         </div>
 
@@ -1485,14 +1777,10 @@
             <input type="checkbox" name="botcheck" id="botcheck" class="honeypot" tabindex="-1" autocomplete="off" />
             <div><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required /></div>
             <div><label for="email">Email</label><input id="email" name="email" type="email" placeholder="your@email.com" autocomplete="email" required /></div>
-            <div><label for="helpType">What would you like help with?</label><select id="helpType" name="help_type"><option>Focused project review</option><option>Story-world / quest structure</option><option>Contract or part-time support</option><option>Not sure yet</option></select></div>
-            <div><label for="projectType">Project type</label><select id="projectType" name="project_type"><option>Story-driven game</option><option>RPG / visual novel</option><option>Fictional IP / worldbuilding project</option><option>Cinematic IP / film project</option><option>Pitch / funding preparation</option><option>Internal documentation</option><option>Portfolio / proof package</option><option>Other</option></select></div>
-            <div><label for="projectStage">Project stage</label><select id="projectStage" name="project_stage"><option>Early idea</option><option>Existing notes / rough material</option><option>Prototype / vertical slice</option><option>Pre-production</option><option>Pitch / funding preparation</option><option>Ongoing development</option><option>Existing draft or documentation</option><option>Other</option></select></div>
-            <div><label for="timeline">Timeline</label><select id="timeline" name="timeline"><option>No rush</option><option>1–2 weeks</option><option>This month</option><option>Deadline-based</option><option>Not sure yet</option></select></div>
-            <div><label for="budgetScope">Budget / scope range</label><select id="budgetScope" name="budget_scope"><option>Small focused audit</option><option>Moderate documentation support</option><option>Larger package</option><option>Part-time / ongoing support</option><option>Not sure yet</option></select></div>
-            <div><label for="message">Current material, difficulty, and next milestone</label><textarea id="message" name="message" placeholder="What already exists? What feels unclear or keeps changing? What milestone, handoff, pitch, or revision decision comes next?" required></textarea></div>
-            <button id="submitButton" class="button" type="submit" data-cta="contact-form-submit" data-section="contact">Send Message</button>
-            <p id="formStatus" class="form-status" aria-live="polite">Your message will be sent directly through the contact form.</p>
+            <div><label for="projectType">Project format</label><select id="projectType" name="project_type" required><option value="" selected disabled>Select the closest fit</option><option value="story-driven-game">Story-driven game</option><option value="film-tv-animation">Film, television, or animation</option><option value="original-ip">Original science-fiction or fantasy IP</option><option value="tabletop-interactive">Tabletop RPG or interactive narrative</option><option value="novel-series">Novel or story series</option><option value="immersive-transmedia">Immersive or transmedia project</option><option value="world-bible">World bible or canon documentation</option><option value="other">Other or not yet defined</option></select></div>
+            <div><label for="message">Project context</label><textarea id="message" name="message" placeholder="Current stage, existing material, and the narrative or worldbuilding challenge." required></textarea></div>
+            <button id="submitButton" class="button" type="submit" data-cta="contact-form-submit" data-section="contact">Start a Conversation</button>
+            <p id="formStatus" class="form-status" aria-live="polite">Your privacy matters. Initial project inquiries are reviewed with discretion.</p>
           </form>
         </div>
       </div>
@@ -1516,13 +1804,6 @@
     const WEB3FORMS_ACCESS_KEY = ['e7b01ded','e06f','4ed1','88b2','050976525786'].join('-');
     const CONTACT_EMAIL = 'revealedcosmosstudio@gmail.com';
 
-    const messagePrompts = {
-      'Focused project review': 'What already exists? What decision does the next document need to support? What obstacle is blocking the project right now?',
-      'Story-world / quest structure': 'What world rules, factions, quest objectives, branches, stakes, or continuity issues need clearer structure?',
-      'Contract or part-time support': 'What defined task, timeline, deliverable, and team use case would the support need to serve?',
-      'Not sure yet': 'Briefly describe what you are building, what exists now, and what kind of next step would help.'
-    };
-
     function cleanUrl() {
       if (history.replaceState) {
         history.replaceState(null, '', window.location.pathname + window.location.search);
@@ -1543,23 +1824,6 @@
       try { return document.querySelector(hash); } catch (error) { return null; }
     }
 
-    function applyHelpIntent(helpValue) {
-      if (!helpValue) return;
-      const helpType = document.getElementById('helpType');
-      const message = document.getElementById('message');
-      if (!helpType) return;
-
-      const matchingOption = Array.from(helpType.options).find((option) => option.value === helpValue || option.textContent === helpValue);
-      if (matchingOption) {
-        helpType.value = matchingOption.value;
-        updateMessagePlaceholder();
-      }
-
-      if (message) {
-        setTimeout(() => message.focus({ preventScroll: true }), 450);
-      }
-    }
-
     function updateHash(hash) {
       if (!hash || hash === '#top' || hash === '#') {
         cleanUrl();
@@ -1570,14 +1834,13 @@
       }
     }
 
-    function scrollToSection(hash, shouldUpdateHash = true, helpValue = '') {
+    function scrollToSection(hash, shouldUpdateHash = true) {
       const target = getTarget(hash || '#top');
       if (!target) return;
       updateScrollOffset();
       const top = Math.max(target.getBoundingClientRect().top + window.scrollY - getHeaderOffset(), 0);
       window.scrollTo({ top, behavior: 'smooth' });
       if (shouldUpdateHash) updateHash(hash);
-      if (hash === '#contact' && helpValue) applyHelpIntent(helpValue);
     }
 
     document.querySelectorAll('a[href^="#"]').forEach((link) => {
@@ -1585,7 +1848,7 @@
         const hash = link.getAttribute('href');
         if (!getTarget(hash)) return;
         event.preventDefault();
-        scrollToSection(hash, true, link.dataset.help || '');
+        scrollToSection(hash, true);
       });
     });
 
@@ -1598,16 +1861,6 @@
     window.addEventListener('scroll', updateBackToTop, { passive: true });
     window.addEventListener('resize', updateScrollOffset);
     window.addEventListener('orientationchange', () => setTimeout(updateScrollOffset, 250));
-
-    function updateMessagePlaceholder() {
-      const helpType = document.getElementById('helpType');
-      const message = document.getElementById('message');
-      if (!helpType || !message) return;
-      message.placeholder = messagePrompts[helpType.value] || messagePrompts['Focused project review'];
-    }
-
-    const helpSelect = document.getElementById('helpType');
-    if (helpSelect) helpSelect.addEventListener('change', updateMessagePlaceholder);
 
     function setFormStatus(message, type = '') {
       const status = document.getElementById('formStatus');
@@ -1623,18 +1876,14 @@
       const submitButton = document.getElementById('submitButton');
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
-      const helpType = document.getElementById('helpType').value;
       const projectType = document.getElementById('projectType').value;
-      const projectStage = document.getElementById('projectStage').value;
-      const timeline = document.getElementById('timeline').value;
-      const budgetScope = document.getElementById('budgetScope').value;
       const message = document.getElementById('message').value.trim();
       const botcheck = document.getElementById('botcheck');
 
       if (botcheck && botcheck.checked) return;
 
-      if (!name || !email || !message) {
-        setFormStatus('Please add your name, email, and project details before sending.', 'error');
+      if (!name || !email || !projectType || !message) {
+        setFormStatus('Please add your name, email, project format, and project context.', 'error');
         return;
       }
 
@@ -1647,15 +1896,11 @@
 
       const payload = {
         access_key: WEB3FORMS_ACCESS_KEY,
-        subject: 'TRCS project inquiry — ' + helpType,
+        subject: 'TRCS website conversation',
         from_name: 'The Revealed Cosmos Studio Contact Form',
         name,
         email,
-        help_type: helpType,
         project_type: projectType,
-        project_stage: projectStage,
-        timeline,
-        budget_scope: budgetScope,
         message,
         page: window.location.href
       };
@@ -1673,9 +1918,8 @@
         const result = await response.json();
 
         if (result.success) {
-          setFormStatus('✓ Project details sent. I will reply with whether there appears to be a useful fit.', 'success');
+          setFormStatus('✓ Project context sent. Thank you for starting the conversation.', 'success');
           if (form) form.reset();
-          updateMessagePlaceholder();
         } else {
           throw new Error(result.message || 'Message failed to send.');
         }
@@ -1684,7 +1928,7 @@
       } finally {
         if (submitButton) {
           submitButton.disabled = false;
-          submitButton.textContent = originalButtonText || 'Send Message';
+          submitButton.textContent = originalButtonText || 'Start a Conversation';
         }
       }
     }
@@ -1735,7 +1979,7 @@
     document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeSample(); });
 
     function initActiveSectionNav() {
-      const sectionIds = ['services', 'portfolio', 'about', 'contact'];
+      const sectionIds = ['portfolio', 'about', 'contact'];
       const navLinks = sectionIds
         .map((id) => document.querySelector(`nav a[href="#${id}"]`))
         .filter(Boolean);
@@ -1767,7 +2011,7 @@
         sections.forEach((section) => observer.observe(section));
       } else {
         function updateActiveFromScroll() {
-          const offset = getScrollOffset() + 24;
+          const offset = getHeaderOffset() + 24;
           const current = sections.reduce((active, section) => {
             return window.scrollY + offset >= section.offsetTop ? section : active;
           }, sections[0]);
@@ -1791,7 +2035,6 @@
     window.addEventListener('pageshow', (event) => { if (event.persisted) scrollToInitialHash(); });
     updateScrollOffset();
     updateBackToTop();
-    updateMessagePlaceholder();
   </script>
 </body>
 </html>
